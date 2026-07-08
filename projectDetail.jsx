@@ -15,6 +15,7 @@ function renderSection(section, i, accent) {
   if (t === "design-system-career") return <SectionDesignSystemCareer key={i} />;
   if (t === "design-system-skillboost") return <SectionDesignSystemSkillBoost key={i} />;
   if (t === "design-system-dye") return <SectionDesignSystemDye key={i} />;
+  if (t === "design-system-pawsuite") return <SectionDesignSystemPawsuite key={i} />;
   if (t === "ia") return <SectionIA key={i} />;
   if (t === "impact") return <SectionImpact key={i} items={section.items} />;
   if (t === "quote") return null;
@@ -1631,6 +1632,158 @@ function SectionDesignSystemDye() {
             <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
               <span style={{ background: "#C6E9E3", color: P, fontSize: 10, fontWeight: 700, padding: "3px 8px", borderRadius: 4, flexShrink: 0 }}>{tab}</span>
               <span style={{ fontSize: 11, color: GRAY, lineHeight: 1.5 }}>{desc}</span>
+            </div>
+          ))}
+        </div>
+      </>)}
+
+    </div>
+  );
+}
+
+/* ── PawSuite Design System ── */
+function SectionDesignSystemPawsuite() {
+  const P    = "#0D9488";   // primary teal
+  const PD   = "#0F766E";   // deep teal
+  const MINT = "#F0FDFA";   // surface mint
+  const INK  = "#111827";
+  const GRAY = "#6B7280";
+
+  const colors = [
+    { hex: P,       name: "Primary Teal",   use: "Active nav, CTA buttons, links" },
+    { hex: PD,      name: "Deep Teal",      use: "Pressed states, headings" },
+    { hex: "#F59E0B", name: "Staff Amber",  use: "Staff portal accent, in-progress" },
+    { hex: "#3B82F6", name: "Client Blue",  use: "Client portal hero, primary CTA" },
+    { hex: MINT,    name: "Mint Surface",   use: "Sidebar active state, card fill" },
+    { hex: GRAY,    name: "Neutral Gray",   use: "Secondary labels, timestamps" },
+  ];
+
+  const typeScale = [
+    { size: 24, weight: 800, label: "Display",  sample: "$1,390.00",              use: "Dashboard stat values" },
+    { size: 18, weight: 700, label: "Heading",  sample: "Reports & Insights",      use: "Page titles" },
+    { size: 15, weight: 600, label: "Row Title",sample: "Alice Johnson — Buddy",   use: "Booking & client rows" },
+    { size: 13, weight: 400, label: "Body",     sample: "Teeth Cleaning · 30 min", use: "Service, meta text" },
+    { size: 11, weight: 700, label: "Label",    sample: "OUTSTANDING · OVERDUE",   use: "Stat labels (caps)" },
+  ];
+
+  const statusBadges = [
+    { label: "Pending",     bg: "#FFF7ED", color: "#C2410C" },
+    { label: "Confirmed",   bg: "#ECFDF5", color: "#059669" },
+    { label: "In Progress", bg: "#FFF7ED", color: "#D97706" },
+    { label: "Completed",   bg: "#ECFDF5", color: "#047857" },
+    { label: "Cancelled",   bg: "#F3F4F6", color: "#6B7280" },
+    { label: "Overdue",     bg: "#FEF2F2", color: "#DC2626" },
+  ];
+
+  const roleBadges = [
+    { label: "Owner", bg: MINT, color: P, desc: "Full back office — bookings, finance, staff, reports" },
+    { label: "Staff",  bg: "#FFF7ED", color: "#D97706", desc: "Focused day-view — schedule, clients, invoices" },
+    { label: "Client", bg: "#EFF6FF", color: "#3B82F6", desc: "Mobile app — book, track, pay" },
+  ];
+
+  const LABEL_STYLE = { fontSize: 12, fontWeight: 800, textTransform: "uppercase", letterSpacing: ".07em", color: GRAY, marginBottom: 14 };
+  const box = (children) => (
+    <div style={{ background: "#fff", border: "1px solid var(--hair,#e8e6e0)", borderRadius: 12, padding: "18px 20px" }}>{children}</div>
+  );
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+
+      {/* Color palette */}
+      {box(<>
+        <div style={LABEL_STYLE}>Color Palette</div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(6,1fr)", gap: 10 }}>
+          {colors.map((c, i) => (
+            <div key={i}>
+              <div style={{ height: 48, borderRadius: 8, background: c.hex, marginBottom: 8 }} />
+              <div style={{ fontSize: 13, fontWeight: 700, color: INK }}>{c.name}</div>
+              <div style={{ fontSize: 11, color: GRAY, fontFamily: "monospace", marginTop: 1 }}>{c.hex}</div>
+              <div style={{ fontSize: 11, color: GRAY, marginTop: 3, lineHeight: 1.4 }}>{c.use}</div>
+            </div>
+          ))}
+        </div>
+      </>)}
+
+      {/* Typography */}
+      {box(<>
+        <div style={LABEL_STYLE}>Typography — Inter</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {typeScale.map((t, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "baseline", gap: 16, borderBottom: i < typeScale.length - 1 ? "1px solid var(--hair,#f0ede8)" : "none", paddingBottom: i < typeScale.length - 1 ? 12 : 0 }}>
+              <div style={{ width: 90, flexShrink: 0 }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: P, background: MINT, padding: "2px 7px", borderRadius: 4 }}>{t.label}</span>
+              </div>
+              <div style={{ flex: 1, fontSize: Math.min(t.size, 20), fontWeight: t.weight, color: INK }}>{t.sample}</div>
+              <div style={{ fontSize: 12, color: GRAY, flexShrink: 0 }}>{t.size}px / {t.weight}</div>
+            </div>
+          ))}
+        </div>
+      </>)}
+
+      {/* Booking status system */}
+      {box(<>
+        <div style={LABEL_STYLE}>Booking & Invoice Status Badges</div>
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          {statusBadges.map((b, i) => (
+            <span key={i} style={{ fontSize: 13, fontWeight: 700, padding: "5px 12px", borderRadius: 6, background: b.bg, color: b.color }}>{b.label}</span>
+          ))}
+        </div>
+        <div style={{ fontSize: 13, color: GRAY, marginTop: 12, lineHeight: 1.6 }}>
+          Every booking and invoice shares the same six-state vocabulary across all three portals — a groomer sees the exact same "In Progress" color an owner does on the reports page.
+        </div>
+      </>)}
+
+      {/* Role badge / access system */}
+      {box(<>
+        <div style={LABEL_STYLE}>Role Access System</div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
+          {roleBadges.map((r, i) => (
+            <div key={i} style={{ border: "1px solid var(--hair,#e8e6e0)", borderRadius: 10, padding: "14px" }}>
+              <span style={{ fontSize: 12, fontWeight: 800, letterSpacing: ".06em", textTransform: "uppercase", background: r.bg, color: r.color, padding: "3px 10px", borderRadius: 5 }}>{r.label}</span>
+              <div style={{ fontSize: 13, color: GRAY, marginTop: 10, lineHeight: 1.5 }}>{r.desc}</div>
+            </div>
+          ))}
+        </div>
+      </>)}
+
+      {/* Stat card anatomy */}
+      {box(<>
+        <div style={LABEL_STYLE}>Stat Card Anatomy</div>
+        <div style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 24, alignItems: "center" }}>
+          <div style={{ border: "1px solid var(--hair,#e8e6e0)", borderRadius: 12, padding: "18px", display: "flex", gap: 12, alignItems: "center" }}>
+            <div style={{ width: 40, height: 40, borderRadius: 8, background: MINT, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, color: P, flexShrink: 0 }}>$</div>
+            <div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1 }}>$1,390.00</div>
+              <div style={{ fontSize: 12, color: GRAY, marginTop: 3 }}>Revenue This Month</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {[
+              "Icon tile always 40×40 with mint fill — never decorative color",
+              "Value leads at 22–24px bold — the number is the message",
+              "Label sits below in gray, never above the number",
+            ].map((rule, i) => (
+              <div key={i} style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+                <div style={{ width: 5, height: 5, borderRadius: "50%", background: P, marginTop: 7, flexShrink: 0 }} />
+                <span style={{ fontSize: 13, color: GRAY, lineHeight: 1.5 }}>{rule}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>)}
+
+      {/* Button system */}
+      {box(<>
+        <div style={LABEL_STYLE}>Button System</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {[
+            { label: "+ New Booking", bg: PD, color: "#fff", desc: "Primary CTA — pinned top-right on every owner & staff page" },
+            { label: "Walk In Transaction", bg: P, color: "#fff", desc: "Secondary quick-entry — pairs with New Booking in the header" },
+            { label: "View", bg: "transparent", color: P, border: `1.5px solid ${P}`, desc: "Ghost link — inline row actions across tables" },
+          ].map((btn, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ background: btn.bg, color: btn.color, border: btn.border || "none", borderRadius: 8, padding: "9px 18px", fontSize: 13, fontWeight: 700, minWidth: 170, textAlign: "center", flexShrink: 0 }}>{btn.label}</div>
+              <div style={{ fontSize: 13, color: GRAY, lineHeight: 1.4 }}>{btn.desc}</div>
             </div>
           ))}
         </div>

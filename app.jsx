@@ -47,6 +47,7 @@ function App() {
   const [active, setActive] = React.useState(null);
   const [contactOpen, setContactOpen] = React.useState(false);
   const [copied, setCopied] = React.useState(null);
+  const [showAllWork, setShowAllWork] = React.useState(false);
 
   const projects = window.PROJECTS;
   const filtered =
@@ -94,12 +95,21 @@ function App() {
           setFilter={setFilter}
           density={t.gridDensity}
           onOpen={(p) => setActive(p.id)}
+          onViewAll={() => setShowAllWork(true)}
         />
         <ServicesSection />
         <ExperienceSection />
         <CollabSection onContactOpen={() => setContactOpen(true)} />
       </main>
       <SiteFooter />
+
+      <AllWorkPage
+        open={showAllWork}
+        projects={projects}
+        density={t.gridDensity}
+        onClose={() => setShowAllWork(false)}
+        onOpen={(p) => setActive(p.id)}
+      />
 
       <ProjectDetail
         project={activeProject}
@@ -330,9 +340,11 @@ function AboutSection() {
 }
 
 /* ── Work / Projects ──────────────────────────── */
-function WorkSection({ projects, filter, setFilter, density, onOpen }) {
+function WorkSection({ projects, filter, setFilter, density, onOpen, onViewAll }) {
   const allProjects = window.PROJECTS;
   const cols = density === "two" ? "repeat(2,1fr)" : "repeat(3,1fr)";
+  const showViewAll = allProjects.length >= 7;
+  const visibleProjects = showViewAll ? allProjects.slice(0, 6) : allProjects;
 
   return (
     <section id="work" className="sec" style={{ paddingTop: 60 }}>
@@ -342,13 +354,22 @@ function WorkSection({ projects, filter, setFilter, density, onOpen }) {
             <div className="sec-label">Projects</div>
             <h2 className="sec-title">My Latest Projects</h2>
           </div>
-          <a className="view-all-btn" href="#">
-            View all work <Ic.Arrow />
-          </a>
+          {showViewAll && (
+            <a
+              className="view-all-btn"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onViewAll();
+              }}
+            >
+              View all work <Ic.Arrow />
+            </a>
+          )}
         </div>
 
         <div className="proj-grid" style={{ gridTemplateColumns: cols }}>
-          {allProjects.map((p) => (
+          {visibleProjects.map((p) => (
             <article key={p.id} className="proj-card" onClick={() => onOpen(p)}>
               <div className="proj-thumb">
                 <span className="proj-kind-tag">
@@ -378,6 +399,69 @@ function WorkSection({ projects, filter, setFilter, density, onOpen }) {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ── All Work (full project list page) ───────── */
+function AllWorkPage({ open, projects, density, onClose, onOpen }) {
+  const cols = density === "two" ? "repeat(2,1fr)" : "repeat(3,1fr)";
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, onClose]);
+
+  return (
+    <div className={"pd-page " + (open ? "open" : "")}>
+      <div className="pd-topbar">
+        <div className="pd-topbar-inner">
+          <button className="pd-back-btn" onClick={onClose}>
+            <Ic.ArrowRight style={{ transform: "rotate(180deg)" }} /> Back
+          </button>
+          <div className="pd-topbar-divider" />
+          <span className="pd-topbar-label">All Work</span>
+        </div>
+      </div>
+
+      <div className="pd-page-hero">
+        <span className="pd-page-cat">Projects</span>
+        <h1 className="pd-page-title">All Work</h1>
+      </div>
+
+      <div className="container" style={{ paddingTop: 20, paddingBottom: 80 }}>
+        <div className="proj-grid" style={{ gridTemplateColumns: cols }}>
+          {projects.map((p) => (
+            <article key={p.id} className="proj-card" onClick={() => onOpen(p)}>
+              <div className="proj-thumb">
+                <span className="proj-kind-tag">
+                  {p.kind === "Real Project" ? "Real Project" : "Exploration"}
+                </span>
+                <span className="proj-open-btn">
+                  <Ic.Arrow />
+                </span>
+                {p.coverImg ? (
+                  <img src={p.coverImg} alt={p.title} />
+                ) : (
+                  <CoverArt kind={p.cover} />
+                )}
+              </div>
+              <div className="proj-body">
+                <h3 className="proj-title">{p.title}</h3>
+                <div className="proj-chips">
+                  {p.chips.map((c) => (
+                    <span key={c} className="chip">
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
