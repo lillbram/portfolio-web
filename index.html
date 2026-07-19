@@ -4,7 +4,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portfolio — Bob Ellson</title>
+  <title>Bob Ellson — UI/UX & Product Designer</title>
+  <meta name="description" content="Bob Ellson is a Product Designer with 5+ years of experience turning complex problems into simple, effective digital products — UI/UX, SaaS, mobile apps, and branding." />
+  <meta name="theme-color" content="#10B981" />
+  <link rel="canonical" href="https://bobellson.com/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bob Ellson" />
+  <meta property="og:title" content="Bob Ellson — UI/UX & Product Designer" />
+  <meta property="og:description" content="Product Designer with 5+ years of experience turning complex problems into simple, effective digital products." />
+  <meta property="og:url" content="https://bobellson.com/" />
+  <meta property="og:image" content="https://bobellson.com/hero-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bob Ellson — UI/UX & Product Designer" />
+  <meta name="twitter:description" content="Product Designer with 5+ years of experience turning complex problems into simple, effective digital products." />
+  <meta name="twitter:image" content="https://bobellson.com/hero-image.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
@@ -365,7 +382,8 @@
     }
 
     /* ── shared section ───────────────────────────── */
-    .sec { padding: 100px 0 }
+    .sec { padding: 100px 0; scroll-margin-top: 91px }
+    #contact { scroll-margin-top: 91px }
     .sec-label {
       display: inline-flex;
       align-items: center;
@@ -891,18 +909,16 @@
   <div id="root"></div>
 
   <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"
+    integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"
+    integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"
     crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
-    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
-    crossorigin="anonymous"></script>
-
-  <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="icons.jsx"></script>
-  <script type="text/babel" src="data.jsx"></script>
-  <script type="text/babel" src="projectDetail.jsx"></script>
-  <script type="text/babel" src="app.jsx"></script>
+  <script src="dist/tweaks-panel.js"></script>
+  <script src="dist/icons.js"></script>
+  <script src="dist/data.js"></script>
+  <script src="dist/projectDetail.js"></script>
+  <script src="dist/app.js"></script>
 </body>
 
 </html>

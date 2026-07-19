@@ -11,7 +11,7 @@ const PROJECTS = [
     duration: "12 weeks",
     team: "1 designer, 4 engineers, 1 PM",
     cover: "dashboard",
-    coverImg: "pos-order.png",
+    coverImg: "pos-order.webp",
     projectInfo: [
       { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2023-2024" },
@@ -276,7 +276,7 @@ const PROJECTS = [
             subtitle: "Cashier's primary workspace",
             tag: "Core feature",
             tagColor: "#3D55CC",
-            img: "pos-order.png",
+            img: "pos-order.webp",
             url: "https://lillbram.github.io/pos-demo/order.html",
             desc: "The main cashier workspace. Staff use this to build and complete customer orders in real time – picking products, applying discounts, and collecting payment without leaving the screen.",
             features: [
@@ -292,7 +292,7 @@ const PROJECTS = [
             subtitle: "Stock and product management",
             tag: "Management",
             tagColor: "#10B981",
-            img: "pos-inventory.png",
+            img: "pos-inventory.webp",
             url: "https://lillbram.github.io/pos-demo/inventory.html",
             desc: "The full catalog of all products across every store. Admins manage what's on the menu, how much it costs, and how much stock is left – all from one table view.",
             features: [
@@ -308,7 +308,7 @@ const PROJECTS = [
             subtitle: "Loyalty and customer directory",
             tag: "Management",
             tagColor: "#10B981",
-            img: "pos-customers.png",
+            img: "pos-customers.webp",
             url: "https://lillbram.github.io/pos-demo/customer.html",
             desc: "A complete view of every registered customer and their activity. Tracks loyalty points, order history, and membership status so the team can identify and reward top customers.",
             features: [
@@ -324,7 +324,7 @@ const PROJECTS = [
             subtitle: "Daily and period-level analytics",
             tag: "Reports",
             tagColor: "#EC4899",
-            img: "pos-summary-report.png",
+            img: "pos-summary-report.webp",
             url: "https://lillbram.github.io/pos-demo/report.html",
             desc: "A daily business health check for managers. Shows revenue, transactions, promo usage, and profit margin at a glance – with trend charts to spot patterns over the last 7 days.",
             features: [
@@ -340,7 +340,7 @@ const PROJECTS = [
             subtitle: "Transaction-level drill-down analytics",
             tag: "Reports",
             tagColor: "#EC4899",
-            img: "pos-detail-report.png",
+            img: "pos-detail-report.webp",
             url: "https://lillbram.github.io/pos-demo/report.html",
             desc: "A deep-dive into every transaction within a selected date range. Lets managers drill down by product, promo, store, or inventory movement to understand exactly what's driving revenue.",
             features: [
@@ -356,7 +356,7 @@ const PROJECTS = [
             subtitle: "P&L statement and financial health",
             tag: "Finance",
             tagColor: "#0EA5E9",
-            img: "pos-finance.png",
+            img: "pos-finance.webp",
             url: "https://lillbram.github.io/pos-demo/finance.html",
             desc: "A formal profit and loss statement that gives owners a complete financial picture – from gross sales down to net profit, accounting for COGS, staff salaries, rent, and taxes.",
             features: [
@@ -372,7 +372,7 @@ const PROJECTS = [
             subtitle: "Campaign and promotion control",
             tag: "Management",
             tagColor: "#10B981",
-            img: "pos-promo.png",
+            img: "pos-promo.webp",
             url: "https://lillbram.github.io/pos-demo/promo.html",
             desc: "The control panel for all active promotional codes. Admins can create, monitor, and manage discounts – choosing between fixed amount or percentage off, scoped per transaction or per product.",
             features: [
@@ -388,7 +388,7 @@ const PROJECTS = [
             subtitle: "Team and role administration",
             tag: "Management",
             tagColor: "#10B981",
-            img: "pos-staff.png",
+            img: "pos-staff.webp",
             url: "https://lillbram.github.io/pos-demo/staff.html",
             desc: "A directory of all staff across every outlet. Shows who works where, what role they hold, and their status – so admins can manage access and store coverage from one place.",
             features: [
@@ -404,7 +404,7 @@ const PROJECTS = [
             subtitle: "Multi-location configuration",
             tag: "Management",
             tagColor: "#10B981",
-            img: "pos-store.png",
+            img: "pos-store.webp",
             url: "https://lillbram.github.io/pos-demo/store.html",
             desc: "An overview of every outlet in the network. Tracks each store's address, staff count, stocked products, and active promotions – giving admins a bird's-eye view of the entire operation.",
             features: [
@@ -430,7 +430,7 @@ const PROJECTS = [
     duration: "8 weeks",
     team: "1 designer, 2 engineers, 1 PM",
     cover: "career",
-    coverImg: "career-solution.png",
+    coverImg: "career-solution.webp",
     projectInfo: [
       { l: "Role", v: "roduct Designer" },
       { l: "Year", v: "2022" },
@@ -700,7 +700,7 @@ const PROJECTS = [
             subtitle: "Progress overview & recommendations",
             tag: "Core Feature",
             tagColor: "#1E9E6B",
-            img: "career-home.png",
+            img: "career-home.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "The first screen after login. A green profile completion banner (85%) prompts the next action. A 4-stat row shows Applications, Interviews, Saved Jobs, and Profile Views. Below it, 'Check your latest applications' surfaces recent activity, and 'Recommended job for you' delivers personalised listings with salary, work type, and experience tags.",
             features: [
@@ -716,7 +716,7 @@ const PROJECTS = [
             subtitle: "Search & filter job listings",
             tag: "Discovery",
             tagColor: "#1E9E6B",
-            img: "career-search.png",
+            img: "career-search.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "The main job discovery screen. A full-width search bar accepts job title, company, or keyword. Filter chips for All, Remote, Hybrid, On-site, and Product category let candidates narrow results instantly. Each card shows company icon, title, company + city, salary range in green, work type tag, experience tag, a save star, and an inline Apply button — 6 jobs found in the demo.",
             features: [
@@ -732,7 +732,7 @@ const PROJECTS = [
             subtitle: "Full listing with sticky apply CTA",
             tag: "Core Feature",
             tagColor: "#1E9E6B",
-            img: "career-job-detail.png",
+            img: "career-job-detail.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "Full job page for Senior Product Designer at Gojek. A compact 4-column meta strip at the top shows Type (Full-time), Salary (Rp 100–135M), Experience (3–5 Years), and Location (Remote) at a glance — no scrolling required. Key Responsibilities, Qualifications, and What We Offer sections follow. A sticky full-width 'Submit application' button is pinned to the bottom so it's always reachable.",
             features: [
@@ -748,7 +748,7 @@ const PROJECTS = [
             subtitle: "Resume selection & one-tap submit",
             tag: "Core Feature",
             tagColor: "#1E9E6B",
-            img: "career-apply.png",
+            img: "career-apply.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "Single-screen apply flow for Senior Product Designer. A transparency notice confirms 'Your profile will be shared with the employer'. Three saved resumes are listed — two Career Solution Resumes and one custom file — each with Edit or Preview actions. The first resume is highlighted in mint green as the selected choice. An 'Add / Create Resume' option sits below. A sticky green 'Continue' button closes the flow.",
             features: [
@@ -764,7 +764,7 @@ const PROJECTS = [
             subtitle: "Application pipeline tracker",
             tag: "Tracking",
             tagColor: "#F59E0B",
-            img: "career-tracker.png",
+            img: "career-tracker.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "All submitted applications in one filtered list. Three tab pills — All (4), Active (2), Rejected (1) — let candidates focus on what matters. Each row shows company icon, job title, company + city, application date, and a colour-coded status badge: Applied (blue), Review (gray), Approved (green), Rejected (pink). Tap any row to open the full application or recruiter messages.",
             features: [
@@ -780,7 +780,7 @@ const PROJECTS = [
             subtitle: "Candidate identity & resume builder",
             tag: "Management",
             tagColor: "#8B5CF6",
-            img: "career-profile.png",
+            img: "career-profile.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "Structured profile builder with four sections: Basic Info (Job Title, Location, Portfolio URL, About/Bio), Work Experience with + Add for multiple entries, Education, and Skills (Figma, UX Research, Prototyping, Design Systems, User Testing). Each field uses a subtle green outline. Individual entries can be removed with the × button. A sticky 'Save Profile' CTA sits at the bottom.",
             features: [
@@ -796,7 +796,7 @@ const PROJECTS = [
             subtitle: "Per-application inbox",
             tag: "Communication",
             tagColor: "#0EA5E9",
-            img: "career-chat.png",
+            img: "career-chat.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "A unified inbox showing one conversation thread per application. Filter pills — All (4), Read (2), Unread (2) — help candidates prioritise. Each row shows the recruiter company, message preview, and timestamp. Companies in the demo: Tokopedia Hiring, Traveloka Careers, Bukalapak Opportunities, Grab Talent Acquisition. Tapping a thread opens a full in-app chat with full message history.",
             features: [
@@ -812,7 +812,7 @@ const PROJECTS = [
             subtitle: "Free vs Pro — choose your tier",
             tag: "Monetisation",
             tagColor: "#EC4899",
-            img: "career-plans.png",
+            img: "career-plans.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
             desc: "'Choose Your Plan — Upgrade anytime. Cancel anytime.' Two tiers side by side. Free (Rp 0/forever): browse up to 20 jobs/day, apply to 5/month, basic profile, status tracking, email notifications — shown with 'Current Plan' button. Pro (Rp 49.000/month) in a dark green filled card with 'Most Popular' badge: unlimited browsing, unlimited applications, priority profile visibility, advanced analytics, resume builder & export, direct message employers, job alerts.",
             features: [
@@ -838,7 +838,7 @@ const PROJECTS = [
     duration: "16 weeks",
     team: "1 designer, 5 engineers, 1 PM",
     cover: "elearning",
-    coverImg: "skill-booster.png",
+    coverImg: "skill-booster.webp",
     projectInfo: [
       { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2022" },
@@ -1102,7 +1102,7 @@ const PROJECTS = [
             subtitle: "Personalized feed & featured courses",
             tag: "Core Feature",
             tagColor: "#4F46E5",
-            img: "sb-home.png",
+            img: "sb-home.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "The entry point after launch. A hero banner carousel rotates 3 featured courses with status labels (FEATURED COURSE, NEW THIS WEEK, TRENDING NOW) and a direct enroll CTA. Below: Course Recommendation with BESTSELLER cards (rating + price), Incoming Seminar Events list, Highest Rating Courses, and a Premium upgrade prompt.",
             features: [
@@ -1118,7 +1118,7 @@ const PROJECTS = [
             subtitle: "Curriculum, instructor & enroll CTA",
             tag: "Core Feature",
             tagColor: "#4F46E5",
-            img: "sb-course-detail.png",
+            img: "sb-course-detail.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Full course page for Advanced Figma Pro. Header thumbnail with a PREVIEW button for free sample. Meta strip: 32hrs duration, 24K enrolled, 4.8 rating. Instructor card (Sarah Williams, UI/UX Design Instructor) with '+more'. Three tabs: Materials (course content), Description, Reviews. Course content lists chapters and lessons — locked vs Preview-available. Sticky bottom bar: price + Enroll Now gradient button.",
             features: [
@@ -1134,7 +1134,7 @@ const PROJECTS = [
             subtitle: "Voucher, summary & payment",
             tag: "Core Feature",
             tagColor: "#4F46E5",
-            img: "sb-checkout.png",
+            img: "sb-checkout.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Single-page checkout. Course name and price summarized at top. Voucher code input with Apply button. Order summary: Subtotal → Grand Total in bold indigo. Payment Method selector: Card / E-Wallet / Bank — tabs toggle the inline form below. Card form: card number, expiry date, CVC. Full-width 'Pay Rp 200,000' gradient button pinned to bottom.",
             features: [
@@ -1150,7 +1150,7 @@ const PROJECTS = [
             subtitle: "Search, categories & discovery",
             tag: "Discovery",
             tagColor: "#10B981",
-            img: "sb-explore.png",
+            img: "sb-explore.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Explore tab with Courses / Events switcher at top. Search bar for courses and events. Category filter chips: All, Design, Coding, Business, Marketing. Recommended for You: card grid by profile match. Top Instructors: avatar + name + specialty + stats (courses, students). Most Popular: ranked course list below fold.",
             features: [
@@ -1166,7 +1166,7 @@ const PROJECTS = [
             subtitle: "Progress tracking & registered events",
             tag: "Tracking",
             tagColor: "#F59E0B",
-            img: "sb-library.png",
+            img: "sb-library.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Unified library showing all purchased courses and registered events. Purchased Courses: each row shows title, instructor, and a progress bar (0–100% with %). Completed courses get a filled checkmark. Registered Events section below: each event shows status badge (INCOMING green / RUNNING blue), date, time, title, and location.",
             features: [
@@ -1182,7 +1182,7 @@ const PROJECTS = [
             subtitle: "Chapter-by-chapter course player",
             tag: "Learning",
             tagColor: "#4F46E5",
-            img: "sb-player.png",
+            img: "sb-player.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "In-course video player for Full-Stack Web Development. Top: video area with play/pause, timestamp (0:00 / 12:45). Below: course title and instructor. Collapsible Description & Files panel. Materials / Comments tab. Course content accordion by chapter — Chapter 1: Frontend Foundations, Chapter 2: Backend Development. Each lesson shows title, duration, and completion dot.",
             features: [
@@ -1198,7 +1198,7 @@ const PROJECTS = [
             subtitle: "Event detail & registration",
             tag: "Events",
             tagColor: "#8B5CF6",
-            img: "sb-seminar.png",
+            img: "sb-seminar.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Seminar event detail for 'Future of UI/UX in 2025'. Hero banner with UPCOMING SEMINAR badge, event title, host (Design Masters with avatar). Two detail cards side by side: Date & Time (17 Jun, 10:00 PM), Location (Online / Zoom). About Event prose description covering spatial computing, AI-driven interfaces, and accessibility. Price: Free. Sticky CTA: Register Now.",
             features: [
@@ -1214,7 +1214,7 @@ const PROJECTS = [
             subtitle: "Account, subscription & certificates",
             tag: "Management",
             tagColor: "#6B7280",
-            img: "sb-profile.png",
+            img: "sb-profile.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Profile screen for Jessica Thompson. Avatar with camera icon for photo upload, name, email. Stats row: 3 Courses, 1 Certificate, 2 Events. Menu list: Subscription (Free Plan · Upgrade for unlimited access), Personal Information (Update your details), My Certificates (View your earned certificates), Logout (red label, sign out).",
             features: [
@@ -1240,7 +1240,7 @@ const PROJECTS = [
     duration: "12 weeks",
     team: "1 designer, 3 engineers, 1 PM",
     cover: "food",
-    coverImg: "did-you-eat.png",
+    coverImg: "did-you-eat.webp",
     projectInfo: [
       { l: "Role", v: "UI/UX Designer" },
       { l: "Year", v: "2022" },
@@ -1505,7 +1505,7 @@ const PROJECTS = [
             subtitle: "Today's meals & AI reflections",
             tag: "Core Feature",
             tagColor: "#0F7B6C",
-            img: "dye-home.png",
+            img: "dye-home.webp",
             url: "https://lillbram.github.io/did-you-eat/",
             desc: "The daily dashboard. Greeting header shows name and today's date. Meals are grouped by type — Breakfast, Lunch, Dinner, Snack — each as a card showing food emoji, name, location, and time. Reflections section below (Premium badge) shows AI insight cards for Today, This Week, and This Month with period-coloured tags.",
             features: [
@@ -1521,7 +1521,7 @@ const PROJECTS = [
             subtitle: "Photo-first meal logging",
             tag: "Core Feature",
             tagColor: "#0F7B6C",
-            img: "dye-add-log.png",
+            img: "dye-add-log.webp",
             url: "https://lillbram.github.io/did-you-eat/add-log.html",
             desc: "Two-step logging flow. Step 1: camera/gallery — tap the + button to capture a food photo or pick from gallery. Step 2: Meal Information form — meal type dropdown (Breakfast / Lunch / Dinner / Snack), food name text field, optional Additional field with '+ Additional Meal', location, date picker, time picker, feeling dropdown. 'Add New Log' teal CTA at the bottom.",
             features: [
@@ -1537,7 +1537,7 @@ const PROJECTS = [
             subtitle: "Full log with reflection notes",
             tag: "Core Feature",
             tagColor: "#0F7B6C",
-            img: "dye-home-detail.png",
+            img: "dye-home-detail.webp",
             url: "https://lillbram.github.io/did-you-eat/",
             desc: "Full meal page for Berries (Breakfast). Large food photo hero at top. Below the sheet: food name + meal type badge (orange pill) + time right-aligned. Location and date row with icons. Additionals section (or 'No additionals'). Reflection section: feeling emoji + label, reason for eating, freeform note. 'Edit Log' teal CTA at bottom.",
             features: [
@@ -1553,7 +1553,7 @@ const PROJECTS = [
             subtitle: "Hourly timeline of your day",
             tag: "History",
             tagColor: "#F59E0B",
-            img: "dye-logs.png",
+            img: "dye-logs.webp",
             url: "https://lillbram.github.io/did-you-eat/logs.html",
             desc: "Weekly log view. Month header with prev/next arrows. Day selector strip (Mon–Sun) with the selected day highlighted in teal. Below: a 24-hour vertical timeline with hourly tick marks. Meals appear at their actual time — card shows food emoji, name, feeling badge, meal type, time, and location. Gaps between meals are immediately visible as blank time slots.",
             features: [
@@ -1569,7 +1569,7 @@ const PROJECTS = [
             subtitle: "Calendar with meal-count badges",
             tag: "History",
             tagColor: "#F59E0B",
-            img: "dye-logs-monthly.png",
+            img: "dye-logs-monthly.webp",
             url: "https://lillbram.github.io/did-you-eat/logs.html",
             desc: "Monthly calendar view — toggle from Weekly. Each date shows a teal circle with a number (2–5) indicating total meals logged that day. Days with no logs are empty circles. Selecting a date expands a list below showing all meals for that day with their feeling badges and time. Today is highlighted with a lighter teal fill.",
             features: [
@@ -1585,7 +1585,7 @@ const PROJECTS = [
             subtitle: "Account, preferences & AI features",
             tag: "Management",
             tagColor: "#6B7280",
-            img: "dye-settings.png",
+            img: "dye-settings.webp",
             url: "https://lillbram.github.io/did-you-eat/settings.html",
             desc: "Settings screen split into two sections. Account: avatar, name, email (editable), password update, Export My Logs (download history), Erase My Logs. Logging Preference: four toggles — Camera First (show camera on open), Auto Time Meal (auto-detect Breakfast/Lunch/Dinner by time), Meal Reminder (timed alerts), Missed Meal Check (alert when a meal type was skipped). AI as Partner (Premium) at bottom.",
             features: [
@@ -1611,7 +1611,7 @@ const PROJECTS = [
     duration: "12 weeks",
     team: "1 designer, 1 engineers, 1 PM",
     cover: "dashboard",
-    coverImg: "pawsuite-owner-dashboard.png",
+    coverImg: "pawsuite-owner-dashboard.webp",
     projectInfo: [
       { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2026" },
@@ -1876,7 +1876,7 @@ const PROJECTS = [
             subtitle: "Business overview at a glance",
             tag: "Core feature",
             tagColor: "#0D9488",
-            img: "pawsuite-owner-dashboard.png",
+            img: "pawsuite-owner-dashboard.webp",
             url: "https://lillbram.github.io/pawsuite/owner/dashboard.html",
             desc: "The owner's home base. Four stat cards — Total Clients, Total Pets, Bookings This Month, Revenue This Month — sit above a live Today's Schedule and a list of Upcoming Bookings, so the owner sees the whole shop's day without opening a single report.",
             features: [
@@ -1892,7 +1892,7 @@ const PROJECTS = [
             subtitle: "Day, Week, Month & List scheduling",
             tag: "Core feature",
             tagColor: "#0D9488",
-            img: "pawsuite-owner-bookings.png",
+            img: "pawsuite-owner-bookings.webp",
             url: "https://lillbram.github.io/pawsuite/owner/bookings/index.html",
             desc: "The full scheduling engine. Bookings render as color-coded rows by time slot, filterable by store, staff, and status — with live counts for Pending, Confirmed, In Progress, Completed, Cancelled, and No Show right in the filter bar.",
             features: [
@@ -1908,7 +1908,7 @@ const PROJECTS = [
             subtitle: "Full client directory",
             tag: "Management",
             tagColor: "#10B981",
-            img: "pawsuite-owner-clients.png",
+            img: "pawsuite-owner-clients.webp",
             url: "https://lillbram.github.io/pawsuite/owner/clients/index.html",
             desc: "A single directory of every client the salon has ever served. Each row shows contact info, number of pets, lifetime bookings, and account status, so the front desk can pull up history in one search.",
             features: [
@@ -1924,7 +1924,7 @@ const PROJECTS = [
             subtitle: "Cross-client pet registry",
             tag: "Management",
             tagColor: "#10B981",
-            img: "pawsuite-owner-pets.png",
+            img: "pawsuite-owner-pets.webp",
             url: "https://lillbram.github.io/pawsuite/owner/pets/index.html",
             desc: "Every pet in the system in one table, filterable by species. Owner name, breed, age, and active status sit side by side, so staff can find a pet's record without knowing which client it belongs to.",
             features: [
@@ -1940,7 +1940,7 @@ const PROJECTS = [
             subtitle: "Billing and payment tracking",
             tag: "Finance",
             tagColor: "#0EA5E9",
-            img: "pawsuite-owner-invoices.png",
+            img: "pawsuite-owner-invoices.webp",
             url: "https://lillbram.github.io/pawsuite/owner/invoices/index.html",
             desc: "Three headline numbers — Outstanding, Overdue, Collected — sit above a full invoice ledger. Overdue invoices are visually flagged in red so nothing slips through at month-end.",
             features: [
@@ -1956,7 +1956,7 @@ const PROJECTS = [
             subtitle: "Revenue and performance analytics",
             tag: "Reports",
             tagColor: "#EC4899",
-            img: "pawsuite-owner-reports.png",
+            img: "pawsuite-owner-reports.webp",
             url: "https://lillbram.github.io/pawsuite/owner/reports/index.html",
             desc: "The owner's decision-making hub. Revenue, all-time revenue, bookings, and completion rate lead the page, backed by a 6-month revenue chart, a bookings-by-status breakdown, top services by revenue, and top clients by spend.",
             features: [
@@ -1972,7 +1972,7 @@ const PROJECTS = [
             subtitle: "The groomer's daily workspace",
             tag: "Staff Portal",
             tagColor: "#F59E0B",
-            img: "pawsuite-staff-dashboard.png",
+            img: "pawsuite-staff-dashboard.webp",
             url: "https://lillbram.github.io/pawsuite/staff/dashboard.html",
             desc: "A groomer's entire day in one screen. Four stat tiles — Today, This Week, Completed, Upcoming — sit above a live Today's Appointments list and a Coming Up preview, so staff never need to ask the front desk what's next.",
             features: [
@@ -1988,7 +1988,7 @@ const PROJECTS = [
             subtitle: "Mobile-first pet owner app",
             tag: "Client Portal",
             tagColor: "#3B82F6",
-            img: "pawsuite-client-dashboard.png",
+            img: "pawsuite-client-dashboard.webp",
             url: "https://lillbram.github.io/pawsuite/client/dashboard.html",
             desc: "A pocket-sized experience for pet owners. A bold Next Appointment card leads the home screen, backed by one-tap access to Book, My Pets, and Invoices, plus a Recent Activity feed of past bookings and their status.",
             features: [

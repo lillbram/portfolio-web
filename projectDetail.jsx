@@ -1930,6 +1930,7 @@ function SectionCorePages({ pages }) {
               <img
                 src={page.img}
                 alt={page.title}
+                loading="lazy"
                 style={{ width: "100%", display: "block", objectFit: "cover" }}
               />
             </div>
@@ -2251,8 +2252,9 @@ function CoverArt({ kind, large }) {
       return (
         <div {...wrap} style={{ background: "#f0f2f8", overflow: "hidden", position: "relative" }}>
           <img
-            src="pos-order-screen.png"
+            src="pos-order-screen.webp"
             alt="KPoin POS – Order Management Screen"
+            loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top left", display: "block" }}
           />
         </div>

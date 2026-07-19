@@ -40,6 +40,42 @@ function CoverArt({ kind }) {
   );
 }
 
+/* ── Error boundary ───────────────────────────── */
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(error, info) {
+    console.error("Portfolio crashed:", error, info);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{
+          minHeight: "100vh", display: "flex", flexDirection: "column",
+          alignItems: "center", justifyContent: "center", gap: 16, padding: 24,
+          textAlign: "center", fontFamily: "var(--sans)",
+        }}>
+          <p style={{ fontSize: 20, fontWeight: 700, color: "var(--ink)" }}>
+            Something went wrong.
+          </p>
+          <p style={{ color: "var(--slate)" }}>
+            Please refresh the page, or reach out at{" "}
+            <a href="mailto:abrahambobellson@gmail.com" style={{ color: "var(--primary)" }}>
+              abrahambobellson@gmail.com
+            </a>.
+          </p>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 /* ── App ──────────────────────────────────────── */
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
@@ -148,8 +184,16 @@ function App() {
 }
 
 /* ── Contact Modal ────────────────────────────── */
+// Set this to your Formspree endpoint (https://formspree.io/f/xxxxxxx) to enable
+// real form submissions. Until then the form falls back to a mailto: link.
+const FORMSPREE_ENDPOINT = "";
+
 function ContactModal({ open, onClose, copied, setCopied }) {
   const email = "abrahambobellson@gmail.com";
+  const [fields, setFields] = React.useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = React.useState("idle"); // idle | sending | sent | error
+  const cardRef = React.useRef(null);
+  const firstFieldRef = React.useRef(null);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -157,13 +201,78 @@ function ContactModal({ open, onClose, copied, setCopied }) {
     setTimeout(() => setCopied(null), 2000);
   };
 
+  React.useEffect(() => {
+    if (!open) return;
+    setStatus("idle");
+    const t = setTimeout(() => firstFieldRef.current && firstFieldRef.current.focus(), 0);
+
+    const onKey = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab" || !cardRef.current) return;
+      const focusable = cardRef.current.querySelectorAll(
+        'a[href], button:not([disabled]), input, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open, onClose]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!FORMSPREE_ENDPOINT) {
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+        "Project Inquiry from " + (fields.name || "website")
+      )}&body=${encodeURIComponent(fields.message)}`;
+      return;
+    }
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(fields),
+      });
+      if (res.ok) {
+        setStatus("sent");
+        setFields({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   if (!open) return null;
 
   return (
     <div className="modal-back" onClick={onClose}>
-      <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="modal-card"
+        ref={cardRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contact-modal-title"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="modal-left">
-          <h3>
+          <h3 id="contact-modal-title">
             Let's work
             <br />
             together
@@ -174,8 +283,77 @@ function ContactModal({ open, onClose, copied, setCopied }) {
           </p>
         </div>
         <div className="modal-right">
-          <div>
-            <label className="modal-field-label">Email Address</label>
+          {status === "sent" ? (
+            <div>
+              <label className="modal-field-label">Message sent</label>
+              <p style={{ fontSize: 18, color: "var(--ink)", margin: "8px 0 0" }}>
+                Thanks for reaching out — I'll get back to you soon.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div>
+                <label className="modal-field-label" htmlFor="contact-name">Name</label>
+                <div className="modal-field-row">
+                  <input
+                    id="contact-name"
+                    ref={firstFieldRef}
+                    className="modal-field-val"
+                    style={{ background: "transparent", border: "none", outline: "none", width: "100%", font: "inherit" }}
+                    value={fields.name}
+                    required
+                    onChange={(e) => setFields((f) => ({ ...f, name: e.target.value }))}
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="modal-field-label" htmlFor="contact-email">Your Email</label>
+                <div className="modal-field-row">
+                  <input
+                    id="contact-email"
+                    type="email"
+                    className="modal-field-val"
+                    style={{ background: "transparent", border: "none", outline: "none", width: "100%", font: "inherit" }}
+                    value={fields.email}
+                    required
+                    onChange={(e) => setFields((f) => ({ ...f, email: e.target.value }))}
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="modal-field-label" htmlFor="contact-message">Message</label>
+                <div className="modal-field-row" style={{ alignItems: "flex-start" }}>
+                  <textarea
+                    id="contact-message"
+                    rows={3}
+                    className="modal-field-val"
+                    style={{ background: "transparent", border: "none", outline: "none", width: "100%", font: "inherit", resize: "vertical" }}
+                    value={fields.message}
+                    required
+                    onChange={(e) => setFields((f) => ({ ...f, message: e.target.value }))}
+                  />
+                </div>
+              </div>
+
+              {status === "error" && (
+                <p style={{ color: "#DC2626", fontSize: 14, margin: 0 }}>
+                  Something went wrong — please email me directly instead.
+                </p>
+              )}
+
+              <div className="modal-actions">
+                <button type="submit" className="modal-btn-primary" disabled={status === "sending"} style={{ border: "none", cursor: "pointer" }}>
+                  {status === "sending" ? "Sending…" : "Send Message"}
+                </button>
+                <button type="button" onClick={onClose} className="modal-btn-ghost">
+                  Maybe later
+                </button>
+              </div>
+            </form>
+          )}
+
+          <div style={{ borderTop: "1px solid var(--hair,#e8e6e0)", paddingTop: 20, marginTop: status === "sent" ? 20 : 4 }}>
+            <label className="modal-field-label">Or email me directly</label>
             <div className="modal-field-row">
               <span className="modal-field-val">{email}</span>
               <button
@@ -190,18 +368,6 @@ function ContactModal({ open, onClose, copied, setCopied }) {
                 {copied === "email" ? "✓ Copied" : "Copy"}
               </button>
             </div>
-          </div>
-
-          <div className="modal-actions">
-            <a
-              href={`mailto:${email}?subject=Project Inquiry`}
-              className="modal-btn-primary"
-            >
-              Send an Email
-            </a>
-            <button onClick={onClose} className="modal-btn-ghost">
-              Maybe later
-            </button>
           </div>
         </div>
       </div>
@@ -289,8 +455,9 @@ function HeroSection({ onContactOpen }) {
           {/* right: illustration */}
           <div className="portrait-wrap">
             <img
-              src="hero-image.png"
+              src="hero-image.webp"
               alt="Designer illustration"
+              fetchpriority="high"
               style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
@@ -379,7 +546,7 @@ function WorkSection({ projects, filter, setFilter, density, onOpen, onViewAll }
                   <Ic.Arrow />
                 </span>
 {p.coverImg ? (
-                  <img src={p.coverImg} alt={p.title} />
+                  <img src={p.coverImg} alt={p.title} loading="lazy" />
                 ) : (
                   <CoverArt kind={p.cover} />
                 )}
@@ -442,7 +609,7 @@ function AllWorkPage({ open, projects, density, onClose, onOpen }) {
                   <Ic.Arrow />
                 </span>
                 {p.coverImg ? (
-                  <img src={p.coverImg} alt={p.title} />
+                  <img src={p.coverImg} alt={p.title} loading="lazy" />
                 ) : (
                   <CoverArt kind={p.cover} />
                 )}
@@ -631,7 +798,7 @@ function SiteFooter() {
       <div className="container footer-inner">
         <span className="footer-name">Bob Ellson</span>
         <span className="footer-copy">
-          © 2026 Bob Ellson. All Rights Reserved.
+          © {new Date().getFullYear()} Bob Ellson. All Rights Reserved.
         </span>
         <div className="footer-links">
           <a href="#work">Work</a>
@@ -643,4 +810,8 @@ function SiteFooter() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <ErrorBoundary>
+    <App />
+  </ErrorBoundary>
+);
