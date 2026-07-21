@@ -209,7 +209,7 @@ function SectionDecisions({ items }) {
 /* ── Design System ── */
 function SectionDesignSystem() {
   const colors = [
-    { hex: "#3D55CC", name: "KPoin Blue", use: "CTA, active states, links" },
+    { hex: "#3D55CC", name: "POS Blue", use: "CTA, active states, links" },
     { hex: "#10B981", name: "Success", use: "In stock, profitable" },
     { hex: "#EF4444", name: "Alert Red", use: "Out of stock, loss" },
     { hex: "#F59E0B", name: "Warning", use: "Low stock, at-risk" },
@@ -471,8 +471,8 @@ function SectionDesignSystem() {
           {/* Live sidebar preview */}
           <div style={{ background: "#0f1220", borderRadius: 12, padding: "14px 10px", display: "flex", flexDirection: "column", gap: 3 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 8px 12px", borderBottom: "1px solid rgba(255,255,255,.08)", marginBottom: 6 }}>
-              <div style={{ width: 26, height: 26, borderRadius: 6, background: "#3D55CC", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 800, color: "white" }}>K</div>
-              <span style={{ fontSize: 14, fontWeight: 800, color: "white" }}>KPoin POS</span>
+              <div style={{ width: 26, height: 26, borderRadius: 6, background: "#3D55CC", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 800, color: "white" }}>P</div>
+              <span style={{ fontSize: 14, fontWeight: 800, color: "white" }}>POS</span>
             </div>
             {[
               { label: "Orders", state: "active", badge: null },
@@ -1814,7 +1814,7 @@ function SectionIA() {
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ background: "#0f1220", borderRadius: 12, padding: "20px 20px 24px" }}>
         <div style={{ fontSize: 11, color: "rgba(255,255,255,.35)", letterSpacing: ".09em", textTransform: "uppercase", fontWeight: 800, marginBottom: 16 }}>
-          Navigation Hierarchy — KPoin POS
+          Navigation Hierarchy — Point of Sales
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: 8 }}>
           {nav.map((item, i) => (
@@ -2123,32 +2123,55 @@ function ProjectDetail({ project, projects, onClose, onJump }) {
         </div>
       </div>
 
-      {/* ── Hero text ── */}
-      <div className="pd-page-hero">
-        <span className="pd-page-cat">{project.kind}</span>
-        <h1 className="pd-page-title">
-          {titleParts[0]}
-          {titleParts[1] && <><br /><em>{titleParts[1]}</em></>}
-        </h1>
-        <div className="pd-page-meta">
-          <span>{project.year}</span>
-          <span className="sep">·</span>
-          <span>{project.duration}</span>
-          <span className="sep">·</span>
-          <span>{project.role}</span>
+      {/* ── Hero fold: background matches the project's accent color ── */}
+      <div className="pd-hero-fold" style={{ background: project.accent || "var(--dark)" }}>
+        <div className="pd-fold-inner">
+          <span className="pd-fold-cat">{project.kind}</span>
+          <h1 className="pd-fold-title">
+            {titleParts[0]}
+            {titleParts[1] && <><br /><em>{titleParts[1]}</em></>}
+          </h1>
+          <div className="pd-fold-meta">
+            <span>{project.year}</span>
+            <span className="sep">·</span>
+            <span>{project.duration}</span>
+            <span className="sep">·</span>
+            <span>{project.role}</span>
+          </div>
+          {/* Chips */}
+          <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap", marginBottom: 8 }}>
+            {project.chips.map(c => <span key={c} className="pd-fold-chip">{c}</span>)}
+          </div>
         </div>
-        {/* Chips */}
-        <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap", marginBottom: 8 }}>
-          {project.chips.map(c => <span key={c} className="chip">{c}</span>)}
-        </div>
-      </div>
 
-      {/* ── Cover ── */}
-      <div className="pd-cover-wrap">
-        {project.coverImg
-          ? <img src={project.coverImg} alt={project.title} style={{ borderRadius: 20 }} />
-          : <CoverArt kind={project.cover} large />
-        }
+        {/* ── Preview. heroImg (a single-screen capture) is preferred here
+             over coverImg, which is often a wide multi-screen composite
+             meant for the grid thumbnail. Dashboard/SaaS projects get a
+             browser-window frame; mobile projects show the screen plain. ── */}
+        <div className="pd-fold-frame-wrap">
+          {project.chips.includes("Mobile App") ? (
+            <div className="pd-device-plain">
+              {project.heroImg || project.coverImg
+                ? <img src={project.heroImg || project.coverImg} alt={project.title} />
+                : <CoverArt kind={project.cover} large />
+              }
+            </div>
+          ) : (
+            <div className="pd-device-desktop">
+              <div className="pd-device-desktop-bar">
+                <span className="pd-device-desktop-dot" style={{ background: "#FF5F57" }} />
+                <span className="pd-device-desktop-dot" style={{ background: "#FEBC2E" }} />
+                <span className="pd-device-desktop-dot" style={{ background: "#28C840" }} />
+              </div>
+              <div className="pd-device-desktop-screen">
+                {project.heroImg || project.coverImg
+                  ? <img src={project.heroImg || project.coverImg} alt={project.title} />
+                  : <CoverArt kind={project.cover} large />
+                }
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* ── Two-column body ── */}
@@ -2253,7 +2276,7 @@ function CoverArt({ kind, large }) {
         <div {...wrap} style={{ background: "#f0f2f8", overflow: "hidden", position: "relative" }}>
           <img
             src="pos-order-screen.webp"
-            alt="KPoin POS – Order Management Screen"
+            alt="Point of Sales – Order Management Screen"
             loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top left", display: "block" }}
           />

@@ -1,9 +1,9 @@
 // Portfolio Data
 const PROJECTS = [
   {
-    id: "kpoin",
+    id: "pos",
     kind: "Real Project",
-    title: "KPoin Point of Sales — Multi Store Order Management System",
+    title: "Point of Sales — Multi Store Order Management System",
     subtitle: "Enterprise dashboard · Multi-store chain management",
     chips: ["Dashboard", "SaaS"],
     role: "Product Designer",
@@ -261,7 +261,7 @@ const PROJECTS = [
       {
         type: "quote",
         text: "Make the complex simple through ruthless prioritization.",
-        sub: "— Design philosophy, KPoin Point of Sales",
+        sub: "— Design philosophy, Point of Sales",
       },
       {
         type: "heading",
@@ -431,6 +431,7 @@ const PROJECTS = [
     team: "1 designer, 2 engineers, 1 PM",
     cover: "career",
     coverImg: "career-solution.webp",
+    heroImg: "career-home.webp",
     projectInfo: [
       { l: "Role", v: "roduct Designer" },
       { l: "Year", v: "2022" },
@@ -839,6 +840,7 @@ const PROJECTS = [
     team: "1 designer, 5 engineers, 1 PM",
     cover: "elearning",
     coverImg: "skill-booster.webp",
+    heroImg: "sb-home.webp",
     projectInfo: [
       { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2022" },
@@ -1241,6 +1243,7 @@ const PROJECTS = [
     team: "1 designer, 3 engineers, 1 PM",
     cover: "food",
     coverImg: "did-you-eat.webp",
+    heroImg: "dye-home.webp",
     projectInfo: [
       { l: "Role", v: "UI/UX Designer" },
       { l: "Year", v: "2022" },

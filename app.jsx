@@ -76,19 +76,69 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+/* ── URL routing ──────────────────────────────────
+   Project detail pages get a real, shareable URL: /project/<id>/. The
+   "all work" page gets /work/. Both have a matching static HTML file
+   (see prerender.js) with project-specific meta/OG tags baked in, so
+   link previews and crawlers see the right title/image without running
+   any JS — this same route parsing then boots the SPA into the right
+   state for real visitors. Everything else (nav anchors like #about,
+   #contact) is a plain in-page fragment and never reaches this parser. */
+function parseRoute() {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const projectMatch = path.match(/^\/project\/([^/]+)$/);
+  if (projectMatch) return { active: decodeURIComponent(projectMatch[1]), showAllWork: false };
+  if (path === "/work") return { active: null, showAllWork: true };
+  return { active: null, showAllWork: false };
+}
+
 /* ── App ──────────────────────────────────────── */
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
   const [filter, setFilter] = React.useState("All");
-  const [active, setActive] = React.useState(null);
+  const initialRoute = React.useMemo(parseRoute, []);
+  const [active, setActive] = React.useState(initialRoute.active);
   const [contactOpen, setContactOpen] = React.useState(false);
   const [copied, setCopied] = React.useState(null);
-  const [showAllWork, setShowAllWork] = React.useState(false);
+  const [showAllWork, setShowAllWork] = React.useState(initialRoute.showAllWork);
 
   const projects = window.PROJECTS;
   const filtered =
     filter === "All" ? projects : projects.filter((p) => p.kind === filter);
   const activeProject = projects.find((p) => p.id === active) || null;
+
+  // Keep state in sync with the URL bar — covers browser back/forward.
+  React.useEffect(() => {
+    const sync = () => {
+      const route = parseRoute();
+      setActive(route.active);
+      setShowAllWork(route.showAllWork);
+    };
+    window.addEventListener("popstate", sync);
+    return () => window.removeEventListener("popstate", sync);
+  }, []);
+
+  React.useEffect(() => {
+    if (activeProject) document.title = `${activeProject.title} — Bob Ellson`;
+    else if (showAllWork) document.title = "All Work — Bob Ellson";
+    else document.title = "Bob Ellson — UI/UX & Product Designer";
+  }, [activeProject, showAllWork]);
+
+  const openProject = (p) => {
+    history.pushState(null, "", "/project/" + encodeURIComponent(p.id) + "/");
+    setShowAllWork(false);
+    setActive(p.id);
+  };
+  const openAllWork = () => {
+    history.pushState(null, "", "/work/");
+    setActive(null);
+    setShowAllWork(true);
+  };
+  const closeToHome = () => {
+    history.pushState(null, "", "/");
+    setActive(null);
+    setShowAllWork(false);
+  };
 
   React.useEffect(() => {
     const r = document.documentElement;
@@ -130,8 +180,8 @@ function App() {
           filter={filter}
           setFilter={setFilter}
           density={t.gridDensity}
-          onOpen={(p) => setActive(p.id)}
-          onViewAll={() => setShowAllWork(true)}
+          onOpen={openProject}
+          onViewAll={openAllWork}
         />
         <ServicesSection />
         <ExperienceSection />
@@ -143,15 +193,15 @@ function App() {
         open={showAllWork}
         projects={projects}
         density={t.gridDensity}
-        onClose={() => setShowAllWork(false)}
-        onOpen={(p) => setActive(p.id)}
+        onClose={closeToHome}
+        onOpen={openProject}
       />
 
       <ProjectDetail
         project={activeProject}
         projects={projects}
-        onClose={() => setActive(null)}
-        onJump={(p) => setActive(p.id)}
+        onClose={closeToHome}
+        onJump={openProject}
       />
 
       <ContactModal
