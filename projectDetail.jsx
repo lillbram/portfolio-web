@@ -11,11 +11,11 @@ function renderSection(section, i, accent) {
   if (t === "problems") return <SectionProblems key={i} items={section.items} />;
   if (t === "comparison") return <SectionComparison key={i} rows={section.rows} />;
   if (t === "decisions") return <SectionDecisions key={i} items={section.items} />;
-  if (t === "design-system") return <SectionDesignSystem key={i} />;
-  if (t === "design-system-career") return <SectionDesignSystemCareer key={i} />;
-  if (t === "design-system-skillboost") return <SectionDesignSystemSkillBoost key={i} />;
-  if (t === "design-system-dye") return <SectionDesignSystemDye key={i} />;
-  if (t === "design-system-pawsuite") return <SectionDesignSystemPawsuite key={i} />;
+  if (t === "design-system") return <DesignSystemAppendix key={i} accent={accent}><SectionDesignSystem /></DesignSystemAppendix>;
+  if (t === "design-system-career") return <DesignSystemAppendix key={i} accent={accent}><SectionDesignSystemCareer /></DesignSystemAppendix>;
+  if (t === "design-system-skillboost") return <DesignSystemAppendix key={i} accent={accent}><SectionDesignSystemSkillBoost /></DesignSystemAppendix>;
+  if (t === "design-system-dye") return <DesignSystemAppendix key={i} accent={accent}><SectionDesignSystemDye /></DesignSystemAppendix>;
+  if (t === "design-system-pawsuite") return <DesignSystemAppendix key={i} accent={accent}><SectionDesignSystemPawsuite /></DesignSystemAppendix>;
   if (t === "ia") return <SectionIA key={i} />;
   if (t === "impact") return <SectionImpact key={i} items={section.items} />;
   if (t === "quote") return null;
@@ -203,6 +203,25 @@ function SectionDecisions({ items }) {
         </div>
       ))}
     </div>
+  );
+}
+
+/* ── Collapsed design-token appendix wrapper ── */
+function DesignSystemAppendix({ children, accent }) {
+  const color = accent || "#3D55CC";
+  return (
+    <details style={{ background: "var(--white,#fff)", border: "1px solid var(--hair,#e8e6e0)", borderRadius: 12, padding: "16px 18px" }}>
+      <summary style={{
+        cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 10,
+        fontSize: 15, fontWeight: 800, color: "white", letterSpacing: ".01em",
+        background: color, padding: "10px 18px", borderRadius: 8,
+        boxShadow: `0 4px 14px ${color}55`
+      }}>
+        View full design token inventory
+        <Ic.Arrow style={{ width: 12, height: 12, transform: "rotate(90deg)" }} />
+      </summary>
+      <div style={{ marginTop: 20 }}>{children}</div>
+    </details>
   );
 }
 

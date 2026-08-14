@@ -17,6 +17,7 @@ const PROJECTS = [
       { l: "Year", v: "2023-2024" },
       { l: "Duration", v: "12 weeks" },
       { l: "Team", v: "1 designer, 4 engineers, 1 PM" },
+      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
     ],
     accent: "#3D55CC",
     demo: "https://lillbram.github.io/pos-demo/",
@@ -24,6 +25,11 @@ const PROJECTS = [
       "A unified POS and operational intelligence platform for multi-store restaurant chains. Reduced order time 7x, eliminated 90% of errors, and enabled same-day financial decisions.",
     body: [],
     sections: [
+      {
+        type: "heading",
+        label: "01 — Outcome",
+        title: "Outcome Summary",
+      },
       {
         type: "stats",
         items: [
@@ -54,6 +60,11 @@ const PROJECTS = [
         ],
       },
       {
+        type: "heading",
+        label: "02 — Context",
+        title: "The Problem",
+      },
+      {
         type: "text",
         content:
           "Multi-store restaurant chains were operating as silos. Each location ran its own POS, inventory, and financials — no cross-location visibility, 10-15% inventory waste, and P&L only visible at month-end. The challenge wasn't building more features — it was eliminating friction at every step of the operation.",
@@ -66,8 +77,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "01 — Research",
-        title: "5 Problems Destroying Profitability",
+        label: "03 — Research",
+        title: "The Problems",
       },
       {
         type: "problems",
@@ -115,158 +126,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Solution",
-        title: "From Friction to Flow",
-      },
-      {
-        type: "comparison",
-        rows: [
-          {
-            metric: "Order processing time",
-            before: "15-20 min",
-            after: "2-3 min",
-            tag: "7× faster",
-          },
-          {
-            metric: "Data entry error rate",
-            before: "8-12%",
-            after: "<1%",
-            tag: "90% fewer",
-          },
-          {
-            metric: "P&L visibility",
-            before: "35 days",
-            after: "Real-time",
-            tag: "Instant",
-          },
-          {
-            metric: "Stock Expired Wasted",
-            before: "10-15%",
-            after: "2-3%",
-            tag: "75% less",
-          },
-          {
-            metric: "Staff time on data entry",
-            before: "60% of shift",
-            after: "10% of shift",
-            tag: "50 min/day saved",
-          },
-          {
-            metric: "Customer retention",
-            before: "68%",
-            after: "84%",
-            tag: "+16 pts",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "03 — Design Decisions",
-        title: "What Made the Difference",
-      },
-      {
-        type: "decisions",
-        items: [
-          {
-            num: "D1",
-            title: "Two-Role System",
-            why: "Cashiers and managers have completely different operational needs",
-            how: "Cashier sees: Orders only. Admin sees: Full reports, finance, staff, config.",
-            result: "40% less navigation, near-zero misconfiguration incidents",
-          },
-          {
-            num: "D2",
-            title: "Color-Coded Status",
-            why: "Reading text labels in a busy restaurant environment takes too long",
-            how: "Green = OK. Yellow = Monitor. Red = Act now. Applied across inventory, finance, customers.",
-            result:
-              "System state understood in under 1 second, no reading required",
-          },
-          {
-            num: "D3",
-            title: "Real-Time Everywhere",
-            why: "Batch processing creates lag, distrust, and fatally delayed decisions",
-            how: "Every change updates instantly. No Save button. No confirmation delays anywhere.",
-            result:
-              "90% fewer errors, same-day financial decision-making enabled",
-          },
-          {
-            num: "D4",
-            title: "Multi-Store by Default",
-            why: "Local optimization often silently hurts company-wide performance",
-            how: "Inventory and finance default to all-stores view. Drill-down available.",
-            result:
-              "Strategic thinking replaced local tunnel vision across all managers",
-          },
-          {
-            num: "D5",
-            title: "Promos in Order Flow",
-            why: "A separate promo module adds steps and kills compliance",
-            how: "Best promo auto-applies during checkout. One tap to change or override.",
-            result: "Faster checkout, higher compliance, cleaner promo data",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "04 — Design System",
-        title: "Visual Language Built for Operations",
-      },
-      { type: "design-system" },
-      {
-        type: "heading",
-        label: "05 — Information Architecture",
-        title: "Role-Based Navigation, Not Feature-Based",
-      },
-      { type: "ia" },
-      {
-        type: "heading",
-        label: "06 — Impact",
-        title: "Measurable Business Results",
-      },
-      {
-        type: "impact",
-        items: [
-          {
-            label: "Order Time",
-            before: 18,
-            after: 2.5,
-            unit: "min",
-            tag: "7× faster",
-          },
-          {
-            label: "Error Rate",
-            before: 10,
-            after: 0.5,
-            unit: "%",
-            tag: "90% fewer",
-          },
-          {
-            label: "Expired Stock Waste",
-            before: 13,
-            after: 2.5,
-            unit: "%",
-            tag: "75% less",
-          },
-          {
-            label: "Customer Retention",
-            before: 68,
-            after: 84,
-            unit: "%",
-            tag: "+16 pts",
-            higher_is_better: true,
-          },
-        ],
-      },
-      {
-        type: "quote",
-        text: "Make the complex simple through ruthless prioritization.",
-        sub: "— Design philosophy, Point of Sales",
-      },
-      {
-        type: "heading",
-        label: "07 — Design Overview",
-        title: "Design Overview — Key Screens",
+        label: "04 — Key Screens",
+        title: "Key Screens Walkthrough",
       },
       {
         type: "core-pages",
@@ -417,6 +278,141 @@ const PROJECTS = [
           },
         ],
       },
+      {
+        type: "heading",
+        label: "05 — Supporting Decisions",
+        title: "Key Design Decisions",
+      },
+      {
+        type: "comparison",
+        rows: [
+          {
+            metric: "Order processing time",
+            before: "15-20 min",
+            after: "2-3 min",
+            tag: "7× faster",
+          },
+          {
+            metric: "Data entry error rate",
+            before: "8-12%",
+            after: "<1%",
+            tag: "90% fewer",
+          },
+          {
+            metric: "P&L visibility",
+            before: "35 days",
+            after: "Real-time",
+            tag: "Instant",
+          },
+          {
+            metric: "Stock Expired Wasted",
+            before: "10-15%",
+            after: "2-3%",
+            tag: "75% less",
+          },
+          {
+            metric: "Staff time on data entry",
+            before: "60% of shift",
+            after: "10% of shift",
+            tag: "50 min/day saved",
+          },
+          {
+            metric: "Customer retention",
+            before: "68%",
+            after: "84%",
+            tag: "+16 pts",
+          },
+        ],
+      },
+      {
+        type: "decisions",
+        items: [
+          {
+            num: "D1",
+            title: "Two-Role System",
+            why: "Cashiers and managers have completely different operational needs",
+            how: "Cashier sees: Orders only. Admin sees: Full reports, finance, staff, config.",
+            result: "40% less navigation, near-zero misconfiguration incidents",
+          },
+          {
+            num: "D2",
+            title: "Color-Coded Status",
+            why: "Reading text labels in a busy restaurant environment takes too long",
+            how: "Green = OK. Yellow = Monitor. Red = Act now. Applied across inventory, finance, customers.",
+            result:
+              "System state understood in under 1 second, no reading required",
+          },
+          {
+            num: "D3",
+            title: "Real-Time Everywhere",
+            why: "Batch processing creates lag, distrust, and fatally delayed decisions",
+            how: "Every change updates instantly. No Save button. No confirmation delays anywhere.",
+            result:
+              "90% fewer errors, same-day financial decision-making enabled",
+          },
+          {
+            num: "D4",
+            title: "Multi-Store by Default",
+            why: "Local optimization often silently hurts company-wide performance",
+            how: "Inventory and finance default to all-stores view. Drill-down available.",
+            result:
+              "Strategic thinking replaced local tunnel vision across all managers",
+          },
+          {
+            num: "D5",
+            title: "Promos in Order Flow",
+            why: "A separate promo module adds steps and kills compliance",
+            how: "Best promo auto-applies during checkout. One tap to change or override.",
+            result: "Faster checkout, higher compliance, cleaner promo data",
+          },
+        ],
+      },
+      { type: "ia" },
+      {
+        type: "heading",
+        label: "06 — Design System",
+        title: "The Design System",
+      },
+      { type: "design-system" },
+      {
+        type: "heading",
+        label: "07 — Results",
+        title: "Measurable Results",
+      },
+      {
+        type: "impact",
+        items: [
+          {
+            label: "Order Time",
+            before: 18,
+            after: 2.5,
+            unit: "min",
+            tag: "7× faster",
+          },
+          {
+            label: "Error Rate",
+            before: 10,
+            after: 0.5,
+            unit: "%",
+            tag: "90% fewer",
+          },
+          {
+            label: "Expired Stock Waste",
+            before: 13,
+            after: 2.5,
+            unit: "%",
+            tag: "75% less",
+          },
+          {
+            label: "Customer Retention",
+            before: 68,
+            after: 84,
+            unit: "%",
+            tag: "+16 pts",
+            higher_is_better: true,
+          },
+        ],
+      },
     ],
   },
   {
@@ -433,10 +429,11 @@ const PROJECTS = [
     coverImg: "career-solution.webp",
     heroImg: "career-home.webp",
     projectInfo: [
-      { l: "Role", v: "roduct Designer" },
+      { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2022" },
       { l: "Duration", v: "8 weeks" },
       { l: "Team", v: "1 designer, 2 engineers, 1 PM" },
+      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
     ],
     accent: "#10B981",
     demo: "https://lillbram.github.io/career-solution-pwa/",
@@ -444,6 +441,11 @@ const PROJECTS = [
       "A mobile-first job platform PWA that simplifies the entire hiring journey — from discovery to one-tap application to real-time offer tracking. Built for Indonesia's growing job market with smart job matching and direct recruiter messaging.",
     body: [],
     sections: [
+      {
+        type: "heading",
+        label: "01 — Outcome",
+        title: "Outcome Summary",
+      },
       {
         type: "stats",
         items: [
@@ -474,6 +476,11 @@ const PROJECTS = [
         ],
       },
       {
+        type: "heading",
+        label: "02 — Context",
+        title: "The Problem",
+      },
+      {
         type: "text",
         content:
           "Job seekers in Indonesia were navigating fragmented hiring experiences — outdated listings, multi-step application forms, and zero visibility after submitting. Recruiters struggled to reach the right candidates efficiently. The challenge wasn't building another job board — it was removing every barrier between a qualified candidate and their next opportunity.",
@@ -486,8 +493,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "01 — Research",
-        title: "5 Barriers Blocking Job Seekers",
+        label: "03 — Research",
+        title: "The Problems",
       },
       {
         type: "problems",
@@ -536,162 +543,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Solution",
-        title: "From Friction to First Interview",
-      },
-      {
-        type: "comparison",
-        rows: [
-          {
-            metric: "Steps to apply",
-            before: "8+ steps",
-            after: "1 tap",
-            tag: "3× faster",
-          },
-          {
-            metric: "Application completion rate",
-            before: "35%",
-            after: "68%",
-            tag: "+33 pts",
-          },
-          {
-            metric: "Status visibility",
-            before: "None",
-            after: "Real-time",
-            tag: "Instant",
-          },
-          {
-            metric: "Job match relevance",
-            before: "Generic search",
-            after: "Smart recommendations",
-            tag: "2× better",
-          },
-          {
-            metric: "Resume accuracy rate",
-            before: "82%",
-            after: "99%",
-            tag: "Saved resumes",
-          },
-          {
-            metric: "Recruiter response time",
-            before: "5-7 days",
-            after: "< 24 hours",
-            tag: "Direct chat",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "03 — Design Decisions",
-        title: "What Made the Difference",
-      },
-      {
-        type: "decisions",
-        items: [
-          {
-            num: "D1",
-            title: "One-Tap Apply",
-            why: "Every extra step in the apply flow costs ~15% of remaining applicants",
-            how: "Profile and preferred resume pre-selected. One button submits with optional cover letter.",
-            result:
-              "Application completion rate jumped from 35% to 68% in first cohort",
-          },
-          {
-            num: "D2",
-            title: "Real-Time Status Tracking",
-            why: "Post-apply silence was the #1 complaint in user research across all age groups",
-            how: "4-stage pipeline visible: Received → Under Review → Shortlisted → Decision. Push alerts on each change.",
-            result:
-              "Support tickets about application status dropped to near zero",
-          },
-          {
-            num: "D3",
-            title: "Smart Job Recommendations",
-            why: "Generic search results destroy trust faster than no results at all",
-            how: "Home feed ranks jobs by title match, salary range, location, and prior application patterns.",
-            result: "2× increase in job detail opens vs browse-only users",
-          },
-          {
-            num: "D4",
-            title: "Multi-Resume Management",
-            why: "Candidates tailor resumes per role — forcing one resume leads to wrong attachments",
-            how: "Save up to 3 named resumes. Default is auto-selected but swappable in one tap before submit.",
-            result:
-              "Wrong resume incidents eliminated. Profile accuracy reached 99%",
-          },
-          {
-            num: "D5",
-            title: "Direct Recruiter Chat",
-            why: "Hiring decisions stall when candidates and recruiters can't communicate directly",
-            how: "In-app messaging thread per application. Recruiter initiates; candidate responds in context.",
-            result:
-              "Average time to first interview response dropped from 5-7 days to under 24 hours",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "04 — Design System",
-        title: "Visual Language Built for Trust",
-      },
-      { type: "design-system-career" },
-      {
-        type: "heading",
-        label: "05 — Information Architecture",
-        title: "Job Seeker-First Navigation",
-      },
-      { type: "ia" },
-      {
-        type: "heading",
-        label: "06 — Impact",
-        title: "Measurable Results",
-      },
-      {
-        type: "impact",
-        items: [
-          {
-            label: "Apply Steps",
-            before: 8,
-            after: 1,
-            unit: " steps",
-            tag: "3× faster",
-            higher_is_better: false,
-          },
-          {
-            label: "Completion Rate",
-            before: 35,
-            after: 68,
-            unit: "%",
-            tag: "+33 pts",
-            higher_is_better: true,
-          },
-          {
-            label: "Recruiter Response",
-            before: 6,
-            after: 1,
-            unit: " days",
-            tag: "6× faster",
-            higher_is_better: false,
-          },
-          {
-            label: "Job Match Rate",
-            before: 40,
-            after: 80,
-            unit: "%",
-            tag: "2× better",
-            higher_is_better: true,
-          },
-        ],
-      },
-      {
-        type: "quote",
-        text: "Remove every barrier between a great candidate and their next opportunity.",
-        sub: "— Design philosophy, Career Solution",
-      },
-      {
-        type: "heading",
-        label: "07 — Design Overview",
-        title: "Design Overview — Key Screens",
+        label: "04 — Key Screens",
+        title: "Key Screens Walkthrough",
       },
       {
         type: "core-pages",
@@ -826,6 +679,144 @@ const PROJECTS = [
           },
         ],
       },
+      {
+        type: "heading",
+        label: "05 — Supporting Decisions",
+        title: "Key Design Decisions",
+      },
+      {
+        type: "comparison",
+        rows: [
+          {
+            metric: "Steps to apply",
+            before: "8+ steps",
+            after: "1 tap",
+            tag: "3× faster",
+          },
+          {
+            metric: "Application completion rate",
+            before: "35%",
+            after: "68%",
+            tag: "+33 pts",
+          },
+          {
+            metric: "Status visibility",
+            before: "None",
+            after: "Real-time",
+            tag: "Instant",
+          },
+          {
+            metric: "Job match relevance",
+            before: "Generic search",
+            after: "Smart recommendations",
+            tag: "2× better",
+          },
+          {
+            metric: "Resume accuracy rate",
+            before: "82%",
+            after: "99%",
+            tag: "Saved resumes",
+          },
+          {
+            metric: "Recruiter response time",
+            before: "5-7 days",
+            after: "< 24 hours",
+            tag: "Direct chat",
+          },
+        ],
+      },
+      {
+        type: "decisions",
+        items: [
+          {
+            num: "D1",
+            title: "One-Tap Apply",
+            why: "Every extra step in the apply flow costs ~15% of remaining applicants",
+            how: "Profile and preferred resume pre-selected. One button submits with optional cover letter.",
+            result:
+              "Application completion rate jumped from 35% to 68% in first cohort",
+          },
+          {
+            num: "D2",
+            title: "Real-Time Status Tracking",
+            why: "Post-apply silence was the #1 complaint in user research across all age groups",
+            how: "4-stage pipeline visible: Received → Under Review → Shortlisted → Decision. Push alerts on each change.",
+            result:
+              "Support tickets about application status dropped to near zero",
+          },
+          {
+            num: "D3",
+            title: "Smart Job Recommendations",
+            why: "Generic search results destroy trust faster than no results at all",
+            how: "Home feed ranks jobs by title match, salary range, location, and prior application patterns.",
+            result: "2× increase in job detail opens vs browse-only users",
+          },
+          {
+            num: "D4",
+            title: "Multi-Resume Management",
+            why: "Candidates tailor resumes per role — forcing one resume leads to wrong attachments",
+            how: "Save up to 3 named resumes. Default is auto-selected but swappable in one tap before submit.",
+            result:
+              "Wrong resume incidents eliminated. Profile accuracy reached 99%",
+          },
+          {
+            num: "D5",
+            title: "Direct Recruiter Chat",
+            why: "Hiring decisions stall when candidates and recruiters can't communicate directly",
+            how: "In-app messaging thread per application. Recruiter initiates; candidate responds in context.",
+            result:
+              "Average time to first interview response dropped from 5-7 days to under 24 hours",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        label: "06 — Design System",
+        title: "The Design System",
+      },
+      { type: "design-system-career" },
+      {
+        type: "heading",
+        label: "07 — Results",
+        title: "Measurable Results",
+      },
+      {
+        type: "impact",
+        items: [
+          {
+            label: "Apply Steps",
+            before: 8,
+            after: 1,
+            unit: " steps",
+            tag: "3× faster",
+            higher_is_better: false,
+          },
+          {
+            label: "Completion Rate",
+            before: 35,
+            after: 68,
+            unit: "%",
+            tag: "+33 pts",
+            higher_is_better: true,
+          },
+          {
+            label: "Recruiter Response",
+            before: 6,
+            after: 1,
+            unit: " days",
+            tag: "6× faster",
+            higher_is_better: false,
+          },
+          {
+            label: "Job Match Rate",
+            before: 40,
+            after: 80,
+            unit: "%",
+            tag: "2× better",
+            higher_is_better: true,
+          },
+        ],
+      },
     ],
   },
   {
@@ -842,10 +833,11 @@ const PROJECTS = [
     coverImg: "skill-booster.webp",
     heroImg: "sb-home.webp",
     projectInfo: [
-      { l: "Role", v: "Product Designer" },
-      { l: "Year", v: "2022" },
-      { l: "Duration", v: "8 weeks" },
-      { l: "Team", v: "1 designer, 2 engineers, 1 PM" },
+      { l: "Role", v: "Lead Product Designer" },
+      { l: "Year", v: "2024" },
+      { l: "Duration", v: "16 weeks" },
+      { l: "Team", v: "1 designer, 5 engineers, 1 PM" },
+      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
     ],
     accent: "#4F46E5",
     demo: "https://lillbram.github.io/skillbooster-pwa/",
@@ -853,6 +845,11 @@ const PROJECTS = [
       "A mobile-first e-learning PWA that turns scattered online courses into a structured learning journey — from discovery to enrollment to completion tracking. Built for self-paced learners who want career-relevant skills without friction.",
     body: [],
     sections: [
+      {
+        type: "heading",
+        label: "01 — Outcome",
+        title: "Outcome Summary",
+      },
       {
         type: "stats",
         items: [
@@ -883,6 +880,11 @@ const PROJECTS = [
         ],
       },
       {
+        type: "heading",
+        label: "02 — Context",
+        title: "The Problem",
+      },
+      {
         type: "text",
         content:
           "Online learners in Indonesia were dropping courses within the first week — not because the content was bad, but because the experience was. Overwhelming catalogs, no progress tracking, and a hard paywall before learners knew if a course was right for them. The challenge wasn't building another course platform — it was designing a learning journey that felt worth finishing.",
@@ -895,8 +897,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "01 — Research",
-        title: "5 Reasons Learners Quit",
+        label: "03 — Research",
+        title: "The Problems",
       },
       {
         type: "problems",
@@ -945,156 +947,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Solution",
-        title: "From Browsing to Completing",
-      },
-      {
-        type: "comparison",
-        rows: [
-          {
-            metric: "Course discovery",
-            before: "Browse full catalog",
-            after: "Personalized home feed + smart recs",
-            tag: "4× faster",
-          },
-          {
-            metric: "Completion rate",
-            before: "45% industry avg",
-            after: "82%",
-            tag: "+37 pts",
-          },
-          {
-            metric: "Paywall friction",
-            before: "Pay to see anything",
-            after: "Free lesson previews first",
-            tag: "Reduced drop-off",
-          },
-          {
-            metric: "Learning continuity",
-            before: "Restart from beginning",
-            after: "Resume from last lesson",
-            tag: "Auto-save",
-          },
-          {
-            metric: "Live learning",
-            before: "Not available",
-            after: "Integrated seminar events",
-            tag: "New channel",
-          },
-          {
-            metric: "Library overview",
-            before: "Courses only",
-            after: "Courses + events + progress",
-            tag: "Unified",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "03 — Design Decisions",
-        title: "What Made the Difference",
-      },
-      {
-        type: "decisions",
-        items: [
-          {
-            num: "D1",
-            title: "Curated Home Feed",
-            why: "A blank catalog forces learners to know what they want before they know what exists",
-            how: "Home shows a featured hero banner, 'New This Week', 'Trending Now', personalized recommendations, and highest-rated picks — each with a single clear CTA.",
-            result:
-              "Enrollment from home feed increased 4× vs direct catalog browsing",
-          },
-          {
-            num: "D2",
-            title: "Progress-First Library",
-            why: "Learners abandon courses they can't see themselves finishing",
-            how: "Library shows each course with a progress bar (0–100%), completion checkmark, and direct resume button. Events show status (Incoming / Running) with countdown.",
-            result: "Course return rate rose from 45% to 82% in first cohort",
-          },
-          {
-            num: "D3",
-            title: "Free Lesson Previews",
-            why: "Learners won't pay for content they haven't sampled — the paywall kills intent",
-            how: "Each course has 2-3 lessons marked 'Preview' — visible before enrollment. Checkout is triggered from the course detail after the learner has seen real value.",
-            result:
-              "Checkout conversion improved 3× over hard-paywall baseline",
-          },
-          {
-            num: "D4",
-            title: "Integrated Seminar Events",
-            why: "Recorded-only platforms lose learners who want live interaction and accountability",
-            how: "Explore tab has a dedicated Events section alongside courses. Seminar cards show date, host, location, and price. Registration is a single tap.",
-            result:
-              "20% of active learners registered for at least one seminar per month",
-          },
-          {
-            num: "D5",
-            title: "Freemium Subscription Tier",
-            why: "A single paid-only tier locks out the majority of potential users who could convert later",
-            how: "Free tier allows course browsing and limited previews. Premium unlocks unlimited enrollment, downloads, and certificates. Profile shows subscription status with a clear upgrade path.",
-            result:
-              "Free-to-Premium conversion rate reached 28% among 30-day active users",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "04 — Design System",
-        title: "Visual Language Built for Learning",
-      },
-      { type: "design-system-skillboost" },
-      {
-        type: "heading",
-        label: "05 — Impact",
-        title: "Measurable Results",
-      },
-      {
-        type: "impact",
-        items: [
-          {
-            label: "Discovery Time",
-            before: 8,
-            after: 2,
-            unit: " min",
-            tag: "4× faster",
-            higher_is_better: false,
-          },
-          {
-            label: "Completion Rate",
-            before: 45,
-            after: 82,
-            unit: "%",
-            tag: "+37 pts",
-            higher_is_better: true,
-          },
-          {
-            label: "Checkout Conversion",
-            before: 12,
-            after: 36,
-            unit: "%",
-            tag: "3× better",
-            higher_is_better: true,
-          },
-          {
-            label: "Monthly Enrollments",
-            before: 1.2,
-            after: 3.8,
-            unit: "/user",
-            tag: "3× more",
-            higher_is_better: true,
-          },
-        ],
-      },
-      {
-        type: "quote",
-        text: "Design the learning experience worth finishing, not just starting.",
-        sub: "— Design philosophy, Skill Booster",
-      },
-      {
-        type: "heading",
-        label: "06 — Design Overview",
-        title: "Design Overview — Key Screens",
+        label: "04 — Key Screens",
+        title: "Key Screens Walkthrough",
       },
       {
         type: "core-pages",
@@ -1229,6 +1083,144 @@ const PROJECTS = [
           },
         ],
       },
+      {
+        type: "heading",
+        label: "05 — Supporting Decisions",
+        title: "Key Design Decisions",
+      },
+      {
+        type: "comparison",
+        rows: [
+          {
+            metric: "Course discovery",
+            before: "Browse full catalog",
+            after: "Personalized home feed + smart recs",
+            tag: "4× faster",
+          },
+          {
+            metric: "Completion rate",
+            before: "45% industry avg",
+            after: "82%",
+            tag: "+37 pts",
+          },
+          {
+            metric: "Paywall friction",
+            before: "Pay to see anything",
+            after: "Free lesson previews first",
+            tag: "Reduced drop-off",
+          },
+          {
+            metric: "Learning continuity",
+            before: "Restart from beginning",
+            after: "Resume from last lesson",
+            tag: "Auto-save",
+          },
+          {
+            metric: "Live learning",
+            before: "Not available",
+            after: "Integrated seminar events",
+            tag: "New channel",
+          },
+          {
+            metric: "Library overview",
+            before: "Courses only",
+            after: "Courses + events + progress",
+            tag: "Unified",
+          },
+        ],
+      },
+      {
+        type: "decisions",
+        items: [
+          {
+            num: "D1",
+            title: "Curated Home Feed",
+            why: "A blank catalog forces learners to know what they want before they know what exists",
+            how: "Home shows a featured hero banner, 'New This Week', 'Trending Now', personalized recommendations, and highest-rated picks — each with a single clear CTA.",
+            result:
+              "Enrollment from home feed increased 4× vs direct catalog browsing",
+          },
+          {
+            num: "D2",
+            title: "Progress-First Library",
+            why: "Learners abandon courses they can't see themselves finishing",
+            how: "Library shows each course with a progress bar (0–100%), completion checkmark, and direct resume button. Events show status (Incoming / Running) with countdown.",
+            result: "Course return rate rose from 45% to 82% in first cohort",
+          },
+          {
+            num: "D3",
+            title: "Free Lesson Previews",
+            why: "Learners won't pay for content they haven't sampled — the paywall kills intent",
+            how: "Each course has 2-3 lessons marked 'Preview' — visible before enrollment. Checkout is triggered from the course detail after the learner has seen real value.",
+            result:
+              "Checkout conversion improved 3× over hard-paywall baseline",
+          },
+          {
+            num: "D4",
+            title: "Integrated Seminar Events",
+            why: "Recorded-only platforms lose learners who want live interaction and accountability",
+            how: "Explore tab has a dedicated Events section alongside courses. Seminar cards show date, host, location, and price. Registration is a single tap.",
+            result:
+              "20% of active learners registered for at least one seminar per month",
+          },
+          {
+            num: "D5",
+            title: "Freemium Subscription Tier",
+            why: "A single paid-only tier locks out the majority of potential users who could convert later",
+            how: "Free tier allows course browsing and limited previews. Premium unlocks unlimited enrollment, downloads, and certificates. Profile shows subscription status with a clear upgrade path.",
+            result:
+              "Free-to-Premium conversion rate reached 28% among 30-day active users",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        label: "06 — Design System",
+        title: "The Design System",
+      },
+      { type: "design-system-skillboost" },
+      {
+        type: "heading",
+        label: "07 — Results",
+        title: "Measurable Results",
+      },
+      {
+        type: "impact",
+        items: [
+          {
+            label: "Discovery Time",
+            before: 8,
+            after: 2,
+            unit: " min",
+            tag: "4× faster",
+            higher_is_better: false,
+          },
+          {
+            label: "Completion Rate",
+            before: 45,
+            after: 82,
+            unit: "%",
+            tag: "+37 pts",
+            higher_is_better: true,
+          },
+          {
+            label: "Checkout Conversion",
+            before: 12,
+            after: 36,
+            unit: "%",
+            tag: "3× better",
+            higher_is_better: true,
+          },
+          {
+            label: "Monthly Enrollments",
+            before: 1.2,
+            after: 3.8,
+            unit: "/user",
+            tag: "3× more",
+            higher_is_better: true,
+          },
+        ],
+      },
     ],
   },
   {
@@ -1245,10 +1237,11 @@ const PROJECTS = [
     coverImg: "did-you-eat.webp",
     heroImg: "dye-home.webp",
     projectInfo: [
-      { l: "Role", v: "UI/UX Designer" },
-      { l: "Year", v: "2022" },
+      { l: "Role", v: "Lead Product Designer" },
+      { l: "Year", v: "2025" },
       { l: "Duration", v: "12 weeks" },
-      { l: "Team", v: "1 designer, 1 engineer, 1 PM" },
+      { l: "Team", v: "1 designer, 3 engineers, 1 PM" },
+      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
     ],
     accent: "#F97316",
     demo: "https://lillbram.github.io/did-you-eat/",
@@ -1256,6 +1249,11 @@ const PROJECTS = [
       "A mobile-first meal tracking PWA that turns food logging into a mindful habit — photo-first logging, feeling-aware entries, and AI-powered reflections that surface patterns people never noticed before.",
     body: [],
     sections: [
+      {
+        type: "heading",
+        label: "01 — Outcome",
+        title: "Outcome Summary",
+      },
       {
         type: "stats",
         items: [
@@ -1286,6 +1284,11 @@ const PROJECTS = [
         ],
       },
       {
+        type: "heading",
+        label: "02 — Context",
+        title: "The Problem",
+      },
+      {
         type: "text",
         content:
           "Most people who try to track their eating give up within a week — not because they lack discipline, but because logging every meal by hand is tedious, joyless, and provides no insight in return. The challenge wasn't building another calorie counter. It was designing a logging experience fast enough to actually use, and meaningful enough to come back to.",
@@ -1298,8 +1301,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "01 — Research",
-        title: "5 Reasons Food Tracking Fails",
+        label: "03 — Research",
+        title: "The Problems",
       },
       {
         type: "problems",
@@ -1348,157 +1351,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Solution",
-        title: "From Tedious to Effortless",
-      },
-      {
-        type: "comparison",
-        rows: [
-          {
-            metric: "Time per log entry",
-            before: "2–3 minutes (typing)",
-            after: "Under 30 seconds (photo + form)",
-            tag: "6× faster",
-          },
-          {
-            metric: "Emotional context",
-            before: "None",
-            after: "Feeling captured per entry",
-            tag: "New insight",
-          },
-          {
-            metric: "Pattern visibility",
-            before: "Raw list",
-            after: "Weekly timeline + monthly calendar",
-            tag: "Visual",
-          },
-          {
-            metric: "Meal history",
-            before: "Flat log",
-            after: "Grouped by type + time of day",
-            tag: "Structured",
-          },
-          {
-            metric: "Habit insights",
-            before: "Manual review only",
-            after: "AI Reflections (Today / Week / Month)",
-            tag: "Automatic",
-          },
-          {
-            metric: "Missed meal detection",
-            before: "Not tracked",
-            after: "Reminders + history gaps visible",
-            tag: "Aware",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "03 — Design Decisions",
-        title: "What Made the Difference",
-      },
-      {
-        type: "decisions",
-        items: [
-          {
-            num: "D1",
-            title: "Photo-First Logging",
-            why: "Text input is the slowest possible start — users give up before they've even started the form",
-            how: "Add Log opens the camera immediately. A food photo is captured first, then a short form fills in type, location, and time. Name is the only required text field.",
-            result:
-              "Average log time dropped from 2–3 minutes to under 30 seconds in testing",
-          },
-          {
-            num: "D2",
-            title: "Feeling Tracking Per Meal",
-            why: "What you ate is data; how you felt is insight. Without feelings, logs are just lists",
-            how: "Every entry includes a one-tap feeling selector: Feeling Good, Just Okay, A Bit Stressed, Low Energy. These appear on timeline cards and in meal detail.",
-            result:
-              "Users reported 3× more awareness of emotional eating patterns after 2 weeks",
-          },
-          {
-            num: "D3",
-            title: "Timeline + Calendar Views",
-            why: "A flat list of meals gives no sense of time — when you ate is as important as what you ate",
-            how: "Logs shows a weekly timeline with hourly slots so gaps between meals are immediately visible. Monthly calendar view shows a meal-count badge per day.",
-            result:
-              "Pattern awareness self-reported improved 3× vs prior flat-log apps in user studies",
-          },
-          {
-            num: "D4",
-            title: "AI Reflections (Premium)",
-            why: "Raw logs provide data; users need interpretation. They want to know what the data means",
-            how: "Reflections section on Home surfaces AI-generated insights for Today, This Week, and This Month — noting patterns like skipped breakfasts, timing consistency, and snack frequency.",
-            result:
-              "Premium Reflections was the top reason users cited for upgrading in exit surveys",
-          },
-          {
-            num: "D5",
-            title: "Smart Logging Preferences",
-            why: "One logging behaviour doesn't fit everyone — some want camera first, others prefer the form",
-            how: "Settings lets users toggle Camera First, Auto Time Meal (auto-sets type by time of day), Meal Reminders, and Missed Meal Check. All on by default except reminders.",
-            result:
-              "Personalisation reduced support requests about default behaviour by 80%",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "04 — Design System",
-        title: "Visual Language Built for Daily Habits",
-      },
-      { type: "design-system-dye" },
-      {
-        type: "heading",
-        label: "05 — Impact",
-        title: "Measurable Results",
-      },
-      {
-        type: "impact",
-        items: [
-          {
-            label: "Log Time",
-            before: 180,
-            after: 30,
-            unit: "s",
-            tag: "6× faster",
-            higher_is_better: false,
-          },
-          {
-            label: "Daily Consistency",
-            before: 32,
-            after: 89,
-            unit: "%",
-            tag: "+57 pts",
-            higher_is_better: true,
-          },
-          {
-            label: "7-Day Retention",
-            before: 22,
-            after: 71,
-            unit: "%",
-            tag: "3× better",
-            higher_is_better: true,
-          },
-          {
-            label: "Meal Timing Score",
-            before: 41,
-            after: 66,
-            unit: "%",
-            tag: "+25 pts",
-            higher_is_better: true,
-          },
-        ],
-      },
-      {
-        type: "quote",
-        text: "The best tracking app is the one you actually use every day.",
-        sub: "— Design philosophy, Did You Eat",
-      },
-      {
-        type: "heading",
-        label: "06 — Design Overview",
-        title: "Design Overview — Key Screens",
+        label: "04 — Key Screens",
+        title: "Key Screens Walkthrough",
       },
       {
         type: "core-pages",
@@ -1601,6 +1455,145 @@ const PROJECTS = [
           },
         ],
       },
+      {
+        type: "heading",
+        label: "05 — Supporting Decisions",
+        title: "Key Design Decisions",
+      },
+      {
+        type: "comparison",
+        rows: [
+          {
+            metric: "Time per log entry",
+            before: "2–3 minutes (typing)",
+            after: "Under 30 seconds (photo + form)",
+            tag: "6× faster",
+          },
+          {
+            metric: "Emotional context",
+            before: "None",
+            after: "Feeling captured per entry",
+            tag: "New insight",
+          },
+          {
+            metric: "Pattern visibility",
+            before: "Raw list",
+            after: "Weekly timeline + monthly calendar",
+            tag: "Visual",
+          },
+          {
+            metric: "Meal history",
+            before: "Flat log",
+            after: "Grouped by type + time of day",
+            tag: "Structured",
+          },
+          {
+            metric: "Habit insights",
+            before: "Manual review only",
+            after: "AI Reflections (Today / Week / Month)",
+            tag: "Automatic",
+          },
+          {
+            metric: "Missed meal detection",
+            before: "Not tracked",
+            after: "Reminders + history gaps visible",
+            tag: "Aware",
+          },
+        ],
+      },
+      {
+        type: "decisions",
+        items: [
+          {
+            num: "D1",
+            title: "Photo-First Logging",
+            why: "Text input is the slowest possible start — users give up before they've even started the form",
+            how: "Add Log opens the camera immediately. A food photo is captured first, then a short form fills in type, location, and time. Name is the only required text field.",
+            result:
+              "Average log time dropped from 2–3 minutes to under 30 seconds in testing",
+          },
+          {
+            num: "D2",
+            title: "Feeling Tracking Per Meal",
+            why: "What you ate is data; how you felt is insight. Without feelings, logs are just lists",
+            how: "Every entry includes a one-tap feeling selector: Feeling Good, Just Okay, A Bit Stressed, Low Energy. These appear on timeline cards and in meal detail.",
+            result:
+              "Users reported 3× more awareness of emotional eating patterns after 2 weeks",
+          },
+          {
+            num: "D3",
+            title: "Timeline + Calendar Views",
+            why: "A flat list of meals gives no sense of time — when you ate is as important as what you ate",
+            how: "Logs shows a weekly timeline with hourly slots so gaps between meals are immediately visible. Monthly calendar view shows a meal-count badge per day.",
+            result:
+              "Pattern awareness self-reported improved 3× vs prior flat-log apps in user studies",
+          },
+          {
+            num: "D4",
+            title: "AI Reflections (Premium)",
+            why: "Raw logs provide data; users need interpretation. They want to know what the data means",
+            how: "Reflections section on Home surfaces AI-generated insights for Today, This Week, and This Month — noting patterns like skipped breakfasts, timing consistency, and snack frequency.",
+            result:
+              "Premium Reflections was the top reason users cited for upgrading in exit surveys",
+          },
+          {
+            num: "D5",
+            title: "Smart Logging Preferences",
+            why: "One logging behaviour doesn't fit everyone — some want camera first, others prefer the form",
+            how: "Settings lets users toggle Camera First, Auto Time Meal (auto-sets type by time of day), Meal Reminders, and Missed Meal Check. All on by default except reminders.",
+            result:
+              "Personalisation reduced support requests about default behaviour by 80%",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        label: "06 — Design System",
+        title: "The Design System",
+      },
+      { type: "design-system-dye" },
+      {
+        type: "heading",
+        label: "07 — Results",
+        title: "Measurable Results",
+      },
+      {
+        type: "impact",
+        items: [
+          {
+            label: "Log Time",
+            before: 180,
+            after: 30,
+            unit: "s",
+            tag: "6× faster",
+            higher_is_better: false,
+          },
+          {
+            label: "Daily Consistency",
+            before: 32,
+            after: 89,
+            unit: "%",
+            tag: "+57 pts",
+            higher_is_better: true,
+          },
+          {
+            label: "7-Day Retention",
+            before: 22,
+            after: 71,
+            unit: "%",
+            tag: "3× better",
+            higher_is_better: true,
+          },
+          {
+            label: "Meal Timing Score",
+            before: 41,
+            after: 66,
+            unit: "%",
+            tag: "+25 pts",
+            higher_is_better: true,
+          },
+        ],
+      },
     ],
   },
   {
@@ -1620,6 +1613,7 @@ const PROJECTS = [
       { l: "Year", v: "2026" },
       { l: "Duration", v: "12 weeks" },
       { l: "Team", v: "1 designer, 1 engineers, 1 PM" },
+      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
     ],
     accent: "#0D9488",
     demo: "https://lillbram.github.io/pawsuite/",
@@ -1627,6 +1621,11 @@ const PROJECTS = [
       "A multi-role SaaS platform for pet grooming businesses — one system that runs the front desk, the groomer's day, and the pet owner's booking experience without duct-taping three separate tools together.",
     body: [],
     sections: [
+      {
+        type: "heading",
+        label: "01 — Outcome",
+        title: "Outcome Summary",
+      },
       {
         type: "stats",
         items: [
@@ -1657,6 +1656,11 @@ const PROJECTS = [
         ],
       },
       {
+        type: "heading",
+        label: "02 — Context",
+        title: "The Problem",
+      },
+      {
         type: "text",
         content:
           "Independent grooming salons were running on a patchwork of paper appointment books, group chats, and spreadsheet invoices. Owners had no real-time view of revenue or staff load, groomers had no single place to see their day, and pet owners had to call in just to check a booking status. The challenge wasn't building another calendar app — it was designing one system that gave each of the three people in the shop exactly the view they needed, and nothing else.",
@@ -1669,8 +1673,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "01 — Research",
-        title: "5 Problems Running a Grooming Salon on Paper",
+        label: "03 — Research",
+        title: "The Problems",
       },
       {
         type: "problems",
@@ -1719,157 +1723,8 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Solution",
-        title: "One Platform, Three Views",
-      },
-      {
-        type: "comparison",
-        rows: [
-          {
-            metric: "Booking process",
-            before: "Phone call + paper diary",
-            after: "Shared calendar, 1-tap booking",
-            tag: "3× faster",
-          },
-          {
-            metric: "Revenue visibility",
-            before: "Month-end spreadsheet",
-            after: "Live dashboard, by store & service",
-            tag: "Real-time",
-          },
-          {
-            metric: "Groomer's daily view",
-            before: "Verbal handoff each morning",
-            after: "Personal schedule + client history",
-            tag: "Self-serve",
-          },
-          {
-            metric: "Invoice tracking",
-            before: "Manual ledger",
-            after: "Auto-generated, status-tracked",
-            tag: "97% accurate",
-          },
-          {
-            metric: "Client status checks",
-            before: "Call the front desk",
-            after: "Self-serve client portal",
-            tag: "Fewer calls",
-          },
-          {
-            metric: "Pet medical history",
-            before: "In a groomer's memory",
-            after: "Attached to every pet profile",
-            tag: "Always on file",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "03 — Design Decisions",
-        title: "What Made the Difference",
-      },
-      {
-        type: "decisions",
-        items: [
-          {
-            num: "D1",
-            title: "Three Roles, Three Products",
-            why: "An owner, a groomer, and a pet owner need almost nothing in common on screen",
-            how: "Owner gets a full desktop back office. Staff gets a focused desktop day-view. Clients get a mobile-first app with a bottom tab bar.",
-            result:
-              "Each role reached its most-used action in one tap, with zero irrelevant UI",
-          },
-          {
-            num: "D2",
-            title: "Booking Board with Status Color",
-            why: "A day full of appointments is unreadable as a flat list once volume grows",
-            how: "Bookings render as color-coded blocks — pending, confirmed, in progress, completed — filterable by store and staff, switchable between Day, Week, Month, and List.",
-            result:
-              "Front desk staff scan a full day's status in under 5 seconds",
-          },
-          {
-            num: "D3",
-            title: "Revenue & Ops in One Dashboard",
-            why: "Owners were checking three different places for bookings, cash, and staff load",
-            how: "Reports & Insights combines revenue trend, bookings-by-status, top services, top clients, and staff performance on a single filterable page.",
-            result:
-              "Owners moved from month-end review to daily decision-making",
-          },
-          {
-            num: "D4",
-            title: "Groomer-First Daily Dashboard",
-            why: "Staff don't need the whole back office — they need today, and what's next",
-            how: "Staff dashboard leads with 4 stat tiles (Today, This Week, Completed, Upcoming) and a live appointment list, with one tap into client and pet history.",
-            result:
-              "Staff onboarding time to first solo shift dropped significantly",
-          },
-          {
-            num: "D5",
-            title: "Pet Profile as the System of Record",
-            why: "Medical notes and preferences are only useful if every groomer sees the same ones",
-            how: "Every pet has a persistent profile — breed, age, weight, medical notes, vaccination status — visible to any staff member handling that booking.",
-            result:
-              "Medical flags (like Buddy's hip dysplasia note) surface before every visit",
-          },
-        ],
-      },
-      {
-        type: "heading",
-        label: "04 — Design System",
-        title: "Visual Language Built for Three Roles",
-      },
-      { type: "design-system-pawsuite" },
-      {
-        type: "heading",
-        label: "05 — Impact",
-        title: "Measurable Results",
-      },
-      {
-        type: "impact",
-        items: [
-          {
-            label: "Booking Time",
-            before: 6,
-            after: 2,
-            unit: " min",
-            tag: "3× faster",
-            higher_is_better: false,
-          },
-          {
-            label: "Invoice Accuracy",
-            before: 78,
-            after: 97,
-            unit: "%",
-            tag: "+19 pts",
-            higher_is_better: true,
-          },
-          {
-            label: "Front Desk Calls",
-            before: 100,
-            after: 40,
-            unit: "%",
-            tag: "60% fewer",
-            higher_is_better: false,
-          },
-          {
-            label: "Booking Completion",
-            before: 62,
-            after: 82,
-            unit: "%",
-            tag: "+20 pts",
-            higher_is_better: true,
-          },
-        ],
-      },
-      {
-        type: "quote",
-        text: "Three people share one shop — they shouldn't have to share one screen.",
-        sub: "— Design philosophy, PawSuite",
-      },
-      {
-        type: "heading",
-        label: "06 — Design Overview",
-        title: "Design Overview — Key Screens",
+        label: "04 — Key Screens",
+        title: "Key Screens Walkthrough",
       },
       {
         type: "core-pages",
@@ -2001,6 +1856,145 @@ const PROJECTS = [
               "Recent Activity feed with per-booking status (Pending, Confirmed)",
               "Bottom tab bar: Home, My Pets, Bookings, Invoices, Alerts",
             ],
+          },
+        ],
+      },
+      {
+        type: "heading",
+        label: "05 — Supporting Decisions",
+        title: "Key Design Decisions",
+      },
+      {
+        type: "comparison",
+        rows: [
+          {
+            metric: "Booking process",
+            before: "Phone call + paper diary",
+            after: "Shared calendar, 1-tap booking",
+            tag: "3× faster",
+          },
+          {
+            metric: "Revenue visibility",
+            before: "Month-end spreadsheet",
+            after: "Live dashboard, by store & service",
+            tag: "Real-time",
+          },
+          {
+            metric: "Groomer's daily view",
+            before: "Verbal handoff each morning",
+            after: "Personal schedule + client history",
+            tag: "Self-serve",
+          },
+          {
+            metric: "Invoice tracking",
+            before: "Manual ledger",
+            after: "Auto-generated, status-tracked",
+            tag: "97% accurate",
+          },
+          {
+            metric: "Client status checks",
+            before: "Call the front desk",
+            after: "Self-serve client portal",
+            tag: "Fewer calls",
+          },
+          {
+            metric: "Pet medical history",
+            before: "In a groomer's memory",
+            after: "Attached to every pet profile",
+            tag: "Always on file",
+          },
+        ],
+      },
+      {
+        type: "decisions",
+        items: [
+          {
+            num: "D1",
+            title: "Three Roles, Three Products",
+            why: "An owner, a groomer, and a pet owner need almost nothing in common on screen",
+            how: "Owner gets a full desktop back office. Staff gets a focused desktop day-view. Clients get a mobile-first app with a bottom tab bar.",
+            result:
+              "Each role reached its most-used action in one tap, with zero irrelevant UI",
+          },
+          {
+            num: "D2",
+            title: "Booking Board with Status Color",
+            why: "A day full of appointments is unreadable as a flat list once volume grows",
+            how: "Bookings render as color-coded blocks — pending, confirmed, in progress, completed — filterable by store and staff, switchable between Day, Week, Month, and List.",
+            result:
+              "Front desk staff scan a full day's status in under 5 seconds",
+          },
+          {
+            num: "D3",
+            title: "Revenue & Ops in One Dashboard",
+            why: "Owners were checking three different places for bookings, cash, and staff load",
+            how: "Reports & Insights combines revenue trend, bookings-by-status, top services, top clients, and staff performance on a single filterable page.",
+            result:
+              "Owners moved from month-end review to daily decision-making",
+          },
+          {
+            num: "D4",
+            title: "Groomer-First Daily Dashboard",
+            why: "Staff don't need the whole back office — they need today, and what's next",
+            how: "Staff dashboard leads with 4 stat tiles (Today, This Week, Completed, Upcoming) and a live appointment list, with one tap into client and pet history.",
+            result:
+              "Staff onboarding time to first solo shift dropped significantly",
+          },
+          {
+            num: "D5",
+            title: "Pet Profile as the System of Record",
+            why: "Medical notes and preferences are only useful if every groomer sees the same ones",
+            how: "Every pet has a persistent profile — breed, age, weight, medical notes, vaccination status — visible to any staff member handling that booking.",
+            result:
+              "Medical flags (like Buddy's hip dysplasia note) surface before every visit",
+          },
+        ],
+      },
+      {
+        type: "heading",
+        label: "06 — Design System",
+        title: "The Design System",
+      },
+      { type: "design-system-pawsuite" },
+      {
+        type: "heading",
+        label: "07 — Results",
+        title: "Measurable Results",
+      },
+      {
+        type: "impact",
+        items: [
+          {
+            label: "Booking Time",
+            before: 6,
+            after: 2,
+            unit: " min",
+            tag: "3× faster",
+            higher_is_better: false,
+          },
+          {
+            label: "Invoice Accuracy",
+            before: 78,
+            after: 97,
+            unit: "%",
+            tag: "+19 pts",
+            higher_is_better: true,
+          },
+          {
+            label: "Front Desk Calls",
+            before: 100,
+            after: 40,
+            unit: "%",
+            tag: "60% fewer",
+            higher_is_better: false,
+          },
+          {
+            label: "Booking Completion",
+            before: 62,
+            after: 82,
+            unit: "%",
+            tag: "+20 pts",
+            higher_is_better: true,
           },
         ],
       },
