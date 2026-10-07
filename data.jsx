@@ -3,31 +3,116 @@ const PROJECTS = [
   {
     id: "pos",
     kind: "Real Project",
-    title: "Point of Sales — Multi Store Order Management System",
+    title: "Point of Sales, Multi Store Order Management System",
     subtitle: "Enterprise dashboard · Multi-store chain management",
     chips: ["Dashboard", "SaaS"],
+    platforms: ["Desktop App", "Mobile App", "SaaS"],
     role: "Product Designer",
     year: "2023-2024",
     duration: "12 weeks",
     team: "1 designer, 4 engineers, 1 PM",
     cover: "dashboard",
-    coverImg: "pos-order.webp",
+    coverImg: "cover.jpeg",
     projectInfo: [
       { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2023-2024" },
       { l: "Duration", v: "12 weeks" },
       { l: "Team", v: "1 designer, 4 engineers, 1 PM" },
-      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
+      {
+        l: "What I owned",
+        v: "TODO: describe what you personally owned on this project",
+      },
     ],
     accent: "#3D55CC",
     demo: "https://lillbram.github.io/pos-demo/",
     summary:
       "A unified POS and operational intelligence platform for multi-store restaurant chains. Reduced order time 7x, eliminated 90% of errors, and enabled same-day financial decisions.",
     body: [],
+    contextBreakdown: [
+      {
+        type: "problem-list",
+        title: "The Problem",
+        intro:
+          "Kalbe's partner stores were running into the same three problems, over and over:",
+        items: [
+          "Loss of profit and transaction tracking across Kalbe product sales",
+          "Loss of customer data tracking and insight for each partner store",
+          "Loss of stock and inventory tracking",
+        ],
+      },
+      {
+        type: "narrative",
+        title: "User Interview",
+        body: "I did direct interviews with Kalbe's partners and clients to understand how they wanted the POS to operate and what would actually help their day-to-day work.",
+      },
+      {
+        type: "narrative",
+        title: "Sketch",
+        img: "pos-feature-sketch.webp",
+        body: "The wireframes were made as simple as possible, so staff could use the system easily without getting confused, while still leaving room to show all the detailed data the store needed.",
+      },
+      {
+        type: "narrative",
+        title: "Site Construction",
+        body: "The system's information architecture, built around how each role actually works.",
+        img: "pos-site-construction-ia.webp",
+      },
+      {
+        type: "narrative",
+        title: "Design Decision",
+        body: "The interface uses blue as its primary color throughout, Kalbe's brand identity, reinforcing that this is a trusted, internal company system built specifically for their operations.",
+        img: "pos-feature-design-decision.webp",
+      },
+      {
+        type: "feature",
+        title: "Order Management",
+        img: "pos-feature-order-management.webp",
+        body: "This page is designed to make the process of managing orders and customer data easier, from browsing products and building an order to attaching a customer profile, applying a promo code, and confirming payment, all from one screen.",
+      },
+      {
+        type: "feature",
+        title: "Mobile App Order",
+        img: "pos-feature-mobile-order.webp",
+        body: "Built for cashiers to easily process transactions on mobile, anywhere, browsing products, building an order, applying a promo code, and looking up a customer for loyalty points, all from a phone instead of being tied to a fixed terminal.",
+      },
+      {
+        type: "feature",
+        title: "Customer Management",
+        imgs: [
+          "pos-feature-customer-search.webp",
+          "pos-feature-customer-behavior.webp",
+        ],
+        body: "This feature helps stores understand their customers by managing their contact info, points, and behavior, all connected to KPoin loyalty. Staff can look up a customer right from the order screen, and dig into a full behavior analytics view showing transaction history, average order value, and top products purchased.",
+      },
+      {
+        type: "feature",
+        title: "Outlet & Staff Management",
+        imgs: [
+          "pos-feature-store-management.webp",
+          "pos-feature-staff-management.webp",
+        ],
+        body: "These tools are for the business owner to maintain multiple stores and keep staff productivity in check, an Outlets Directory covering location, manager, staff count, and today's sales per store, and a Staff Directory managing roles, contact details, and which outlets each person is assigned to.",
+      },
+      {
+        type: "feature",
+        title: "Discount Management",
+        imgs: [
+          "pos-feature-discount-order.webp",
+          "pos-feature-discount-list.webp",
+        ],
+        body: "This section helps the business set up discounts on the POS so they can keep track of their original transaction value without getting distracted by price changes, while still giving benefits and promotions to customers. Discounts apply directly in the order screen, and are all configured and tracked from one Discounts & Promos list, percentage cuts, Buy 1 Get 1, and fixed-amount vouchers, each with its own active period and status.",
+      },
+      {
+        type: "feature",
+        title: "Dashboard & Analytics",
+        img: "pos-feature-dashboard-analytics.webp",
+        body: "This is an executive summary and analytics view of how the business is performing through the POS, revenue, orders, active outlets, and average basket size at a glance, plus sales contribution by outlet and revenue by category. It keeps the store owner updated on the business while it's still running, without having to dig through reports.",
+      },
+    ],
     sections: [
       {
         type: "heading",
-        label: "01 — Outcome",
+        label: "01, Outcome",
         title: "Outcome Summary",
       },
       {
@@ -61,23 +146,23 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Context",
+        label: "02, Context",
         title: "The Problem",
       },
       {
         type: "text",
         content:
-          "Multi-store restaurant chains were operating as silos. Each location ran its own POS, inventory, and financials — no cross-location visibility, 10-15% inventory waste, and P&L only visible at month-end. The challenge wasn't building more features — it was eliminating friction at every step of the operation.",
+          "Multi-store restaurant chains were operating as silos. Each location ran its own POS, inventory, and financials, no cross-location visibility, 10-15% inventory waste, and P&L only visible at month-end. The challenge wasn't building more features, it was eliminating friction at every step of the operation.",
       },
       {
         type: "demo-cta",
         url: "https://lillbram.github.io/pos-demo/",
         label: "Explore Live Demo",
-        note: "Full system with real demo data — no login required",
+        note: "Full system with real demo data, no login required",
       },
       {
         type: "heading",
-        label: "03 — Research",
+        label: "03, Research",
         title: "The Problems",
       },
       {
@@ -102,7 +187,7 @@ const PROJECTS = [
           {
             num: "03",
             title: "No Financial Visibility",
-            pain: "P&L reports only appear at month-end — 35+ days after transactions occur",
+            pain: "P&L reports only appear at month-end, 35+ days after transactions occur",
             impact:
               "Reactive decisions only. Preventable losses discovered far too late to fix.",
             severity: "high",
@@ -126,7 +211,7 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "04 — Key Screens",
+        label: "04, Key Screens",
         title: "Key Screens Walkthrough",
       },
       {
@@ -280,7 +365,7 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "05 — Supporting Decisions",
+        label: "05, Supporting Decisions",
         title: "Key Design Decisions",
       },
       {
@@ -370,13 +455,13 @@ const PROJECTS = [
       { type: "ia" },
       {
         type: "heading",
-        label: "06 — Design System",
+        label: "06, Design System",
         title: "The Design System",
       },
       { type: "design-system" },
       {
         type: "heading",
-        label: "07 — Results",
+        label: "07, Results",
         title: "Measurable Results",
       },
       {
@@ -418,7 +503,7 @@ const PROJECTS = [
   {
     id: "career-solution",
     kind: "Real Project",
-    title: "Career Solution — Mobile Job Platform",
+    title: "Career Solution, Mobile Job Platform",
     subtitle: "Mobile PWA · Job search & career development",
     chips: ["Mobile App", "PWA"],
     role: "Product Designer",
@@ -426,24 +511,108 @@ const PROJECTS = [
     duration: "8 weeks",
     team: "1 designer, 2 engineers, 1 PM",
     cover: "career",
-    coverImg: "career-solution.webp",
+    coverImg: "career-solution-cover.webp",
     heroImg: "career-home.webp",
     projectInfo: [
       { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2022" },
       { l: "Duration", v: "8 weeks" },
       { l: "Team", v: "1 designer, 2 engineers, 1 PM" },
-      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
+      {
+        l: "What I owned",
+        v: "TODO: describe what you personally owned on this project",
+      },
     ],
     accent: "#10B981",
     demo: "https://lillbram.github.io/career-solution-pwa/",
     summary:
-      "A mobile-first job platform PWA that simplifies the entire hiring journey — from discovery to one-tap application to real-time offer tracking. Built for Indonesia's growing job market with smart job matching and direct recruiter messaging.",
+      "Career Solution is a mobile app that helps jobseekers and talent of Lemondial Career apply directly to Lemondial Career's partner companies, easily. It also helps jobseekers understand their skill gaps and points them to Skillboost to acquire the skills they need.",
     body: [],
+    contextBreakdown: [
+      {
+        type: "problem-list",
+        title: "The Problems",
+        intro:
+          "Lemondial Career's jobseekers kept running into three core problems:",
+        items: [
+          "Confusion and struggle to get clear, transparent job information",
+          "Difficulty understanding whether their actual skills matched the job requirements",
+          "No visibility into where they stood against what a role required before applying",
+        ],
+      },
+      {
+        type: "narrative",
+        title: "Company Vision",
+        body: "The company vision is to guide all top talent at Lemondial Career toward their best career path. The Career Solution App serves as the primary solution to attract and gather top external talent while facilitating and empowering existing Lemondial Career members.",
+      },
+      {
+        type: "narrative",
+        title: "Sketch",
+        imgRows: [
+          [
+            "cs-sketch-1.webp",
+            "cs-sketch-2.webp",
+            "cs-sketch-3.webp",
+            "cs-sketch-4.webp",
+          ],
+          [
+            "cs-sketch-5.webp",
+            "cs-sketch-6.webp",
+            "cs-sketch-7.webp",
+            "cs-sketch-8.webp",
+          ],
+        ],
+        fitPanel: true,
+        body: "The sketches and wireframes were created directly in Figma to rapidly explore and test every possibility for the best UX flow before moving into high-fidelity design.",
+      },
+      {
+        type: "narrative",
+        title: "Site Construction",
+        img: "cs-site-construction.webp",
+        body: "The application's sitemap and information architecture, structured to give users a clear overview of the navigation flow and core screen hierarchy.",
+      },
+      {
+        type: "narrative",
+        title: "Design Decision",
+        img: "cs-design-decision.webp",
+        body: "I chose blue as the primary color because a job platform asks people to hand over their resume and career history, and blue is the color most associated with trust, stability, and professionalism. It keeps primary actions like Apply and Learn this easy to spot without feeling loud. The background is white so job information stays the focus: salary, requirements, and application status are read on a clean surface with strong contrast, and long job lists stay easy to scan. For typography I used Inter, a typeface designed for screens. Its tall x-height and open letterforms keep small text such as job metadata, tags, and status labels readable on mobile, and its range of weights lets me build a clear hierarchy with a single font family.",
+      },
+      {
+        type: "narrative",
+        title: "Prototype",
+        video: "career-solution-demo.mp4?v=3",
+        bareImgs: true,
+        body: "Creating a prototype is the best way to show management and users the flow of the app before development starts. It gives them a real feel for the app and its user experience, so they can give genuine feedback on the design and user experience.",
+        demoNote: "See how Career Solution was prototyped.",
+        demoBtnColor: "#3D5AFE",
+      },
+      {
+        type: "feature",
+        title: "Homepage",
+        imgs: ["cs-home-1.webp", "cs-home-2.webp", "cs-home-3.webp", "cs-home-4.webp"],
+        bareImgs: true,
+        body: "The homepage is designed to guide users directly toward their primary goals: tracking the latest progress of submitted applications, discovering and applying to the most suited roles through personalized recommendations, and identifying skill gaps with clear pathways to bridge them.",
+      },
+      {
+        type: "feature",
+        title: "Job Progress",
+        imgs: ["cs-progress-1.webp", "cs-progress-2.webp", "cs-progress-3.webp"],
+        bareImgs: true,
+        body: "Job Progress helps users track the progress of their applications. The hiring company keeps each application updated, so the application doesn't go cold and users don't have to wait in uncertainty.",
+      },
+      {
+        type: "feature",
+        title: "Learn Skill",
+        imgs: ["cs-learn-1.webp", "cs-learn-2.webp"],
+        bareImgs: true,
+        galleryMaxWidth: 680,
+        body: "Learn Skill helps jobseekers close the skill gap for the job they want to apply for. This section directs users to the Skillboost app by Lemondial Career, where they learn skills verified and qualified by Lemondial Career's partner companies and earn a certified badge. The badge tells recruiters that the applicant is a Lemondial Career talent.",
+      },
+    ],
     sections: [
       {
         type: "heading",
-        label: "01 — Outcome",
+        label: "01, Outcome",
         title: "Outcome Summary",
       },
       {
@@ -477,23 +646,23 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Context",
+        label: "02, Context",
         title: "The Problem",
       },
       {
         type: "text",
         content:
-          "Job seekers in Indonesia were navigating fragmented hiring experiences — outdated listings, multi-step application forms, and zero visibility after submitting. Recruiters struggled to reach the right candidates efficiently. The challenge wasn't building another job board — it was removing every barrier between a qualified candidate and their next opportunity.",
+          "Lemondial Career's jobseekers sometimes got confused and struggled just to get clear job information, and struggled even more to understand whether their skills actually matched the job they were applying for. The challenge wasn't building another job board, it was making job information clear and showing jobseekers exactly where they stood against what a role required.",
       },
       {
         type: "demo-cta",
         url: "https://lillbram.github.io/career-solution-pwa/",
         label: "Explore Live Demo",
-        note: "Full system with demo data — no login required",
+        note: "Full system with demo data, no login required",
       },
       {
         type: "heading",
-        label: "03 — Research",
+        label: "03, Research",
         title: "The Problems",
       },
       {
@@ -501,49 +670,49 @@ const PROJECTS = [
         items: [
           {
             num: "01",
+            title: "Confusing Job Information",
+            pain: "Job listings buried key details, salary, location, requirements, inconsistently, making it hard to know what a role actually offered",
+            impact:
+              "Jobseekers spent excess time decoding listings just to decide whether a role was worth applying to.",
+            severity: "high",
+          },
+          {
+            num: "02",
+            title: "Unclear Skill Match",
+            pain: "Jobseekers had no way to tell if their skills matched a job's requirements before applying",
+            impact:
+              "Jobseekers applied blind and got rejected for skill mismatches they never saw coming.",
+            severity: "high",
+          },
+          {
+            num: "03",
             title: "Friction-Heavy Applications",
-            pain: "Traditional apply flows require 8+ steps: forms, uploads, re-typing resume data",
+            pain: "Applying to Lemondial's partner companies required repeated manual steps, forms, uploads, re-typing resume data",
             impact:
               "65% abandonment rate at the application step. Qualified candidates lost before even being seen.",
             severity: "high",
           },
           {
-            num: "02",
-            title: "Zero Status Visibility",
-            pain: "After submitting, candidates hear nothing. No confirmation, no timeline, no status updates",
-            impact:
-              "Anxiety, repeated follow-ups, and 40% of candidates reapplying to the same role by mistake.",
-            severity: "high",
-          },
-          {
-            num: "03",
-            title: "Irrelevant Job Listings",
-            pain: "Generic search returns mismatched results — wrong salary range, location, or seniority level",
-            impact:
-              "Time wasted reviewing unsuitable roles. Trust in the platform erodes after repeated mismatches.",
-            severity: "high",
-          },
-          {
             num: "04",
-            title: "No Direct Recruiter Access",
-            pain: "Candidates cannot communicate with recruiters — only one-way form submissions allowed",
+            title: "No Path to Close the Gap",
+            pain: "Even when a skill gap was clear, jobseekers had nowhere in-app to learn the missing skill",
             impact:
-              "Missed context, misaligned expectations, and delayed hiring decisions on both sides.",
+              "Jobseekers left the app to search for courses elsewhere, losing momentum on their application.",
             severity: "medium",
           },
           {
             num: "05",
-            title: "Resume Management Chaos",
-            pain: "Candidates maintain multiple resume versions outside the platform, re-uploading each time",
+            title: "Zero Status Visibility",
+            pain: "After submitting, candidates hear nothing, no confirmation, no timeline, no status updates",
             impact:
-              "Wrong resume attached 18% of the time. Outdated profile data shared with employers.",
+              "Anxiety, repeated follow-ups, and 40% of candidates reapplying to the same role by mistake.",
             severity: "medium",
           },
         ],
       },
       {
         type: "heading",
-        label: "04 — Key Screens",
+        label: "04, Key Screens",
         title: "Key Screens Walkthrough",
       },
       {
@@ -572,13 +741,13 @@ const PROJECTS = [
             tagColor: "#1E9E6B",
             img: "career-search.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
-            desc: "The main job discovery screen. A full-width search bar accepts job title, company, or keyword. Filter chips for All, Remote, Hybrid, On-site, and Product category let candidates narrow results instantly. Each card shows company icon, title, company + city, salary range in green, work type tag, experience tag, a save star, and an inline Apply button — 6 jobs found in the demo.",
+            desc: "The main job discovery screen. A full-width search bar accepts job title, company, or keyword. Filter chips for All, Remote, Hybrid, On-site, and Product category let candidates narrow results instantly. Each card shows company icon, title, company + city, salary range in green, work type tag, experience tag, a save star, and an inline Apply button, 6 jobs found in the demo.",
             features: [
-              "Search bar: 'Search job title, company…' — title, skills, or company",
+              "Search bar: 'Search job title, company…', title, skills, or company",
               "Filter chips: All (active), Remote, Hybrid, On-site, Product category",
               "Salary range shown in green on every card before any tap",
               "Work type tags (Remote, Hybrid, Full-time) + experience level tags",
-              "Inline Apply button and star save on each listing — no drill-in needed",
+              "Inline Apply button and star save on each listing, no drill-in needed",
             ],
           },
           {
@@ -588,10 +757,10 @@ const PROJECTS = [
             tagColor: "#1E9E6B",
             img: "career-job-detail.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
-            desc: "Full job page for Senior Product Designer at Gojek. A compact 4-column meta strip at the top shows Type (Full-time), Salary (Rp 100–135M), Experience (3–5 Years), and Location (Remote) at a glance — no scrolling required. Key Responsibilities, Qualifications, and What We Offer sections follow. A sticky full-width 'Submit application' button is pinned to the bottom so it's always reachable.",
+            desc: "Full job page for Senior Product Designer at Gojek. A compact 4-column meta strip at the top shows Type (Full-time), Salary (Rp 100–135M), Experience (3–5 Years), and Location (Remote) at a glance, no scrolling required. Key Responsibilities, Qualifications, and What We Offer sections follow. A sticky full-width 'Submit application' button is pinned to the bottom so it's always reachable.",
             features: [
               "Company icon + title + 'DKI Jakarta · 2 Days Ago · 100+ Applicant'",
-              "4-column meta strip: Type, Salary, Experience, Location — always visible",
+              "4-column meta strip: Type, Salary, Experience, Location, always visible",
               "Key Responsibilities section with full role description",
               "Qualifications list and What We Offer benefits section",
               "Sticky full-width 'Submit application' CTA pinned to bottom",
@@ -604,13 +773,13 @@ const PROJECTS = [
             tagColor: "#1E9E6B",
             img: "career-apply.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
-            desc: "Single-screen apply flow for Senior Product Designer. A transparency notice confirms 'Your profile will be shared with the employer'. Three saved resumes are listed — two Career Solution Resumes and one custom file — each with Edit or Preview actions. The first resume is highlighted in mint green as the selected choice. An 'Add / Create Resume' option sits below. A sticky green 'Continue' button closes the flow.",
+            desc: "Single-screen apply flow for Senior Product Designer. A transparency notice confirms 'Your profile will be shared with the employer'. Three saved resumes are listed, two Career Solution Resumes and one custom file, each with Edit or Preview actions. The first resume is highlighted in mint green as the selected choice. An 'Add / Create Resume' option sits below. A sticky green 'Continue' button closes the flow.",
             features: [
-              "'Your profile will be shared with the employer' — transparency upfront",
+              "'Your profile will be shared with the employer', transparency upfront",
               "3 saved resumes listed: Career Solution Resume × 2, Your own Resume",
               "Selected resume highlighted with green border (mint background)",
               "Edit or Preview actions on each saved resume",
-              "Sticky full-width 'Continue' CTA — one tap to submit",
+              "Sticky full-width 'Continue' CTA, one tap to submit",
             ],
           },
           {
@@ -620,13 +789,13 @@ const PROJECTS = [
             tagColor: "#F59E0B",
             img: "career-tracker.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
-            desc: "All submitted applications in one filtered list. Three tab pills — All (4), Active (2), Rejected (1) — let candidates focus on what matters. Each row shows company icon, job title, company + city, application date, and a colour-coded status badge: Applied (blue), Review (gray), Approved (green), Rejected (pink). Tap any row to open the full application or recruiter messages.",
+            desc: "All submitted applications in one filtered list. Three tab pills, All (4), Active (2), Rejected (1), let candidates focus on what matters. Each row shows company icon, job title, company + city, application date, and a colour-coded status badge: Applied (blue), Review (gray), Approved (green), Rejected (pink). Tap any row to open the full application or recruiter messages.",
             features: [
               "Filter tabs with live counts: All 4, Active 2, Rejected 1",
               "Status badges: Applied (blue), Review (gray), Approved (green), Rejected (pink)",
-              "UX Researcher @ Tokopedia — Applied 3 days ago",
-              "Visual Designer @ Traveloka — Under Review",
-              "Interaction Designer @ Bukalapak — Approved · Product Manager @ Shopee — Rejected",
+              "UX Researcher @ Tokopedia, Applied 3 days ago",
+              "Visual Designer @ Traveloka, Under Review",
+              "Interaction Designer @ Bukalapak, Approved · Product Manager @ Shopee, Rejected",
             ],
           },
           {
@@ -642,7 +811,7 @@ const PROJECTS = [
               "Work Experience: multiple entries, each removable with ×, + Add for more",
               "Education section with the same pattern as work experience",
               "Skills section: add tags (Figma, UX Research, Prototyping, Design Systems…)",
-              "Sticky 'Save Profile' button — all sections saved in one tap",
+              "Sticky 'Save Profile' button, all sections saved in one tap",
             ],
           },
           {
@@ -652,10 +821,10 @@ const PROJECTS = [
             tagColor: "#0EA5E9",
             img: "career-chat.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
-            desc: "A unified inbox showing one conversation thread per application. Filter pills — All (4), Read (2), Unread (2) — help candidates prioritise. Each row shows the recruiter company, message preview, and timestamp. Companies in the demo: Tokopedia Hiring, Traveloka Careers, Bukalapak Opportunities, Grab Talent Acquisition. Tapping a thread opens a full in-app chat with full message history.",
+            desc: "A unified inbox showing one conversation thread per application. Filter pills, All (4), Read (2), Unread (2), help candidates prioritise. Each row shows the recruiter company, message preview, and timestamp. Companies in the demo: Tokopedia Hiring, Traveloka Careers, Bukalapak Opportunities, Grab Talent Acquisition. Tapping a thread opens a full in-app chat with full message history.",
             features: [
               "Inbox filter: All 4, Read 2, Unread 2",
-              "One thread per application — no context switching between apps",
+              "One thread per application, no context switching between apps",
               "Company name as thread title (Tokopedia Hiring, Traveloka Careers…)",
               "Message preview and relative timestamp per row",
               "Unread badge count on Messages tab in bottom nav",
@@ -663,25 +832,25 @@ const PROJECTS = [
           },
           {
             title: "Subscription Plans",
-            subtitle: "Free vs Pro — choose your tier",
+            subtitle: "Free vs Pro, choose your tier",
             tag: "Monetisation",
             tagColor: "#EC4899",
             img: "career-plans.webp",
             url: "https://lillbram.github.io/career-solution-pwa/",
-            desc: "'Choose Your Plan — Upgrade anytime. Cancel anytime.' Two tiers side by side. Free (Rp 0/forever): browse up to 20 jobs/day, apply to 5/month, basic profile, status tracking, email notifications — shown with 'Current Plan' button. Pro (Rp 49.000/month) in a dark green filled card with 'Most Popular' badge: unlimited browsing, unlimited applications, priority profile visibility, advanced analytics, resume builder & export, direct message employers, job alerts.",
+            desc: "'Choose Your Plan, Upgrade anytime. Cancel anytime.' Two tiers side by side. Free (Rp 0/forever): browse up to 20 jobs/day, apply to 5/month, basic profile, status tracking, email notifications, shown with 'Current Plan' button. Pro (Rp 49.000/month) in a dark green filled card with 'Most Popular' badge: unlimited browsing, unlimited applications, priority profile visibility, advanced analytics, resume builder & export, direct message employers, job alerts.",
             features: [
               "Free: browse 20/day, apply 5/month, basic profile, status tracking",
               "Pro Rp 49.000/month: unlimited browsing + unlimited applications",
               "Pro: priority profile visibility + advanced profile analytics",
               "Pro: resume builder & export, direct message employers",
-              "'Most Popular' badge on Pro — 'Subscribe Pro' CTA on dark green card",
+              "'Most Popular' badge on Pro, 'Subscribe Pro' CTA on dark green card",
             ],
           },
         ],
       },
       {
         type: "heading",
-        label: "05 — Supporting Decisions",
+        label: "05, Supporting Decisions",
         title: "Key Design Decisions",
       },
       {
@@ -754,7 +923,7 @@ const PROJECTS = [
           {
             num: "D4",
             title: "Multi-Resume Management",
-            why: "Candidates tailor resumes per role — forcing one resume leads to wrong attachments",
+            why: "Candidates tailor resumes per role, forcing one resume leads to wrong attachments",
             how: "Save up to 3 named resumes. Default is auto-selected but swappable in one tap before submit.",
             result:
               "Wrong resume incidents eliminated. Profile accuracy reached 99%",
@@ -771,26 +940,18 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "06 — Design System",
+        label: "06, Design System",
         title: "The Design System",
       },
       { type: "design-system-career" },
       {
         type: "heading",
-        label: "07 — Results",
+        label: "07, Results",
         title: "Measurable Results",
       },
       {
         type: "impact",
         items: [
-          {
-            label: "Apply Steps",
-            before: 8,
-            after: 1,
-            unit: " steps",
-            tag: "3× faster",
-            higher_is_better: false,
-          },
           {
             label: "Completion Rate",
             before: 35,
@@ -798,14 +959,7 @@ const PROJECTS = [
             unit: "%",
             tag: "+33 pts",
             higher_is_better: true,
-          },
-          {
-            label: "Recruiter Response",
-            before: 6,
-            after: 1,
-            unit: " days",
-            tag: "6× faster",
-            higher_is_better: false,
+            solves: "Unclear job information",
           },
           {
             label: "Job Match Rate",
@@ -814,6 +968,16 @@ const PROJECTS = [
             unit: "%",
             tag: "2× better",
             higher_is_better: true,
+            solves: "Unsure if skills match the job",
+          },
+          {
+            label: "Recruiter Response",
+            before: 6,
+            after: 1,
+            unit: " days",
+            tag: "6× faster",
+            higher_is_better: false,
+            solves: "No visibility into where they stand",
           },
         ],
       },
@@ -822,32 +986,149 @@ const PROJECTS = [
   {
     id: "skillbooster",
     kind: "Real Project",
-    title: "Skill Booster — E-Learning Mobile Platform",
+    title: "Skillboost, E-Learning Mobile Platform",
     subtitle: "Mobile PWA · Online courses & seminars",
     chips: ["Mobile App", "PWA"],
+    platforms: ["Mobile App", "PWA"],
     role: "Lead Product Designer",
     year: "2024",
-    duration: "16 weeks",
-    team: "1 designer, 5 engineers, 1 PM",
+    duration: "6 weeks",
+    team: "1 designer, 2 engineers, 1 PM",
     cover: "elearning",
     coverImg: "skill-booster.webp",
     heroImg: "sb-home.webp",
     projectInfo: [
       { l: "Role", v: "Lead Product Designer" },
       { l: "Year", v: "2024" },
-      { l: "Duration", v: "16 weeks" },
-      { l: "Team", v: "1 designer, 5 engineers, 1 PM" },
-      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
+      { l: "Duration", v: "6 weeks" },
+      { l: "Team", v: "1 designer, 2 engineers, 1 PM" },
+      {
+        l: "What I owned",
+        v: "TODO: describe what you personally owned on this project",
+      },
     ],
     accent: "#4F46E5",
     demo: "https://lillbram.github.io/skillbooster-pwa/",
     summary:
-      "A mobile-first e-learning PWA that turns scattered online courses into a structured learning journey — from discovery to enrollment to completion tracking. Built for self-paced learners who want career-relevant skills without friction.",
+      "Skillboost is the app that supports jobseekers and talent of Lemondial Career in their career path by giving them comprehensive courses from expert instructors, structured as a real learning journey instead of a scattered course catalog.",
     body: [],
+    contextBreakdown: [
+      {
+        type: "problem-list",
+        title: "The Problem",
+        intro:
+          "Lemondial Career's jobseekers kept running into the same three problems, over and over:",
+        items: [
+          "No way to see the exact skills a target job or company actually required",
+          "No way to measure the gap between the skills they had and the skills the job needed",
+          "No structured path to close that skill gap before applying",
+        ],
+      },
+      {
+        type: "narrative",
+        title: "User Interview",
+        body: "I did direct interviews with self-paced learners across different skill levels to understand why they were dropping courses within the first week, and what would actually bring them back to finish.",
+      },
+      {
+        type: "narrative",
+        title: "Sketch",
+        imgRows: [
+          [
+            "sb-sketch-row1-1.webp",
+            "sb-sketch-row1-2.webp",
+            "sb-sketch-row1-3.webp",
+            "sb-sketch-row1-4.webp",
+            "sb-sketch-row1-5.webp",
+          ],
+          [
+            "sb-sketch-row2-1.webp",
+            "sb-sketch-row2-2.webp",
+            "sb-sketch-row2-3.webp",
+            "sb-sketch-row2-4.webp",
+            "sb-sketch-row2-5.webp",
+          ],
+        ],
+        body: "The wireframes focused on a mobile-first learning journey, kept simple enough to browse one-handed, while still surfacing enough course detail to make an enrollment decision.",
+      },
+      {
+        type: "narrative",
+        title: "Site Construction",
+        img: "sb-site-construction.webp",
+        body: "The app's structure follows the learner's actual journey, discover, preview, enroll, learn, and track, instead of a generic content-library layout.",
+      },
+      {
+        type: "narrative",
+        title: "Design Decision",
+        imgs: [
+          "sb-design-decision-1.webp",
+          "sb-design-decision-2.webp",
+          "sb-design-decision-3.webp",
+        ],
+        bareImgs: true,
+        body: "The interface uses green as its primary color throughout, paired with generous whitespace and card-based layouts, signaling focus and calm in an experience designed to be used in short, frequent sessions.",
+      },
+      {
+        type: "narrative",
+        title: "Prototype as Real Experience",
+        video: "sb-prototype.mp4",
+        bareImgs: true,
+        body: "In this step, I helped users understand the design and the flow by giving them a prototype, so they could feel the actual user experience of the system before it was built.",
+        demoNote: "See how Skillboost was prototyped for users.",
+      },
+      {
+        type: "feature",
+        title: "Home Dashboard",
+        img: "sb-home-dashboard.webp",
+        bareImgs: true,
+        body: "Home Dashboard is the entry point for users to check their summary progress and jump into the main purpose of the Skillboost app, continuing their last and newest activities.",
+      },
+      {
+        type: "feature",
+        title: "Course Detail",
+        imgs: [
+          "sb-my-library.webp",
+          "sb-course-detail-1.webp",
+          "sb-course-detail-2.webp",
+          "sb-course-complete.webp",
+        ],
+        bareImgs: true,
+        body: "Every course page leads with a free preview before any payment, plus instructor info, duration, and enrollment count to build trust. Once enrolled, the video player groups lessons into chapters with per-lesson completion dots, so learners always know exactly where they left off.",
+      },
+      {
+        type: "feature",
+        title: "Explore & Discovery",
+        imgs: [
+          "sb-explore-1.webp",
+          "sb-explore-2.webp",
+          "sb-explore-3.webp",
+          "sb-explore-4.webp",
+        ],
+        bareImgs: true,
+        body: "A dedicated Explore tab lets learners search and filter by category, browse personalized recommendations, and discover top instructors, separating active discovery from the curated home feed.",
+      },
+      {
+        type: "feature",
+        title: "My Library",
+        imgs: [
+          "sb-my-library.webp",
+          "sb-course-detail-2.webp",
+          "sb-course-complete.webp",
+        ],
+        bareImgs: true,
+        body: "One unified view of everything a learner has purchased or registered for, course progress bars, completion checkmarks, and upcoming or running seminar events, so nothing paid for gets forgotten.",
+      },
+      {
+        type: "feature",
+        title: "Events",
+        imgs: ["sb-events-1.webp", "sb-events-2.webp", "sb-events-3.webp"],
+        bareImgs: true,
+        body: "This section is where users can learn directly, live, with an instructor, seminar events with date, host, and location up front, and a one-tap Register CTA to join.",
+      },
+    ],
     sections: [
       {
         type: "heading",
-        label: "01 — Outcome",
+        label: "01, Outcome",
         title: "Outcome Summary",
       },
       {
@@ -881,23 +1162,23 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Context",
+        label: "02, Context",
         title: "The Problem",
       },
       {
         type: "text",
         content:
-          "Online learners in Indonesia were dropping courses within the first week — not because the content was bad, but because the experience was. Overwhelming catalogs, no progress tracking, and a hard paywall before learners knew if a course was right for them. The challenge wasn't building another course platform — it was designing a learning journey that felt worth finishing.",
+          "Many jobseekers don't actually have the real skills that match the exact job they want to apply for, or the company they want to join, so Lemondial Career applicants kept getting filtered out before they even reached an interview. The challenge wasn't building another course platform, it was matching the gap between the skills a jobseeker has and the skills that job actually requires, then closing it.",
       },
       {
         type: "demo-cta",
         url: "https://lillbram.github.io/skillbooster-pwa/",
         label: "Explore Live Demo",
-        note: "Full system with demo data — no account required",
+        note: "Full system with demo data, no account required",
       },
       {
         type: "heading",
-        label: "03 — Research",
+        label: "03, Research",
         title: "The Problems",
       },
       {
@@ -905,49 +1186,49 @@ const PROJECTS = [
         items: [
           {
             num: "01",
-            title: "Overwhelming Course Catalog",
-            pain: "Hundreds of courses with no personalization — learners scroll endlessly without finding the right fit",
+            title: "Skill Gap Blindness",
+            pain: "Jobseekers had no way to compare their current skills against what a target job on Lemondial Career actually required",
             impact:
-              "70% of new users leave within 3 minutes of browsing without enrolling in anything.",
+              "Jobseekers kept applying for roles they weren't qualified for, and got filtered out before they ever reached an interview.",
             severity: "high",
           },
           {
             num: "02",
-            title: "No Progress Visibility",
-            pain: "Learners have no clear sense of how far through a course they are or what comes next",
+            title: "No Job-Linked Learning",
+            pain: "Course catalogs were generic, nothing connected a course back to the specific skill a Lemondial job posting asked for",
             impact:
-              "55% of enrolled learners never return after the first lesson — no hook to come back.",
+              "Jobseekers spent hours learning skills unrelated to the job they actually wanted.",
             severity: "high",
           },
           {
             num: "03",
             title: "Paywall Before Value",
-            pain: "Courses require payment before learners can see any content — no free preview available",
+            pain: "Courses required payment before jobseekers could confirm the content actually covered the skill their target job needed",
             impact:
-              "High drop-off at checkout. Learners won't pay for something they haven't sampled.",
+              "High drop-off at checkout, jobseekers wouldn't pay without proof the course matched the job requirement.",
             severity: "high",
           },
           {
             num: "04",
-            title: "No Live Learning Options",
-            pain: "Platform only offers recorded courses — no real-time events, seminars, or cohort learning",
+            title: "No Proof of New Skill",
+            pain: "Even after finishing a course, jobseekers had nothing to show Lemondial employers that the skill gap was closed",
             impact:
-              "Learners seeking accountability and interaction leave for competing platforms.",
+              "Talent completed courses but still got filtered out at the same skill-requirement stage.",
             severity: "medium",
           },
           {
             num: "05",
             title: "Fragmented Learning Library",
-            pain: "No unified view of purchased courses and registered events — they live in different places",
+            pain: "No unified view of purchased courses and registered events tied to the jobs a jobseeker was targeting",
             impact:
-              "Learners forget what they've enrolled in. Paid courses sit unwatched.",
+              "Jobseekers forgot which skill gaps they'd already started closing.",
             severity: "medium",
           },
         ],
       },
       {
         type: "heading",
-        label: "04 — Key Screens",
+        label: "04, Key Screens",
         title: "Key Screens Walkthrough",
       },
       {
@@ -962,11 +1243,11 @@ const PROJECTS = [
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "The entry point after launch. A hero banner carousel rotates 3 featured courses with status labels (FEATURED COURSE, NEW THIS WEEK, TRENDING NOW) and a direct enroll CTA. Below: Course Recommendation with BESTSELLER cards (rating + price), Incoming Seminar Events list, Highest Rating Courses, and a Premium upgrade prompt.",
             features: [
-              "Hero carousel with 3 featured courses — each with label, title, subtitle, and CTA",
+              "Hero carousel with 3 featured courses, each with label, title, subtitle, and CTA",
               "Course Recommendation: card grid with BESTSELLER badge, rating, price",
               "Incoming Seminar Events: date, time, title, and venue at a glance",
               "Highest Rating: ranked list with score and category tag",
-              "Premium upgrade prompt — persistent but unobtrusive at bottom",
+              "Premium upgrade prompt, persistent but unobtrusive at bottom",
             ],
           },
           {
@@ -976,9 +1257,9 @@ const PROJECTS = [
             tagColor: "#4F46E5",
             img: "sb-course-detail.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
-            desc: "Full course page for Advanced Figma Pro. Header thumbnail with a PREVIEW button for free sample. Meta strip: 32hrs duration, 24K enrolled, 4.8 rating. Instructor card (Sarah Williams, UI/UX Design Instructor) with '+more'. Three tabs: Materials (course content), Description, Reviews. Course content lists chapters and lessons — locked vs Preview-available. Sticky bottom bar: price + Enroll Now gradient button.",
+            desc: "Full course page for Advanced Figma Pro. Header thumbnail with a PREVIEW button for free sample. Meta strip: 32hrs duration, 24K enrolled, 4.8 rating. Instructor card (Sarah Williams, UI/UX Design Instructor) with '+more'. Three tabs: Materials (course content), Description, Reviews. Course content lists chapters and lessons, locked vs Preview-available. Sticky bottom bar: price + Enroll Now gradient button.",
             features: [
-              "Hero thumbnail with floating PREVIEW button — sample before buying",
+              "Hero thumbnail with floating PREVIEW button, sample before buying",
               "Meta strip: total hours, enrolled count, star rating",
               "Instructor info card with name, title, and '+more' to expand",
               "Materials / Description / Reviews tab switcher",
@@ -992,12 +1273,12 @@ const PROJECTS = [
             tagColor: "#4F46E5",
             img: "sb-checkout.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
-            desc: "Single-page checkout. Course name and price summarized at top. Voucher code input with Apply button. Order summary: Subtotal → Grand Total in bold indigo. Payment Method selector: Card / E-Wallet / Bank — tabs toggle the inline form below. Card form: card number, expiry date, CVC. Full-width 'Pay Rp 200,000' gradient button pinned to bottom.",
+            desc: "Single-page checkout. Course name and price summarized at top. Voucher code input with Apply button. Order summary: Subtotal → Grand Total in bold indigo. Payment Method selector: Card / E-Wallet / Bank, tabs toggle the inline form below. Card form: card number, expiry date, CVC. Full-width 'Pay Rp 200,000' gradient button pinned to bottom.",
             features: [
-              "Course summary card at top — title, instructor, price",
-              "Voucher code field with instant Apply — reflects discount in Grand Total",
+              "Course summary card at top, title, instructor, price",
+              "Voucher code field with instant Apply, reflects discount in Grand Total",
               "Order summary: Subtotal and Grand Total (indigo bold)",
-              "Payment method tabs: Card / E-Wallet / Bank — inline form per method",
+              "Payment method tabs: Card / E-Wallet / Bank, inline form per method",
               "Full-width gradient Pay CTA pinned to bottom of screen",
             ],
           },
@@ -1010,9 +1291,9 @@ const PROJECTS = [
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Explore tab with Courses / Events switcher at top. Search bar for courses and events. Category filter chips: All, Design, Coding, Business, Marketing. Recommended for You: card grid by profile match. Top Instructors: avatar + name + specialty + stats (courses, students). Most Popular: ranked course list below fold.",
             features: [
-              "Courses / Events top tab — toggles between course grid and event list",
+              "Courses / Events top tab, toggles between course grid and event list",
               "Search bar: search courses or events from one input",
-              "Category chips: All, Design, Coding, Business, Marketing — horizontal scroll",
+              "Category chips: All, Design, Coding, Business, Marketing, horizontal scroll",
               "Recommended for You: personalized grid with category badge",
               "Top Instructors: avatar, specialty, course count, student count",
             ],
@@ -1028,9 +1309,9 @@ const PROJECTS = [
             features: [
               "Purchased Courses list: progress bar with % (0%, 30%, 65%, 100%)",
               "Completed course marked with filled purple checkmark",
-              "Resume from last lesson — tap card to re-enter at saved position",
+              "Resume from last lesson, tap card to re-enter at saved position",
               "Registered Events: INCOMING / RUNNING status badge per event",
-              "Event row: date + time, title, location — at a glance",
+              "Event row: date + time, title, location, at a glance",
             ],
           },
           {
@@ -1040,13 +1321,13 @@ const PROJECTS = [
             tagColor: "#4F46E5",
             img: "sb-player.webp",
             url: "https://lillbram.github.io/skillbooster-pwa/",
-            desc: "In-course video player for Full-Stack Web Development. Top: video area with play/pause, timestamp (0:00 / 12:45). Below: course title and instructor. Collapsible Description & Files panel. Materials / Comments tab. Course content accordion by chapter — Chapter 1: Frontend Foundations, Chapter 2: Backend Development. Each lesson shows title, duration, and completion dot.",
+            desc: "In-course video player for Full-Stack Web Development. Top: video area with play/pause, timestamp (0:00 / 12:45). Below: course title and instructor. Collapsible Description & Files panel. Materials / Comments tab. Course content accordion by chapter, Chapter 1: Frontend Foundations, Chapter 2: Backend Development. Each lesson shows title, duration, and completion dot.",
             features: [
               "Video player with play/pause and progress scrubber",
               "Collapsible Description & Files panel below player",
               "Materials / Comments tab switcher",
               "Chapter accordion: grouped lessons with duration per lesson",
-              "Completion dots per lesson — visual progress within the chapter",
+              "Completion dots per lesson, visual progress within the chapter",
             ],
           },
           {
@@ -1058,10 +1339,10 @@ const PROJECTS = [
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Seminar event detail for 'Future of UI/UX in 2025'. Hero banner with UPCOMING SEMINAR badge, event title, host (Design Masters with avatar). Two detail cards side by side: Date & Time (17 Jun, 10:00 PM), Location (Online / Zoom). About Event prose description covering spatial computing, AI-driven interfaces, and accessibility. Price: Free. Sticky CTA: Register Now.",
             features: [
-              "Status badge: UPCOMING SEMINAR in purple pill — top of page",
+              "Status badge: UPCOMING SEMINAR in purple pill, top of page",
               "Host card: organizer name with avatar placeholder",
               "Two-column info strip: Date & Time + Location",
-              "About Event description — full context on what attendees will learn",
+              "About Event description, full context on what attendees will learn",
               "Sticky bottom: Price left (Free / Rp X), Register Now CTA right",
             ],
           },
@@ -1074,7 +1355,7 @@ const PROJECTS = [
             url: "https://lillbram.github.io/skillbooster-pwa/",
             desc: "Profile screen for Jessica Thompson. Avatar with camera icon for photo upload, name, email. Stats row: 3 Courses, 1 Certificate, 2 Events. Menu list: Subscription (Free Plan · Upgrade for unlimited access), Personal Information (Update your details), My Certificates (View your earned certificates), Logout (red label, sign out).",
             features: [
-              "Avatar with camera upload icon — tap to change profile photo",
+              "Avatar with camera upload icon, tap to change profile photo",
               "Stats row: Courses enrolled, Certificates earned, Events registered",
               "Subscription row: current plan + 'Upgrade for unlimited access' prompt",
               "Personal Information: editable name, email, and details",
@@ -1085,7 +1366,7 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "05 — Supporting Decisions",
+        label: "05, Supporting Decisions",
         title: "Key Design Decisions",
       },
       {
@@ -1136,7 +1417,7 @@ const PROJECTS = [
             num: "D1",
             title: "Curated Home Feed",
             why: "A blank catalog forces learners to know what they want before they know what exists",
-            how: "Home shows a featured hero banner, 'New This Week', 'Trending Now', personalized recommendations, and highest-rated picks — each with a single clear CTA.",
+            how: "Home shows a featured hero banner, 'New This Week', 'Trending Now', personalized recommendations, and highest-rated picks, each with a single clear CTA.",
             result:
               "Enrollment from home feed increased 4× vs direct catalog browsing",
           },
@@ -1150,8 +1431,8 @@ const PROJECTS = [
           {
             num: "D3",
             title: "Free Lesson Previews",
-            why: "Learners won't pay for content they haven't sampled — the paywall kills intent",
-            how: "Each course has 2-3 lessons marked 'Preview' — visible before enrollment. Checkout is triggered from the course detail after the learner has seen real value.",
+            why: "Learners won't pay for content they haven't sampled, the paywall kills intent",
+            how: "Each course has 2-3 lessons marked 'Preview', visible before enrollment. Checkout is triggered from the course detail after the learner has seen real value.",
             result:
               "Checkout conversion improved 3× over hard-paywall baseline",
           },
@@ -1175,48 +1456,48 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "06 — Design System",
+        label: "06, Design System",
         title: "The Design System",
       },
       { type: "design-system-skillboost" },
       {
         type: "heading",
-        label: "07 — Results",
+        label: "07, Results",
         title: "Measurable Results",
       },
       {
         type: "impact",
         items: [
           {
-            label: "Discovery Time",
-            before: 8,
-            after: 2,
-            unit: " min",
-            tag: "4× faster",
-            higher_is_better: false,
+            label: "Skill Gap Visibility",
+            before: 15,
+            after: 92,
+            unit: "%",
+            tag: " ",
+            higher_is_better: true,
           },
           {
-            label: "Completion Rate",
-            before: 45,
-            after: 82,
+            label: "Job-Matched Enrollments",
+            before: 20,
+            after: 68,
             unit: "%",
-            tag: "+37 pts",
+            tag: "3.4× more",
             higher_is_better: true,
           },
           {
             label: "Checkout Conversion",
             before: 12,
-            after: 36,
+            after: 34,
             unit: "%",
             tag: "3× better",
             higher_is_better: true,
           },
           {
-            label: "Monthly Enrollments",
-            before: 1.2,
-            after: 3.8,
-            unit: "/user",
-            tag: "3× more",
+            label: "Interview Callback Rate",
+            before: 9,
+            after: 23,
+            unit: "%",
+            tag: "+14 pts",
             higher_is_better: true,
           },
         ],
@@ -1226,32 +1507,129 @@ const PROJECTS = [
   {
     id: "did-you-eat",
     kind: "Real Project",
-    title: "Did You Eat — Meal Tracking App",
+    title: "Did You Eat, Meal Tracking App",
     subtitle: "Mobile PWA · Meal logging & eating habits",
     chips: ["Mobile App", "PWA"],
     role: "Lead Product Designer",
     year: "2025",
-    duration: "12 weeks",
-    team: "1 designer, 3 engineers, 1 PM",
+    duration: "4 weeks",
+    team: "1 designer, 1 engineer, 1 PM",
     cover: "food",
-    coverImg: "did-you-eat.webp",
+    coverImg: "did-you-eat-cover.webp",
     heroImg: "dye-home.webp",
     projectInfo: [
       { l: "Role", v: "Lead Product Designer" },
       { l: "Year", v: "2025" },
-      { l: "Duration", v: "12 weeks" },
-      { l: "Team", v: "1 designer, 3 engineers, 1 PM" },
-      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
+      { l: "Duration", v: "4 weeks" },
+      { l: "Team", v: "1 designer, 1 engineer, 1 PM" },
+      {
+        l: "What I owned",
+        v: "TODO: describe what you personally owned on this project",
+      },
     ],
     accent: "#F97316",
     demo: "https://lillbram.github.io/did-you-eat/",
     summary:
-      "A mobile-first meal tracking PWA that turns food logging into a mindful habit — photo-first logging, feeling-aware entries, and AI-powered reflections that surface patterns people never noticed before.",
+      "Did You Eat is a mobile meal tracking app built for noticing, not judging. Users log a meal with a photo, add how they felt, and get gentle reflections that reveal eating patterns they never noticed before.",
     body: [],
+    contextBreakdown: [
+      {
+        type: "problem-list",
+        title: "The Problems",
+        intro: "People who tried to track their eating kept running into three core problems:",
+        items: [
+          "Logging every meal by hand is slow and repetitive, so the habit dies within a week",
+          "Apps record what was eaten, but not how the person felt when eating",
+          "No visual way to see eating patterns across days or weeks at a glance",
+        ],
+      },
+      {
+        type: "personas",
+        title: "User Persona",
+        intro: "Two types of users shaped the design, each with a different problem.",
+        items: [
+          {
+            name: "Arif",
+            meta: "31 · Account Manager · Jakarta",
+            bio: "Arif spends most of his day in meetings and on the road. He often eats late or skips a meal without noticing, and only feels it when he runs out of energy.",
+            problem: "He tried a food diary before but quit within a week. Typing every meal by hand took too long, so the habit never formed.",
+            solution: "Did You Eat lets him log a meal with one photo in seconds. A gentle reminder checks in when a meal is missed, so skipped breakfasts no longer go unnoticed.",
+          },
+          {
+            name: "Dinda",
+            meta: "25 · Graphic Designer · Bekasi",
+            bio: "Dinda wants to understand her eating habits better. She often snacks when she is stressed or bored, but she is not trying to lose weight.",
+            problem: "Diet apps make her feel judged. Calorie counts and red warnings turn every meal into a score, so she stops opening the app.",
+            solution: "Did You Eat counts no calories. It asks how she felt and why she ate, then shows soft reflections that help her notice her own patterns.",
+          },
+        ],
+      },
+      {
+        type: "narrative",
+        title: "Sketch",
+        imgRows: [
+          ["dye-sketch-1.webp", "dye-sketch-2.webp", "dye-sketch-3.webp"],
+          ["dye-sketch-4.webp", "dye-sketch-5.webp", "dye-sketch-6.webp"],
+        ],
+        fitPanel: true,
+        body: "The sketches and wireframes were created directly in Figma to rapidly explore the fastest possible logging flow before moving into high fidelity design.",
+      },
+      {
+        type: "narrative",
+        title: "Site Construction",
+        img: "dye-site-construction.webp",
+        body: "The app is kept small on purpose. Three destinations sit in the bottom bar: Home for today, the add button for a new log, and Logs for history. Settings and plans stay one level deeper, so the main flow is never more than one tap away.",
+      },
+      {
+        type: "narrative",
+        title: "Design Decision",
+        img: "dye-design-decision.webp",
+        body: "I chose a teal green as the primary color because it feels calm and healthy without the pressure of a diet app. The background is white so food photos stay the hero of every screen. Each meal type has its own color, orange for breakfast, green for lunch, purple for dinner, and coral for snacks, so users can read their day at a glance. For typography I used Inter because it is clean and neutral, and it stays readable at small sizes for times, places, and notes.",
+      },
+      {
+        type: "narrative",
+        title: "Prototype",
+        video: "demo-did-you-eat.mp4",
+        bareImgs: true,
+        body: "I built a clickable prototype to test the full journey, from the first log to the weekly reflection. It lets anyone feel the real flow of the app on their own phone before development starts.",
+        demoNote: "See how Did You Eat was prototyped.",
+      },
+      {
+        type: "feature",
+        title: "Homepage",
+        imgs: ["dye-homepage-1.webp", "dye-homepage-2.webp"],
+        bareImgs: true,
+        galleryMaxWidth: 680,
+        body: "The homepage is designed so users can see their log for today. It is not a progress report or a health checkup, so users never feel judged by what they ate. It simply helps them remember their meals, grouped into Breakfast, Lunch, Dinner, and Snack. Reflections sit below and keep the same tone. They do not judge. They are a soft reminder of what users have been through with their meals so far.",
+      },
+      {
+        type: "feature",
+        title: "Add a Meal Log",
+        imgs: ["dye-addlog-1.webp", "dye-addlog-2.webp"],
+        bareImgs: true,
+        galleryMaxWidth: 680,
+        body: "Logging starts with the camera, because a photo is faster than typing. After the shot, a short form asks for the meal type, the name, the place, and the time. A small reflection follows with two quick questions: how did you feel, and why did you eat this? Users can save the log as a draft and finish it later.",
+      },
+      {
+        type: "feature",
+        title: "Meal Logs",
+        imgs: ["dye-meallogs-1.webp", "dye-meallogs-2.webp"],
+        bareImgs: true,
+        galleryMaxWidth: 680,
+        body: "Logs turn single meals into a picture of the week. The weekly view places each meal on a timeline by hour, so late dinners and skipped breakfasts are easy to spot. The monthly view shows how many meals were logged each day. Tapping any meal opens its photo, extras, feeling, and note.",
+      },
+      {
+        type: "feature",
+        title: "Reflections",
+        img: "dye-homepage-1.webp",
+        bareImgs: true,
+        body: "Reflections describe patterns in plain words, such as breakfast was skipped on three days this week or lunch usually happened around noon. They state what happened and never tell users what to do. In Settings, users choose which reminders and reflections they want, so the app stays helpful without becoming noisy.",
+      },
+    ],
     sections: [
       {
         type: "heading",
-        label: "01 — Outcome",
+        label: "01, Outcome",
         title: "Outcome Summary",
       },
       {
@@ -1285,23 +1663,23 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Context",
+        label: "02, Context",
         title: "The Problem",
       },
       {
         type: "text",
         content:
-          "Most people who try to track their eating give up within a week — not because they lack discipline, but because logging every meal by hand is tedious, joyless, and provides no insight in return. The challenge wasn't building another calorie counter. It was designing a logging experience fast enough to actually use, and meaningful enough to come back to.",
+          "Most people who try to track their eating give up within a week. The reason is not a lack of discipline. Logging every meal by hand is tedious, and the app gives nothing back in return. The challenge was not to build another calorie counter. It was to design a logging experience fast enough to actually use and meaningful enough to come back to.",
       },
       {
         type: "demo-cta",
         url: "https://lillbram.github.io/did-you-eat/",
         label: "Explore Live Demo",
-        note: "Full experience with demo data — no login required",
+        note: "Full experience with demo data, no login required",
       },
       {
         type: "heading",
-        label: "03 — Research",
+        label: "03, Research",
         title: "The Problems",
       },
       {
@@ -1318,7 +1696,7 @@ const PROJECTS = [
           {
             num: "02",
             title: "No Emotional Context",
-            pain: "Apps record what was eaten but not how you felt — tired, stressed, or energised when eating",
+            pain: "Apps record what was eaten but not how you felt, tired, stressed, or energised when eating",
             impact:
               "Logs become a list of facts with no insight. Users can't connect patterns to how they feel.",
             severity: "high",
@@ -1334,7 +1712,7 @@ const PROJECTS = [
           {
             num: "04",
             title: "Missed Meal Awareness",
-            pain: "When a meal is skipped, nothing in the app surfaces it — no history gap, no reminder",
+            pain: "When a meal is skipped, nothing in the app surfaces it, no history gap, no reminder",
             impact:
               "Users don't know which meals they're consistently skipping until habits are already entrenched.",
             severity: "medium",
@@ -1342,7 +1720,7 @@ const PROJECTS = [
           {
             num: "05",
             title: "No Reflection Loop",
-            pain: "Logged data is never synthesised into insight — users must interpret raw history themselves",
+            pain: "Logged data is never synthesised into insight, users must interpret raw history themselves",
             impact:
               "The data collected goes unused. Logging feels pointless without any feedback in return.",
             severity: "medium",
@@ -1351,7 +1729,7 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "04 — Key Screens",
+        label: "04, Key Screens",
         title: "Key Screens Walkthrough",
       },
       {
@@ -1364,13 +1742,13 @@ const PROJECTS = [
             tagColor: "#0F7B6C",
             img: "dye-home.webp",
             url: "https://lillbram.github.io/did-you-eat/",
-            desc: "The daily dashboard. Greeting header shows name and today's date. Meals are grouped by type — Breakfast, Lunch, Dinner, Snack — each as a card showing food emoji, name, location, and time. Reflections section below (Premium badge) shows AI insight cards for Today, This Week, and This Month with period-coloured tags.",
+            desc: "The daily dashboard. Greeting header shows name and today's date. Meals are grouped by type, Breakfast, Lunch, Dinner, Snack, each as a card showing food emoji, name, location, and time. Reflections section below (Premium badge) shows AI insight cards for Today, This Week, and This Month with period-coloured tags.",
             features: [
               "Meals grouped by type: Breakfast, Lunch, Dinner, Snack",
-              "Each card: food emoji thumbnail, name, location, time — right-aligned",
+              "Each card: food emoji thumbnail, name, location, time, right-aligned",
               "Tap any card to open full meal detail",
               "Reflections section: AI insights for Today, This Week, This Month",
-              "Premium badge on Reflections — tap to upgrade",
+              "Premium badge on Reflections, tap to upgrade",
             ],
           },
           {
@@ -1380,13 +1758,13 @@ const PROJECTS = [
             tagColor: "#0F7B6C",
             img: "dye-add-log.webp",
             url: "https://lillbram.github.io/did-you-eat/add-log.html",
-            desc: "Two-step logging flow. Step 1: camera/gallery — tap the + button to capture a food photo or pick from gallery. Step 2: Meal Information form — meal type dropdown (Breakfast / Lunch / Dinner / Snack), food name text field, optional Additional field with '+ Additional Meal', location, date picker, time picker, feeling dropdown. 'Add New Log' teal CTA at the bottom.",
+            desc: "Two-step logging flow. Step 1: camera/gallery, tap the + button to capture a food photo or pick from gallery. Step 2: Meal Information form, meal type dropdown (Breakfast / Lunch / Dinner / Snack), food name text field, optional Additional field with '+ Additional Meal', location, date picker, time picker, feeling dropdown. 'Add New Log' teal CTA at the bottom.",
             features: [
-              "Step 1: camera capture or gallery pick — photo shown as hero",
+              "Step 1: camera capture or gallery pick, photo shown as hero",
               "Meal type dropdown: Breakfast / Lunch / Dinner / Snack",
-              "Food name field: required — 'What did you just eat?'",
+              "Food name field: required, 'What did you just eat?'",
               "Additional Meal field for sides/drinks + '+ Additional Meal' for more",
-              "Date + time pickers pre-filled to current — overridable",
+              "Date + time pickers pre-filled to current, overridable",
             ],
           },
           {
@@ -1398,41 +1776,41 @@ const PROJECTS = [
             url: "https://lillbram.github.io/did-you-eat/",
             desc: "Full meal page for Berries (Breakfast). Large food photo hero at top. Below the sheet: food name + meal type badge (orange pill) + time right-aligned. Location and date row with icons. Additionals section (or 'No additionals'). Reflection section: feeling emoji + label, reason for eating, freeform note. 'Edit Log' teal CTA at bottom.",
             features: [
-              "Hero food photo fills top half — visual recall of the meal",
+              "Hero food photo fills top half, visual recall of the meal",
               "Name + meal type badge + time visible on first row of sheet",
               "Location pin + calendar date icons below name",
               "Reflection: feeling, reason ('I was hungry'), and note ('Fresh start to the morning')",
-              "Edit Log CTA — pre-fills the form for corrections",
+              "Edit Log CTA, pre-fills the form for corrections",
             ],
           },
           {
-            title: "Logs — Weekly",
+            title: "Logs, Weekly",
             subtitle: "Hourly timeline of your day",
             tag: "History",
             tagColor: "#F59E0B",
             img: "dye-logs.webp",
             url: "https://lillbram.github.io/did-you-eat/logs.html",
-            desc: "Weekly log view. Month header with prev/next arrows. Day selector strip (Mon–Sun) with the selected day highlighted in teal. Below: a 24-hour vertical timeline with hourly tick marks. Meals appear at their actual time — card shows food emoji, name, feeling badge, meal type, time, and location. Gaps between meals are immediately visible as blank time slots.",
+            desc: "Weekly log view. Month header with prev/next arrows. Day selector strip (Mon–Sun) with the selected day highlighted in teal. Below: a 24-hour vertical timeline with hourly tick marks. Meals appear at their actual time, card shows food emoji, name, feeling badge, meal type, time, and location. Gaps between meals are immediately visible as blank time slots.",
             features: [
               "Day strip: Mon–Sun with teal highlight on selected day",
-              "24-hour vertical timeline — meals plotted at exact log time",
+              "24-hour vertical timeline, meals plotted at exact log time",
               "Feeling badge inline on every timeline card (colored pill)",
               "Meal type and location shown as secondary text",
               "Tap a card to open full meal detail",
             ],
           },
           {
-            title: "Logs — Monthly",
+            title: "Logs, Monthly",
             subtitle: "Calendar with meal-count badges",
             tag: "History",
             tagColor: "#F59E0B",
             img: "dye-logs-monthly.webp",
             url: "https://lillbram.github.io/did-you-eat/logs.html",
-            desc: "Monthly calendar view — toggle from Weekly. Each date shows a teal circle with a number (2–5) indicating total meals logged that day. Days with no logs are empty circles. Selecting a date expands a list below showing all meals for that day with their feeling badges and time. Today is highlighted with a lighter teal fill.",
+            desc: "Monthly calendar view, toggle from Weekly. Each date shows a teal circle with a number (2–5) indicating total meals logged that day. Days with no logs are empty circles. Selecting a date expands a list below showing all meals for that day with their feeling badges and time. Today is highlighted with a lighter teal fill.",
             features: [
               "Calendar grid: Mon–Sun columns, all dates in current month",
               "Teal circle badge per day showing total meal count (2–5)",
-              "Empty circle = no meals logged that day — gaps at a glance",
+              "Empty circle = no meals logged that day, gaps at a glance",
               "Tap date → expands list of meals below with feeling + time",
               "Today highlighted with light teal fill on the date cell",
             ],
@@ -1444,12 +1822,12 @@ const PROJECTS = [
             tagColor: "#6B7280",
             img: "dye-settings.webp",
             url: "https://lillbram.github.io/did-you-eat/settings.html",
-            desc: "Settings screen split into two sections. Account: avatar, name, email (editable), password update, Export My Logs (download history), Erase My Logs. Logging Preference: four toggles — Camera First (show camera on open), Auto Time Meal (auto-detect Breakfast/Lunch/Dinner by time), Meal Reminder (timed alerts), Missed Meal Check (alert when a meal type was skipped). AI as Partner (Premium) at bottom.",
+            desc: "Settings screen split into two sections. Account: avatar, name, email (editable), password update, Export My Logs (download history), Erase My Logs. Logging Preference: four toggles, Camera First (show camera on open), Auto Time Meal (auto-detect Breakfast/Lunch/Dinner by time), Meal Reminder (timed alerts), Missed Meal Check (alert when a meal type was skipped). AI as Partner (Premium) at bottom.",
             features: [
-              "Account: name, email, password — all editable via bottom sheets",
+              "Account: name, email, password, all editable via bottom sheets",
               "Export My Logs: download full history as file",
-              "Camera First toggle — pre-selects camera or gallery on Add Log open",
-              "Auto Time Meal — auto-assigns meal type based on time of day",
+              "Camera First toggle, pre-selects camera or gallery on Add Log open",
+              "Auto Time Meal, auto-assigns meal type based on time of day",
               "AI as Partner (Premium): meal guessing + reflective conversation",
             ],
           },
@@ -1457,7 +1835,7 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "05 — Supporting Decisions",
+        label: "05, Supporting Decisions",
         title: "Key Design Decisions",
       },
       {
@@ -1507,7 +1885,7 @@ const PROJECTS = [
           {
             num: "D1",
             title: "Photo-First Logging",
-            why: "Text input is the slowest possible start — users give up before they've even started the form",
+            why: "Text input is the slowest possible start, users give up before they've even started the form",
             how: "Add Log opens the camera immediately. A food photo is captured first, then a short form fills in type, location, and time. Name is the only required text field.",
             result:
               "Average log time dropped from 2–3 minutes to under 30 seconds in testing",
@@ -1523,7 +1901,7 @@ const PROJECTS = [
           {
             num: "D3",
             title: "Timeline + Calendar Views",
-            why: "A flat list of meals gives no sense of time — when you ate is as important as what you ate",
+            why: "A flat list of meals gives no sense of time, when you ate is as important as what you ate",
             how: "Logs shows a weekly timeline with hourly slots so gaps between meals are immediately visible. Monthly calendar view shows a meal-count badge per day.",
             result:
               "Pattern awareness self-reported improved 3× vs prior flat-log apps in user studies",
@@ -1532,14 +1910,14 @@ const PROJECTS = [
             num: "D4",
             title: "AI Reflections (Premium)",
             why: "Raw logs provide data; users need interpretation. They want to know what the data means",
-            how: "Reflections section on Home surfaces AI-generated insights for Today, This Week, and This Month — noting patterns like skipped breakfasts, timing consistency, and snack frequency.",
+            how: "Reflections section on Home surfaces AI-generated insights for Today, This Week, and This Month, noting patterns like skipped breakfasts, timing consistency, and snack frequency.",
             result:
               "Premium Reflections was the top reason users cited for upgrading in exit surveys",
           },
           {
             num: "D5",
             title: "Smart Logging Preferences",
-            why: "One logging behaviour doesn't fit everyone — some want camera first, others prefer the form",
+            why: "One logging behaviour doesn't fit everyone, some want camera first, others prefer the form",
             how: "Settings lets users toggle Camera First, Auto Time Meal (auto-sets type by time of day), Meal Reminders, and Missed Meal Check. All on by default except reminders.",
             result:
               "Personalisation reduced support requests about default behaviour by 80%",
@@ -1548,13 +1926,13 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "06 — Design System",
+        label: "06, Design System",
         title: "The Design System",
       },
       { type: "design-system-dye" },
       {
         type: "heading",
-        label: "07 — Results",
+        label: "07, Results",
         title: "Measurable Results",
       },
       {
@@ -1599,31 +1977,34 @@ const PROJECTS = [
   {
     id: "pawsuite",
     kind: "Real Project",
-    title: "PawSuite — Multi-Role Pet Grooming SaaS",
+    title: "PawSuite, Multi-Role Pet Grooming SaaS",
     subtitle: "SaaS platform · Grooming salon operations",
     chips: ["Dashboard", "SaaS"],
     role: "Product Designer",
     year: "2026",
-    duration: "12 weeks",
-    team: "1 designer, 1 engineers, 1 PM",
+    duration: "10 weeks",
+    team: "1 designer, 3 engineers, 1 PM",
     cover: "dashboard",
     coverImg: "pawsuite-owner-dashboard.webp",
     projectInfo: [
       { l: "Role", v: "Product Designer" },
       { l: "Year", v: "2026" },
-      { l: "Duration", v: "12 weeks" },
-      { l: "Team", v: "1 designer, 1 engineers, 1 PM" },
-      { l: "What I owned", v: "TODO: describe what you personally owned on this project" },
+      { l: "Duration", v: "10 weeks" },
+      { l: "Team", v: "1 designer, 3 engineers, 1 PM" },
+      {
+        l: "What I owned",
+        v: "TODO: describe what you personally owned on this project",
+      },
     ],
     accent: "#0D9488",
     demo: "https://lillbram.github.io/pawsuite/",
     summary:
-      "A multi-role SaaS platform for pet grooming businesses — one system that runs the front desk, the groomer's day, and the pet owner's booking experience without duct-taping three separate tools together.",
+      "A multi-role SaaS platform for pet grooming businesses, one system that runs the front desk, the groomer's day, and the pet owner's booking experience without duct-taping three separate tools together.",
     body: [],
     sections: [
       {
         type: "heading",
-        label: "01 — Outcome",
+        label: "01, Outcome",
         title: "Outcome Summary",
       },
       {
@@ -1657,23 +2038,23 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "02 — Context",
+        label: "02, Context",
         title: "The Problem",
       },
       {
         type: "text",
         content:
-          "Independent grooming salons were running on a patchwork of paper appointment books, group chats, and spreadsheet invoices. Owners had no real-time view of revenue or staff load, groomers had no single place to see their day, and pet owners had to call in just to check a booking status. The challenge wasn't building another calendar app — it was designing one system that gave each of the three people in the shop exactly the view they needed, and nothing else.",
+          "Independent grooming salons were running on a patchwork of paper appointment books, group chats, and spreadsheet invoices. Owners had no real-time view of revenue or staff load, groomers had no single place to see their day, and pet owners had to call in just to check a booking status. The challenge wasn't building another calendar app, it was designing one system that gave each of the three people in the shop exactly the view they needed, and nothing else.",
       },
       {
         type: "demo-cta",
         url: "https://lillbram.github.io/pawsuite/",
         label: "Explore Live Demo",
-        note: "Owner, staff, and client portals — no login required",
+        note: "Owner, staff, and client portals, no login required",
       },
       {
         type: "heading",
-        label: "03 — Research",
+        label: "03, Research",
         title: "The Problems",
       },
       {
@@ -1682,7 +2063,7 @@ const PROJECTS = [
           {
             num: "01",
             title: "No Shared Schedule",
-            pain: "Bookings lived in a paper diary or a shared phone — double-bookings were routine",
+            pain: "Bookings lived in a paper diary or a shared phone, double-bookings were routine",
             impact:
               "Lost revenue from missed slots, and frustrated clients turned away at the door.",
             severity: "high",
@@ -1698,7 +2079,7 @@ const PROJECTS = [
           {
             num: "03",
             title: "Groomers Flying Blind",
-            pain: "Staff had no single view of their day — appointments were relayed verbally each morning",
+            pain: "Staff had no single view of their day, appointments were relayed verbally each morning",
             impact:
               "Missed prep time for tricky pets, and no record of medical notes between visits.",
             severity: "high",
@@ -1723,7 +2104,7 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "04 — Key Screens",
+        label: "04, Key Screens",
         title: "Key Screens Walkthrough",
       },
       {
@@ -1736,7 +2117,7 @@ const PROJECTS = [
             tagColor: "#0D9488",
             img: "pawsuite-owner-dashboard.webp",
             url: "https://lillbram.github.io/pawsuite/owner/dashboard.html",
-            desc: "The owner's home base. Four stat cards — Total Clients, Total Pets, Bookings This Month, Revenue This Month — sit above a live Today's Schedule and a list of Upcoming Bookings, so the owner sees the whole shop's day without opening a single report.",
+            desc: "The owner's home base. Four stat cards, Total Clients, Total Pets, Bookings This Month, Revenue This Month, sit above a live Today's Schedule and a list of Upcoming Bookings, so the owner sees the whole shop's day without opening a single report.",
             features: [
               "4 stat cards: Total Clients, Total Pets, Bookings This Month, Revenue",
               "Today's Schedule with time, client, pet, service, and live status",
@@ -1752,10 +2133,10 @@ const PROJECTS = [
             tagColor: "#0D9488",
             img: "pawsuite-owner-bookings.webp",
             url: "https://lillbram.github.io/pawsuite/owner/bookings/index.html",
-            desc: "The full scheduling engine. Bookings render as color-coded rows by time slot, filterable by store, staff, and status — with live counts for Pending, Confirmed, In Progress, Completed, Cancelled, and No Show right in the filter bar.",
+            desc: "The full scheduling engine. Bookings render as color-coded rows by time slot, filterable by store, staff, and status, with live counts for Pending, Confirmed, In Progress, Completed, Cancelled, and No Show right in the filter bar.",
             features: [
               "Day / Week / Month / List view switcher",
-              "Filter by store, staff, and date — with a searchable client field",
+              "Filter by store, staff, and date, with a searchable client field",
               "Status tabs with live counts (Confirmed 3, In Progress 5, Completed 4…)",
               "Each row shows time, client + pet, service, staff, store, price, and duration",
               "+ New Booking CTA pinned top-right in every view",
@@ -1800,10 +2181,10 @@ const PROJECTS = [
             tagColor: "#0EA5E9",
             img: "pawsuite-owner-invoices.webp",
             url: "https://lillbram.github.io/pawsuite/owner/invoices/index.html",
-            desc: "Three headline numbers — Outstanding, Overdue, Collected — sit above a full invoice ledger. Overdue invoices are visually flagged in red so nothing slips through at month-end.",
+            desc: "Three headline numbers, Outstanding, Overdue, Collected, sit above a full invoice ledger. Overdue invoices are visually flagged in red so nothing slips through at month-end.",
             features: [
               "Outstanding, Overdue, and Collected totals with invoice counts",
-              "Status tabs: Draft, Unpaid, Overdue, Paid, Cancelled — each with live counts",
+              "Status tabs: Draft, Unpaid, Overdue, Paid, Cancelled, each with live counts",
               "Per-invoice: number, client, service, issued date, due date, total, status",
               "Overdue rows highlighted with a red flag and days-overdue label",
               "+ New Invoice CTA and searchable invoice/client lookup",
@@ -1819,7 +2200,7 @@ const PROJECTS = [
             desc: "The owner's decision-making hub. Revenue, all-time revenue, bookings, and completion rate lead the page, backed by a 6-month revenue chart, a bookings-by-status breakdown, top services by revenue, and top clients by spend.",
             features: [
               "Date range presets: Today, Last 7/30 Days, This Month, Custom Range",
-              "Revenue — This Month vs last month, with trend arrow",
+              "Revenue, This Month vs last month, with trend arrow",
               "6-month revenue bar chart and Bookings by Status progress bars",
               "Top Services by Revenue table, ranked by bookings and revenue",
               "Top Clients by Spend, with invoice count per client",
@@ -1832,7 +2213,7 @@ const PROJECTS = [
             tagColor: "#F59E0B",
             img: "pawsuite-staff-dashboard.webp",
             url: "https://lillbram.github.io/pawsuite/staff/dashboard.html",
-            desc: "A groomer's entire day in one screen. Four stat tiles — Today, This Week, Completed, Upcoming — sit above a live Today's Appointments list and a Coming Up preview, so staff never need to ask the front desk what's next.",
+            desc: "A groomer's entire day in one screen. Four stat tiles, Today, This Week, Completed, Upcoming, sit above a live Today's Appointments list and a Coming Up preview, so staff never need to ask the front desk what's next.",
             features: [
               "4 stat tiles: Today, This Week, Completed, Upcoming",
               "Today's Appointments with time, client, pet, service, and status",
@@ -1861,7 +2242,7 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "05 — Supporting Decisions",
+        label: "05, Supporting Decisions",
         title: "Key Design Decisions",
       },
       {
@@ -1920,7 +2301,7 @@ const PROJECTS = [
             num: "D2",
             title: "Booking Board with Status Color",
             why: "A day full of appointments is unreadable as a flat list once volume grows",
-            how: "Bookings render as color-coded blocks — pending, confirmed, in progress, completed — filterable by store and staff, switchable between Day, Week, Month, and List.",
+            how: "Bookings render as color-coded blocks, pending, confirmed, in progress, completed, filterable by store and staff, switchable between Day, Week, Month, and List.",
             result:
               "Front desk staff scan a full day's status in under 5 seconds",
           },
@@ -1935,7 +2316,7 @@ const PROJECTS = [
           {
             num: "D4",
             title: "Groomer-First Daily Dashboard",
-            why: "Staff don't need the whole back office — they need today, and what's next",
+            why: "Staff don't need the whole back office, they need today, and what's next",
             how: "Staff dashboard leads with 4 stat tiles (Today, This Week, Completed, Upcoming) and a live appointment list, with one tap into client and pet history.",
             result:
               "Staff onboarding time to first solo shift dropped significantly",
@@ -1944,7 +2325,7 @@ const PROJECTS = [
             num: "D5",
             title: "Pet Profile as the System of Record",
             why: "Medical notes and preferences are only useful if every groomer sees the same ones",
-            how: "Every pet has a persistent profile — breed, age, weight, medical notes, vaccination status — visible to any staff member handling that booking.",
+            how: "Every pet has a persistent profile, breed, age, weight, medical notes, vaccination status, visible to any staff member handling that booking.",
             result:
               "Medical flags (like Buddy's hip dysplasia note) surface before every visit",
           },
@@ -1952,13 +2333,13 @@ const PROJECTS = [
       },
       {
         type: "heading",
-        label: "06 — Design System",
+        label: "06, Design System",
         title: "The Design System",
       },
       { type: "design-system-pawsuite" },
       {
         type: "heading",
-        label: "07 — Results",
+        label: "07, Results",
         title: "Measurable Results",
       },
       {
@@ -2000,6 +2381,145 @@ const PROJECTS = [
       },
     ],
   },
+  {
+    id: "prove-fit",
+    kind: "Real Project",
+    title: "Prove Fit, Fitness Class Booking App",
+    subtitle: "Mobile App · Fitness class booking",
+    chips: ["Mobile App"],
+    role: "Product Designer",
+    year: "2026",
+    duration: "9 weeks",
+    team: "1 designer, 3 engineers, 1 PM",
+    cover: "fitness",
+    coverImg: "prove-fit-cover.webp",
+    projectInfo: [
+      { l: "Role", v: "Product Designer" },
+      { l: "Year", v: "2026" },
+      { l: "Duration", v: "9 weeks" },
+      { l: "Team", v: "1 designer, 3 engineers, 1 PM" },
+      {
+        l: "What I owned",
+        v: "TODO: describe what you personally owned on this project",
+      },
+    ],
+    accent: "#00D0E7",
+    demo: "https://lillbram.github.io/provefit-app/",
+    demoBtnColor: "#00D0E7",
+    demoBtnTextColor: "#161B22",
+    summary:
+      "Prove Fit is a mobile app that helps people book fitness classes such as Poundfit, yoga, Zumba, and HIIT at nearby gyms. Users find a class, reserve a spot, check in with a QR code, and track their workout with a smartwatch.",
+    body: [],
+    contextBreakdown: [
+      {
+        type: "problem-list",
+        title: "The Problems",
+        intro: "People who want to join a fitness class kept running into three core problems:",
+        items: [
+          "Class schedules are scattered across chat groups and social media, so it is hard to compare options",
+          "Booking a spot means messaging the studio, waiting for a reply, then queuing at the front desk",
+          "After class there is no record of the workout, so progress is hard to see",
+        ],
+      },
+      {
+        type: "personas",
+        title: "User Persona",
+        intro: "Two types of users shaped the design, each with a different problem.",
+        items: [
+          {
+            name: "Nadia",
+            meta: "27 · Marketing Executive · Jakarta",
+            bio: "Nadia works from nine to six and wants to stay active after work. She enjoys group classes like Zumba and Poundfit because they are fun and social.",
+            problem: "Finding a class that fits her schedule takes too long. Schedules are spread across chat groups and social media, and she has to message each studio to ask if a spot is still open.",
+            solution: "Prove Fit shows nearby classes in one place, with time slots and spots left. Nadia books and pays in seconds, then checks in at the gym with a QR code.",
+          },
+          {
+            name: "Reza",
+            meta: "34 · Software Engineer · Jakarta",
+            bio: "Reza joins yoga and HIIT classes three times a week to stay healthy. He likes numbers and wants to know that his effort is paying off.",
+            problem: "After class nothing is recorded. He cannot see his progress from week to week, so his motivation slowly drops.",
+            solution: "Prove Fit connects to his smartwatch during class and tracks heart rate, calories, and duration. After each session he gets a summary he can compare with his average.",
+          },
+        ],
+      },
+      {
+        type: "narrative",
+        title: "Sketch",
+        imgRows: [
+          [
+            "pf-sketch-1.webp",
+            "pf-sketch-2.webp",
+            "pf-sketch-3.webp",
+            "pf-sketch-4.webp",
+          ],
+          [
+            "pf-sketch-5.webp",
+            "pf-sketch-6.webp",
+            "pf-sketch-7.webp",
+            "pf-sketch-8.webp",
+          ],
+        ],
+        fitPanel: true,
+        body: "The sketches and wireframes were created directly in Figma to rapidly explore the booking flow, from finding a class to payment, before moving into high fidelity design.",
+      },
+      {
+        type: "narrative",
+        title: "Site Construction",
+        img: "pf-site-construction.webp",
+        body: "The app is built around four main tabs: Home, Search, Schedule, and Profile. Each tab answers one question: what is next, what can I join, what did I book, and how do I manage my account. Users always know where they are.",
+      },
+      {
+        type: "narrative",
+        title: "Design Decision",
+        img: "pf-design-decision.webp",
+        body: "I chose a bright cyan as the primary color because it feels fresh and energetic, which matches the mood of a workout without looking aggressive. It marks every key action such as Book this class and Confirm and Pay. The background is white so class photos, prices, and schedules stay easy to read. Status colors do the rest of the work: green for confirmed, orange for in progress, and red for classes that are almost full. For typography I used Plus Jakarta Sans. Its rounded shapes feel friendly and sporty, and it stays readable at small sizes for times, prices, and spots left.",
+      },
+      {
+        type: "narrative",
+        title: "Prototype",
+        video: "prove-fit-flow.mp4",
+        bareImgs: true,
+        body: "I built a clickable prototype to test the full journey, from onboarding to booking, check in, and the workout summary. It lets anyone feel the real flow of the app on their own phone before development starts.",
+        demoNote: "See how Prove Fit was prototyped.",
+      },
+      {
+        type: "feature",
+        title: "Homepage",
+        img: "pf-home-1.webp",
+        bareImgs: true,
+        body: "The homepage gives users a quick view of their fitness life. It opens with four progress stats: classes this month, total workout hours, calories burned, and attendance rate. Below that, the upcoming class sits one tap away, followed by current offers and recommended classes.",
+      },
+      {
+        type: "feature",
+        title: "Find and Book a Class",
+        imgs: ["pf-book-1.webp", "pf-book-2.webp", "pf-book-3.webp"],
+        bareImgs: true,
+        body: "Search lets users browse by category, see nearby gyms with distance and rating, and filter by class type, level, time, price, and rating. On the class page, users pick a day and a time slot and see how many spots are left before they commit. Payment takes one screen, and users can add more classes from the same gym before they pay.",
+      },
+      {
+        type: "feature",
+        title: "QR Check In",
+        imgs: ["pf-checkin-1.webp", "pf-checkin-2.webp", "pf-checkin-3.webp"],
+        bareImgs: true,
+        body: "After booking, every class lives in the Schedule tab with a clear status: not started, in progress, or completed. Users can set a reminder before class. At the gym, they open the class, show the QR code or booking code at reception, and check in without waiting in line.",
+      },
+      {
+        type: "feature",
+        title: "Workout Tracking",
+        imgs: ["pf-tracking-1.webp?v=2", "pf-tracking-2.webp"],
+        bareImgs: true,
+        galleryMaxWidth: 680,
+        body: "Once checked in, users can connect their smartwatch to follow heart rate, calories, steps, and duration live during class. When the session ends, the app shows an activity summary with heart rate zones and compares it with their average workout. Users can share the result to social media in one tap.",
+      },
+    ],
+    sections: [
+      {
+        type: "text",
+        content:
+          "Joining a fitness class usually takes more effort than the workout itself. Schedules live in different places, booking happens over chat, and nothing connects the class to the progress people want to see. The challenge was to bring discovery, booking, check in, and tracking into one simple flow.",
+      },
+    ],
+  },
 ];
 
 const SERVICES = [
@@ -2029,12 +2549,12 @@ const EXPERIENCE = [
   {
     co: "Cakra Radha Mustika (Kalbe)",
     role: "Product Designer",
-    dates: "April 2023 — Now",
+    dates: "April 2023, Now",
   },
   {
     co: "Lakuemas Indonesia",
     role: "Product Manager",
-    dates: "Aug 2022 — Mar 2023",
+    dates: "Aug 2022, Mar 2023",
   },
   {
     co: "Lemondial Career.",

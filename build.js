@@ -6,7 +6,7 @@
 const esbuild = require("esbuild");
 const fs = require("fs");
 
-const files = ["tweaks-panel", "icons", "data", "projectDetail", "app"];
+const files = ["tweaks-panel", "icons", "data", "projectDetail", "app", "v2"];
 
 fs.mkdirSync("dist", { recursive: true });
 
