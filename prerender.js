@@ -82,7 +82,7 @@ for (const p of projects) {
   const title = `${p.title} — Bob Ellson`;
   const description = p.summary || p.subtitle || `${p.title} — a case study by Bob Ellson.`;
   const canonicalUrl = `${SITE}/project/${p.id}/`;
-  const ogImage = p.coverImg ? `${SITE}/${p.coverImg}` : `${SITE}/hero-image.png`;
+  const ogImage = p.coverImg ? `${SITE}/${p.coverImg}` : `${SITE}/og-cover.jpg`;
   const html = buildHead(indexHtml, { title, description, canonicalUrl, ogImage });
   writeShell(`project/${p.id}`, html);
 }
@@ -93,12 +93,35 @@ writeShell(
     title: "All Work — Bob Ellson",
     description: "Every project by Bob Ellson, Product Designer — UI/UX, SaaS dashboards, mobile apps, and branding.",
     canonicalUrl: `${SITE}/work/`,
-    ogImage: `${SITE}/hero-image.png`,
+    ogImage: `${SITE}/og-cover.jpg`,
   })
 );
 
+writeShell(
+  "about",
+  buildHead(indexHtml, {
+    title: "About, Skills & Experience — Bob Ellson",
+    description: "About Bob Ellson, Product Designer: experience, skills, and the tools behind his UI/UX, SaaS, and mobile app work.",
+    canonicalUrl: `${SITE}/about/`,
+    ogImage: `${SITE}/og-cover.jpg`,
+  })
+);
+
+// GitHub Pages serves /404.html for any unknown path. It is the same app
+// shell, so the client router can show its own "Page not found" view.
+fs.writeFileSync(
+  path.join(root, "404.html"),
+  buildHead(indexHtml, {
+    title: "Page not found — Bob Ellson",
+    description: "This page does not exist.",
+    canonicalUrl: `${SITE}/`,
+    ogImage: `${SITE}/og-cover.jpg`,
+  }).replace("<head>", '<head>\n  <meta name="robots" content="noindex" />')
+);
+console.log("wrote 404.html");
+
 // Sitemap: home + one entry per generated route.
-const urls = [SITE + "/", SITE + "/work/", ...projects.map((p) => `${SITE}/project/${p.id}/`)];
+const urls = [SITE + "/", SITE + "/work/", SITE + "/about/", ...projects.map((p) => `${SITE}/project/${p.id}/`)];
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n` +
   `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

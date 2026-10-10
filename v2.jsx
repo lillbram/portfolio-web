@@ -24,7 +24,7 @@ function leadTag(project) {
   const stats = getSection(project, "stats");
   if (!stats || !stats.items.length) return null;
   const s = stats.items[0];
-  return `${s.value} ${s.label}`;
+  return `Est. ${s.value} ${s.label}`;
 }
 
 /* ── shared: Header ── */
@@ -39,6 +39,8 @@ function HeaderNavV2({ route, onNav }) {
   // Over the home hero the bar is transparent with white text; once the hero
   // has scrolled up behind it, it goes back to the solid white bar.
   const barRef = React.useRef(null);
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  React.useEffect(() => { setMenuOpen(false); }, [route]);
   const [overHero, setOverHero] = React.useState(route === "home");
   React.useEffect(() => {
     if (route !== "home") { setOverHero(false); return; }
@@ -53,15 +55,15 @@ function HeaderNavV2({ route, onNav }) {
     return () => { window.removeEventListener("scroll", check); window.removeEventListener("resize", check); };
   }, [route]);
   return (
-    <div ref={barRef} className={"v2-header" + (route === "home" ? " v2-header--fixed" : "") + (overHero ? " v2-header--over-hero" : "")}>
+    <div ref={barRef} className={"v2-header" + (route === "home" ? " v2-header--fixed" : "") + (overHero && !menuOpen ? " v2-header--over-hero" : "")}>
       <a href="/" className="v2-logo" onClick={(e) => onNav(e, "/")}>Bob Ellson</a>
-      <div className="v2-nav-links">
+      <div className={"v2-nav-links" + (menuOpen ? " open" : "")}>
         {links.map((l, i) => (
           <a
             key={i}
             href={l.href}
             className={route === l.id ? "active" : ""}
-            onClick={(e) => onNav(e, l.href)}
+            onClick={(e) => { setMenuOpen(false); onNav(e, l.href); }}
           >
             {l.label}
           </a>
@@ -71,6 +73,11 @@ function HeaderNavV2({ route, onNav }) {
         <span className="v2-status-dot" />
         Open to work
       </span>
+      <button type="button" className="v2-menu-btn" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+          {menuOpen ? <><path d="M6 6 L18 18" /><path d="M18 6 L6 18" /></> : <><path d="M4 7 H20" /><path d="M4 12 H20" /><path d="M4 17 H20" /></>}
+        </svg>
+      </button>
     </div>
   );
 }
@@ -88,20 +95,23 @@ function FooterV2() {
             Currently looking for Senior Product Designer roles or consulting opportunities. Based in Jakarta, Indonesia. Open to remote.
           </p>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 24, minWidth: 280 }}>
+        <div className="v2-footer-contact" style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <p style={{ fontSize: 18, fontWeight: 600, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--v2-mist)", margin: 0 }}>
             Contact &amp; Socials
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <a href="mailto:abrahambobellson@gmail.com" style={{ fontSize: 26, fontWeight: 500 }}>
+            <a href="mailto:abrahambobellson@gmail.com" className="v2-footer-email" style={{ fontWeight: 500 }}>
               abrahambobellson@gmail.com
             </a>
             <div style={{ display: "flex", gap: 8 }}>
-              {["in", "Be"].map((label, i) => (
-                <span key={i} style={{
+              {[
+                { label: "in", name: "LinkedIn", href: "https://www.linkedin.com/in/ellson-l-muda/" },
+                { label: "Be", name: "Behance", href: "https://www.behance.net/abrahamellson" },
+              ].map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name} title={s.name} style={{
                   width: 30, height: 30, borderRadius: 4, background: "white", color: "var(--v2-deep-forest)",
                   display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 800
-                }}>{label}</span>
+                }}>{s.label}</a>
               ))}
             </div>
           </div>
@@ -143,7 +153,7 @@ function HomeV2({ projects, onOpen, onNav }) {
           <h1 className="v2-hero-title">Product Designer<br />UI/UX</h1>
         </div>
         <p className="v2-hero-sub">
-          I turn complex user research &amp; requirements into simple and elegant, as high converting revenue channels.
+          I turn complex user research &amp; requirements into simple, elegant products that convert.
         </p>
         <div className="v2-hero-ctas">
           <a href="/work/" className="v2-btn-primary" onClick={(e) => onNav(e, "/work/")}>View Work</a>
@@ -178,7 +188,7 @@ function HomeV2({ projects, onOpen, onNav }) {
       <div className="v2-contact-band">
         <div className="v2-container v2-contact">
           <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 24 }}>
-            <h2 style={{ fontSize: 62, fontWeight: 800, color: "var(--v2-deep-forest)", margin: 0 }}>
+            <h2 style={{ fontSize: "clamp(36px, 8vw, 62px)", fontWeight: 800, color: "var(--v2-deep-forest)", margin: 0 }}>
               Have a project in mind?
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--v2-slate)", margin: 0 }}>
@@ -363,7 +373,7 @@ function CaseStudyV2({ project, projects, onOpen }) {
     <div className="v2-container" style={{ paddingBottom: 48 }}>
       {/* Hero */}
       <div style={{ padding: "96px 0 0" }}>
-        <h1 style={{ fontSize: 62, fontWeight: 800, color: "var(--v2-deep-forest)", margin: "0 0 16px" }}>
+        <h1 style={{ fontSize: "clamp(36px, 8vw, 62px)", fontWeight: 800, color: "var(--v2-deep-forest)", margin: "0 0 16px" }}>
           {shortTitle(project)}
         </h1>
         {project.platforms && (
@@ -381,6 +391,7 @@ function CaseStudyV2({ project, projects, onOpen }) {
           : <div className="v2-cs-cover v2-cover-empty" style={{ marginTop: 32, aspectRatio: "16/8" }}><span>Cover image placeholder</span></div>}
         {lead && (
           <div className="v2-cs-banner">
+            <div className="v2-eyebrow" style={{ marginBottom: 6 }}>Estimated impact</div>
             <div style={{ fontSize: 42, fontWeight: 800, color: "var(--v2-deep-forest)" }}>{lead.value} {lead.label}</div>
             <div style={{ fontSize: 20, color: "var(--v2-slate)", marginTop: 6 }}>{lead.sub}</div>
           </div>
@@ -425,8 +436,11 @@ function CaseStudyV2({ project, projects, onOpen }) {
       {impact && (
         <div style={{ padding: "64px 0", borderTop: "1px solid var(--v2-border)" }}>
           <h2 style={{ fontSize: 36, fontWeight: 800, color: "var(--v2-deep-forest)", margin: 0 }}>
-            Outcomes &amp; Business Impact
+            Outcomes
           </h2>
+          <p className="v2-ctx-intro" style={{ marginTop: 12, marginBottom: 0 }}>
+            Estimated impact of the design.
+          </p>
           <div className={"v2-cs-stat-row" + (impact.items.length === 3 ? " v2-cs-stat-row--3" : "")}>
             {impact.items.map((it, i) => (
               <div key={i} className="v2-cs-stat">
@@ -465,21 +479,16 @@ function CaseStudyV2({ project, projects, onOpen }) {
   );
 }
 
-/* ── Page: About / Experience ──
-   DRAFT COPY: the Skills grid + Tools row below are the Figma file's
-   generic template content (it references fictional case studies like
-   "Checkout Flow Reimagination" that aren't real projects) — kept here
-   as placeholder structure/copy to review the layout, not as claims
-   about Bob's actual skills. Swap before shipping. */
+/* ── Page: About / Experience ── */
 const SKILL_ICONS = {
   "User Research": <><circle cx="20" cy="20" r="13" /><path d="M30 30 L42 42" /><circle cx="20" cy="16" r="4" /><path d="M12.5 27 C14 22 26 22 27.5 27" /></>,
-  "Prototyping": <><rect x="4" y="8" width="16" height="14" rx="2" /><rect x="28" y="26" width="16" height="14" rx="2" /><path d="M20 15 H32 A4 4 0 0 1 36 19 V25" /><path d="M32 21 L36 25 L40 21" /></>,
   "UI Design": <><rect x="5" y="8" width="38" height="32" rx="3" /><path d="M5 17 H43" /><rect x="10" y="22" width="12" height="13" rx="1.5" /><path d="M27 23 H38" /><path d="M27 29 H38" /><path d="M27 35 H34" /></>,
   "Design Systems": <><rect x="7" y="7" width="14" height="14" rx="2" /><circle cx="34" cy="14" r="7" /><path d="M14 27 L21 41 H7 Z" /><path d="M34 26 L42 34 L34 42 L26 34 Z" /></>,
-  "Roadmapping": <><path d="M8 38 C8 28 22 34 22 24 C22 14 40 20 40 10" /><circle cx="8" cy="38" r="3" /><circle cx="22" cy="24" r="2.5" /><circle cx="40" cy="10" r="3" /></>,
-  "Prioritization Frameworks": <><path d="M6 12 H30" /><path d="M6 24 H22" /><path d="M6 36 H14" /><path d="M40 10 V38" /><path d="M35 33 L40 38 L45 33" /></>,
-  "Metrics & Analytics": <><path d="M7 7 V41 H41" /><rect x="13" y="27" width="6" height="10" /><rect x="23" y="21" width="6" height="16" /><rect x="33" y="13" width="6" height="24" /></>,
-  "Stakeholder Alignment": <><circle cx="24" cy="15" r="5" /><path d="M14 38 C14 28 34 28 34 38" /><circle cx="9.5" cy="19" r="3.5" /><path d="M3 36 C3 30 10 28 13 31" /><circle cx="38.5" cy="19" r="3.5" /><path d="M45 36 C45 30 38 28 35 31" /></>,
+  "Advanced Prototyping": <><rect x="15" y="4" width="18" height="40" rx="4" /><path d="M21 9 H27" /><path d="M20 30 L24 21 L28 30" /><path d="M21.5 27 H26.5" /><path d="M6 18 L10 24 L6 30" /><path d="M42 18 L38 24 L42 30" /></>,
+  "Vibe Coding": <><path d="M14 16 L5 25 L14 34" /><path d="M26 16 L35 25 L26 34" /><path d="M39 4 L40.8 9.2 L46 11 L40.8 12.8 L39 18 L37.2 12.8 L32 11 L37.2 9.2 Z" /><path d="M20 38 H32" /></>,
+  "Front End Skills": <><rect x="4" y="8" width="40" height="32" rx="3" /><path d="M4 17 H44" /><path d="M18 23 L12 29 L18 35" /><path d="M30 23 L36 29 L30 35" /><path d="M26 22 L22 36" /></>,
+  "AI Assisted Workflow": <><path d="M20 6 L23.5 16.5 L34 20 L23.5 23.5 L20 34 L16.5 23.5 L6 20 L16.5 16.5 Z" /><path d="M37 26 L38.8 31.2 L44 33 L38.8 34.8 L37 40 L35.2 34.8 L30 33 L35.2 31.2 Z" /><path d="M8 38 H20" /><path d="M8 43 H15" /></>,
+  "Product Strategy": <><path d="M8 38 C8 28 22 34 22 24 C22 14 40 20 40 10" /><circle cx="8" cy="38" r="3" /><circle cx="22" cy="24" r="2.5" /><circle cx="40" cy="10" r="3" /></>,
 };
 function SkillThumb({ title }) {
   return (
@@ -493,18 +502,18 @@ function SkillThumb({ title }) {
 
 function AboutV2({ experience }) {
   const designCraft = [
-    { title: "User Research", desc: "Conducting remote usability interviews and synthesizing target group feedback into quantitative personas." },
-    { title: "Prototyping", desc: "High-fidelity interactive canvases built inside Figma and Framer to simulate actual backend conditions." },
-    { title: "UI Design", desc: "Pixel-perfect responsive screen designs matching current web guidelines and accessibility constraints." },
-    { title: "Design Systems", desc: "Standardizing multi-tenant atomic elements to scale design handoffs and keep builders unified." },
+    { title: "User Research", desc: "Talking to users and turning what I hear into clear problems and personas that guide the design." },
+    { title: "UI Design", desc: "Designing clean, responsive screens with attention to hierarchy, readability, and accessibility." },
+    { title: "Design Systems", desc: "Defining colors, typography, and reusable components so every screen stays consistent." },
+    { title: "Advanced Prototyping", desc: "Building prototypes in real code that run on a phone like a finished app, so flows can be tested before development starts." },
   ];
   const productStrategy = [
-    { title: "Roadmapping", desc: "Scoping long-term operational milestones with project leads and standardizing milestones." },
-    { title: "Prioritization Frameworks", desc: "Applying RICE/Kano formulas to separate business critical feature sets from cosmetic noise." },
-    { title: "Metrics & Analytics", desc: "Diving deep into funnel telemetry utilizing Mixpanel, Amplitude, and custom tracking nodes." },
-    { title: "Stakeholder Alignment", desc: "Directing cross-functional whiteboard strategy workshops to find business compromises." },
+    { title: "Vibe Coding", desc: "Turning ideas into working products with AI coding tools like Claude Code, Gemini, and Codex, guided by clear design intent." },
+    { title: "Front End Skills", desc: "Reading and writing HTML, CSS, and JavaScript, so designs are realistic to build and handoff is smoother." },
+    { title: "AI Assisted Workflow", desc: "Using AI to speed up research synthesis, writing, and exploration, while keeping judgment and taste in human hands." },
+    { title: "Product Strategy", desc: "Working with the team to decide what gets built first by weighing user value against effort." },
   ];
-  const tools = ["Figma", "Framer", "Mixpanel", "Amplitude", "Jira", "Notion", "Miro", "Github", "React", "Storybook", "Tailwind", "Claude Code", "Gemini", "Codex"];
+  const tools = ["Figma", "Jira", "Notion", "Miro", "Github", "Claude Code", "Gemini", "Codex"];
 
   return (
     <div className="v2-container" style={{ paddingBottom: 48 }}>
@@ -516,11 +525,12 @@ function AboutV2({ experience }) {
             Bridging business priorities with elegant interface logic.
           </h1>
           <p className="v2-body" style={{ margin: 0 }}>
-            I believe gorgeous design is completely useless unless it shifts real conversion metrics. Over the past 8 years, I've designed dashboard analytics portals, checkout funnels, and design systems for enterprise brands. My methodology targets complex stakeholder desires and distills them into intuitive user loops.
+            I believe good design only matters when it solves a real problem for users and for the business. For over 5 years I have designed SaaS dashboards, mobile apps, and the design systems behind them.
           </p>
           <p className="v2-body" style={{ margin: 0 }}>
-            Whether building a remote whiteboard system from scratch or pruning redundant shipping fields down to 3 inputs, I approach constraints with extreme data-driven curiosity.
+            My process starts with research, moves through quick prototypes, and ends with a design the team can build with confidence.
           </p>
+          <a href="resume.pdf" download className="v2-btn-primary" style={{ alignSelf: "flex-start" }}>Download resume ↓</a>
         </div>
       </div>
 
@@ -538,10 +548,7 @@ function AboutV2({ experience }) {
       </div>
 
       <div id="skills" style={{ padding: "48px 0" }}>
-        <h2 className="v2-h2" style={{ marginBottom: 8 }}>Skills &amp; Expertise</h2>
-        <p style={{ fontSize: 14, color: "var(--v2-slate)", marginBottom: 32 }}>
-          Draft content from the design file — replace with real skill descriptions before shipping.
-        </p>
+        <h2 className="v2-h2" style={{ marginBottom: 32 }}>Skills &amp; Expertise</h2>
         <div className="v2-skills-grid">
           <div>
             <div className="v2-skills-col-title">Design &amp; Craft</div>
@@ -556,7 +563,7 @@ function AboutV2({ experience }) {
             ))}
           </div>
           <div>
-            <div className="v2-skills-col-title">Product &amp; Strategy</div>
+            <div className="v2-skills-col-title">AI &amp; Build</div>
             {productStrategy.map((s, i) => (
               <div key={i} className="v2-skill-item">
                 <SkillThumb title={s.title} />
@@ -592,7 +599,18 @@ function parseRouteV2() {
   if (projectMatch) return { page: "project", id: decodeURIComponent(projectMatch[1]) };
   if (path === "/work") return { page: "work" };
   if (path === "/about") return { page: "about" };
-  return { page: "home" };
+  if (path === "/" || path === "/index.html") return { page: "home" };
+  return { page: "notfound" };
+}
+
+function NotFoundV2({ onNav }) {
+  return (
+    <div className="v2-container" style={{ padding: "120px var(--v2-gutter) 120px", minHeight: "50vh" }}>
+      <h1 style={{ fontSize: "clamp(36px, 8vw, 62px)", fontWeight: 800, color: "var(--v2-deep-forest)", margin: "0 0 16px" }}>Page not found</h1>
+      <p className="v2-body" style={{ margin: "0 0 32px" }}>This page does not exist or has moved.</p>
+      <a href="/" className="v2-btn-primary" onClick={(e) => onNav(e, "/")}>Back to home</a>
+    </div>
+  );
 }
 
 function AppV2() {
@@ -627,6 +645,16 @@ function AppV2() {
   const onOpen = (p) => navigate("/project/" + p.id + "/");
 
   const activeProject = route.page === "project" ? projects.find((p) => p.id === route.id) : null;
+  const notFound = route.page === "notfound" || (route.page === "project" && !activeProject);
+
+  React.useEffect(() => {
+    const base = "Bob Ellson";
+    if (notFound) document.title = "Page not found — " + base;
+    else if (activeProject) document.title = activeProject.title + " — " + base;
+    else if (route.page === "work") document.title = "All Work — " + base;
+    else if (route.page === "about") document.title = "About, Skills & Experience — " + base;
+    else document.title = base + " — UI/UX & Product Designer";
+  }, [route, activeProject, notFound]);
 
   return (
     <div className="v2">
@@ -637,6 +665,7 @@ function AppV2() {
       {route.page === "project" && activeProject && (
         <CaseStudyV2 project={activeProject} projects={projects} onOpen={onOpen} />
       )}
+      {notFound && <NotFoundV2 onNav={onNav} />}
       <FooterV2 />
     </div>
   );
